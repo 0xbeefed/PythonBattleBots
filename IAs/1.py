@@ -1,3 +1,3 @@
 import lib
 
-print(lib.toast('test'))
+print(lib.moveOn(5,5))

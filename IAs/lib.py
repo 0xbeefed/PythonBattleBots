@@ -3,13 +3,13 @@ import os
 import time
 PATH = os.getcwd().replace('\\', '/') + '/' + sys.argv[1]
 
-def toast(text):
+def moveOn(x, y):
     global PATH
 
     # Request info
     with open(PATH + 'actionX.dat', 'r+') as file:
         file.seek(0)
-        file.write(text)
+        file.write('[MOVE] {0} {1}'.format(x, y))
     os.rename(PATH + 'actionX.dat', PATH + 'actionO.dat')
 
     # Wait for response
@@ -27,4 +27,4 @@ def toast(text):
         except:
             continue
         
-    return data
+    return int(data)

@@ -1,15 +1,15 @@
 from tkinter import *
 
 
-game = {'width': 16, 'height': 16, 'cellSize': 20}
+game = {'width': 10, 'height': 10, 'cellSize': 30}
 players = []
 players.append({'hp': 100, 'x': 1, 'y': 1, 'color': 'blue'})
 players.append({'hp': 100, 'x': game['width']-2, 'y': game['height']-2, 'color': 'red'})
-root = Tk()
 
+
+root = Tk()
 gameCanvas = Canvas(root, width=game['width']*game['cellSize'], height=game['height']*game['cellSize'])
 gameCanvas.pack()
-
 
 # Grid
 for x in range(game['width']):
