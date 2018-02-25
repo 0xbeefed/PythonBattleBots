@@ -1,8 +1,10 @@
 from tkinter import *
+import time
 
+replay = open('replayFormat2', 'r')
+replay = replay.read().split('\n')
 
 game = {'width': 16, 'height': 16, 'cellSize': 20}
-turn = 1
 players = []
 players.append({'hp': 100, 'x': 1, 'y': 1, 'color': 'blue'})
 players.append({'hp': 100, 'x': game['width']-2, 'y': game['height']-2, 'color': 'red'})
@@ -18,9 +20,7 @@ turnLabel.grid(row = 0, column = 0)
 controlPanel = Label(informationPanel)
 controlPanel.grid(row = 1, column = 0)
 
-def move(action):
-    global turn
-    
+def move(action, index_player):    
     if action == 'up':
         dx, dy = 0, -1
     elif action == 'down':
@@ -30,32 +30,39 @@ def move(action):
     elif action == 'right':
         dx, dy = 1, 0
 
-    player = players[turn%2].copy()
+    player = players[index_player].copy()
     
     player['x'] += dx
     player['y'] += dy
     if 0 <= player['x'] <= game['width'] and 0 <= player['y'] <= game['height']:
         gameCanvas.coords(player['icon'],player['x']*game['cellSize'],player['y']*game['cellSize'], (player['x']+1)*game['cellSize'], (player['y']+1)*game['cellSize'])
-        players[turn%2] = player
-        if turn%2: # Player Red Turn
-            turnLabel.configure(text = '-----Player Blue Turn-----')
-        else: # Player Blue Turn
-            turnLabel.configure(text = '-----Player Red Turn-----')  
-        turn += 1    
+        players[index_player] = player 
+           
     root.update()
-        
 
-
-upButton = Button(controlPanel, text = 'Up', command = lambda : move('up'))
-upButton.grid(row = 0, column = 1)
-downButton = Button(controlPanel, text = 'Down', command = lambda : move('down'))
-downButton.grid(row = 2, column = 1)
-leftButton = Button(controlPanel, text = 'Left', command = lambda : move('left'))
-leftButton.grid(row = 1, column = 0)
-rightButton = Button(controlPanel, text = 'Right', command = lambda : move('right'))
-rightButton.grid(row = 1, column = 2)
-
-
+def watchReplay(replay):       
+    player = 0
+    turn = 0
+    for action in replay:
+        print(action)
+        action = action.split(' ')
+        if action[0] == '[MOVE]':
+            direction = [players[player]['y']-int(action[1]), players[player]['x']-int(action[2])]
+            if direction == [0, 1]: move('left', player)
+            elif direction == [0 ,-1]: move('right', player)
+            elif direction == [1, 0]: move('up', player)
+            elif direction == [-1, 0]: move('down', player)
+            
+        elif action[0] == '[WHOPLAYS]':
+            player = int(action[1])
+        elif action[0] == '[TURN]':
+            turn = int(action[1])
+            
+        time.sleep(0.5)
+ 
+startButton = Button(informationPanel, text = 'start replay', command = lambda : watchReplay(replay))
+startButton.grid(row = 2, column = 0)
+   
 # Grid
 for x in range(game['width']):
     gameCanvas.create_line(x*game['cellSize'], 0, x*game['cellSize'], game['height']*game['cellSize'], width=1, fill='black')
