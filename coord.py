@@ -11,18 +11,18 @@ class Steward(Thread):
 
     def __init__(self, path):
         Thread.__init__(self)
-        self.path = path
+        self.game = {'id': -1, 'ias': ['1.py', '2.py'], 'maxTurns': 4, 'turn': 1, 'path': path}
 
     def run(self):
         global fightInProgress
         print('[STEWARD]: started')
         while fightInProgress:
             try: # actionO = require treatment | actionX = allFine
-                with open(self.path + 'actionO.dat', 'r+') as file:
+                with open(self.game['path'] + 'actionO.dat', 'r+') as file:
                     print('[STEWARD]: command -> ' + file.read())
                     file.seek(0)
                     file.write('message from steward')
-                os.rename(self.path + 'actionO.dat', self.path + 'actionX.dat')
+                os.rename(self.path + 'actionO.dat', self.game['path'] + 'actionX.dat')
             except:
                 continue
                 
