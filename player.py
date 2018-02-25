@@ -1,6 +1,7 @@
 from tkinter import *
 import time
 
+VERBOSE = False
 replay = open('replayFormat2', 'r')
 replay = replay.read().split('\n')
 
@@ -40,11 +41,13 @@ def move(action, index_player):
            
     root.update()
 
-def watchReplay(replay):       
+def watchReplay(replay):
+    global VERBOSE
     player = 0
     turn = 0
     for action in replay:
-        print(action)
+        if VERBOSE:
+            print(action)
         action = action.split(' ')
         if action[0] == '[MOVE]':
             direction = [players[player]['y']-int(action[1]), players[player]['x']-int(action[2])]
@@ -58,7 +61,7 @@ def watchReplay(replay):
         elif action[0] == '[TURN]':
             turn = int(action[1])
             
-        time.sleep(0.5)
+        time.sleep(0.025)
  
 startButton = Button(informationPanel, text = 'start replay', command = lambda : watchReplay(replay))
 startButton.grid(row = 2, column = 0)

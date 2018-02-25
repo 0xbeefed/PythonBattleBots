@@ -1,8 +1,6 @@
 import lib
 
-print('lib loaded')
 mId = lib.myId()
-print('id ok')
 pos = lib.getCell(mId)
 
 
