@@ -80,7 +80,7 @@ class Coordinator():
             self.turn = turn
             for ia in self.game['ias']:
                 # Launch IA
-                result = subprocess.run(['python', 'C:/Users/arthc/Desktop/ProG2/IAs/' + ia, self.game['path']], stdout=subprocess.PIPE)
+                result = subprocess.run(['python', 'IAs/' + ia, self.game['path']], stdout=subprocess.PIPE)
                 with open(self.game['path'] + ia + '.dat', 'a') as file:
                     file.write('\nTurn ' + str(turn) + ': ' + str(result.stdout))
                     
