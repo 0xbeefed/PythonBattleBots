@@ -8,7 +8,7 @@ CELL_OBSTACLE = 1
 
 # GRABBING INFOS
 PATH = os.getcwd().replace('\\', '/') + '/' + sys.argv[1]
-#PATH = 'C:/Users/arthc/Desktop/PythonBattleBots/Fights/1/'
+#PATH = 'C:/Users/arthc/Desktop/PythonBattleBots/Fights/45/'
 with open(PATH + 'game.dat', 'r') as file:
     GAME_DAT = json.loads(file.read())
 with open(PATH + 'players.dat', 'r') as file:
@@ -33,14 +33,20 @@ def getCell(entity):
 
 def getCellContent(x, y):
     global MAP_DAT
-    if y > 0 and x > 0 and y < len(MAP_DAT) and x < len(MAP_DAT[y]):
+    if y >= 0 and x >= 0 and y < len(MAP_DAT) and x < len(MAP_DAT[y]):
         return 0 if MAP_DAT[y][x] == -1 else 1
     else:
-        return -1
+        return 1
+
+    
 
     
 
 # ACTION FUNCTIONS
 def moveOn(x, y):
     print('[MOVE] {0} {1}'.format(x, y))
+    return 1
+
+def mark(x, y):
+    print('[MARK] {0} {1}'.format(x, y))
     return 1

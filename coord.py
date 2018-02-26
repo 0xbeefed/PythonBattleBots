@@ -14,7 +14,7 @@ class Coordinator():
 
     def __init__(self):
         # VARIABLES #
-        self.game = {'id': -1, 'ias': ['1.py', '2.py'], 'maxTurns': 10, 'path':'', 'turn': 1, 'whoPlays': -1, 'width': 16, 'height': 16}
+        self.game = {'id': -1, 'ias': ['1.py', '2.py'], 'maxTurns': 16, 'path':'', 'turn': 1, 'whoPlays': -1, 'width': 16, 'height': 16}
         self.players = [
             {'x': 1, 'y': 1, 'maxMp': 3, 'mp': 3, 'id': 0},
             {'x': self.game['width']-2, 'y': self.game['height']-2, 'maxMp': 3, 'mp': 3, 'id': 1}
@@ -93,7 +93,7 @@ class Coordinator():
                             and self.map[y][x] == -1
                             and self.players[self.game['whoPlays']]['mp'] >= 1):
                             
-                            self.map[self.players[self.game['whoPlays']]['y']][self.players[self.game['whoPlays']]['x']] = 0
+                            self.map[self.players[self.game['whoPlays']]['y']][self.players[self.game['whoPlays']]['x']] = -1
                             self.players[self.game['whoPlays']]['x'] = x
                             self.players[self.game['whoPlays']]['y'] = y
                             self.map[y][x] = self.game['whoPlays']

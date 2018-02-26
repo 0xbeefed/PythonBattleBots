@@ -13,7 +13,7 @@ replay = replay.read().split('\n')
 Map = json.loads(replay[0])
 replay = replay[1:]
 
-game = {'width': 16, 'height': 16, 'cellSize': 20}
+game = {'width': len(Map), 'height': len(Map[0]), 'cellSize': 25}
 players = []
 players.append({'hp': 100, 'x': 1, 'y': 1, 'color': 'blue'})
 players.append({'hp': 100, 'x': game['width']-2, 'y': game['height']-2, 'color': 'red'})
@@ -52,7 +52,7 @@ def watchReplay(replay):
             turn = int(action[1])
 
         root.update()
-        time.sleep(0.075)
+        time.sleep(0.09)
  
 startButton = Button(informationPanel, text = 'Play', command = lambda : watchReplay(replay))
 startButton.grid(row = 2, column = 0)
@@ -62,6 +62,11 @@ for x in range(game['width']):
     gameCanvas.create_line(x*game['cellSize'], 0, x*game['cellSize'], game['height']*game['cellSize'], width=1, fill='black')
 for y in range(game['height']):
     gameCanvas.create_line(0, y*game['cellSize'], game['width']*game['cellSize'], y*game['cellSize'], width=1, fill='black')
+
+# Numerotation
+for x in range(game['width']):
+    for y in range(game['height']):
+        gameCanvas.create_text((x+0.5)*game['cellSize'], (y+0.5)*game['cellSize'], text='[{0}, {1}]'.format(x, y), justify='center', font=("Arial", 5))
 
 # Obstacles
 for y in range(len(Map)):
