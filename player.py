@@ -1,6 +1,7 @@
 from tkinter import *
 import time
 import sys
+import json
 
 if (len(sys.argv) > 1):
     path = sys.argv[1]
@@ -9,6 +10,8 @@ else:
 VERBOSE = False
 replay = open(path, 'r')
 replay = replay.read().split('\n')
+Map = json.loads(replay[0])
+replay = replay[1:]
 
 game = {'width': 16, 'height': 16, 'cellSize': 20}
 players = []
@@ -55,7 +58,7 @@ def watchReplay(replay):
             print(action)
         action = action.split(' ')
         if action[0] == '[MOVE]':
-            direction = [players[player]['y']-int(action[1]), players[player]['x']-int(action[2])]
+            direction = [players[player]['y']-int(action[2]), players[player]['x']-int(action[1])]
             if direction == [0, 1]: move('left', player)
             elif direction == [0 ,-1]: move('right', player)
             elif direction == [1, 0]: move('up', player)
@@ -76,6 +79,13 @@ for x in range(game['width']):
     gameCanvas.create_line(x*game['cellSize'], 0, x*game['cellSize'], game['height']*game['cellSize'], width=1, fill='black')
 for y in range(game['height']):
     gameCanvas.create_line(0, y*game['cellSize'], game['width']*game['cellSize'], y*game['cellSize'], width=1, fill='black')
+
+# Obstacles
+for y in range(len(Map)):
+    for x in range(len(Map[y])):
+        if Map[y][x] == -2:
+            gameCanvas.create_rectangle(x*game['cellSize'],y*game['cellSize'], (x+1)*game['cellSize'], (y+1)*game['cellSize'], fill='black')
+
 # Players
 for player in players:
     player['icon'] = gameCanvas.create_oval(player['x']*game['cellSize'], player['y']*game['cellSize'], (player['x']+1)*game['cellSize'], (player['y']+1)*game['cellSize'], fill=player['color'])

@@ -4,6 +4,7 @@ import subprocess
 import shutil
 from threading import Thread
 import time
+from random import randint
 
 fightInProgress = False
 turn = 1
@@ -18,7 +19,6 @@ class Coordinator():
             {'x': 1, 'y': 1, 'maxMp': 3, 'mp': 3, 'id': 0},
             {'x': self.game['width']-2, 'y': self.game['height']-2, 'maxMp': 3, 'mp': 3, 'id': 1}
             ]
-        self.map = [[-1 for i in range(self.game['width'])] for o in range(self.game['height'])]
         self.globals = {}
         with open('globals.dat', 'r') as file:
             self.globals = json.loads(file.read())
@@ -29,14 +29,27 @@ class Coordinator():
         self.game['path'] = 'Fights/' + str(self.game['id']) + '/'
         os.makedirs(self.game['path'])
 
-        #dat files
+        # DAT #
         with open(self.game['path'] + 'actionX.dat', 'w') as file:
             file.write('')
-
         self.globals['gamesCount'] += 1
         with open('globals.dat', 'w+') as file:
             file.write(json.dumps(self.globals))
         print('Created game id ' + str(self.game['id']))
+
+        # GENERATING MAP #
+        self.map = [[-1 for i in range(self.game['width'])] for o in range(self.game['height'])]
+        for player in self.players:
+            self.map[player['y']][player['x']] = player['id']
+        placedObstacles = 0
+        obstaclesToPlace = 15
+        while placedObstacles < obstaclesToPlace:
+            y = randint(0, len(self.map)-1)
+            x = randint(0, len(self.map[y])-1)
+            if (self.map[y][x] == -1):
+                placedObstacles += 1
+                self.map[y][x] = -2
+        self.history.append(json.dumps(self.map))
 
         # LAUNCH GAME #
         print('Generating turns')
@@ -51,6 +64,8 @@ class Coordinator():
                 self.game['whoPlays'] = i
                 self.history.append('[WHOPLAYS] ' + str(self.game['whoPlays']))
                 ia = self.game['ias'][self.game['whoPlays']]
+
+                # Stats
                 self.players[self.game['whoPlays']]['mp'] = self.players[self.game['whoPlays']]['maxMp']
 
                 # UPDATE CHANGES
