@@ -1,8 +1,13 @@
 from tkinter import *
 import time
+import sys
 
+if (len(sys.argv) > 1):
+    path = sys.argv[1]
+else:
+    path = 'replayFormat2'
 VERBOSE = False
-replay = open('replayFormat2', 'r')
+replay = open(path, 'r')
 replay = replay.read().split('\n')
 
 game = {'width': 16, 'height': 16, 'cellSize': 20}

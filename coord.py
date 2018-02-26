@@ -13,12 +13,12 @@ class Coordinator():
 
     def __init__(self):
         # VARIABLES #
-        self.game = {'id': -1, 'ias': ['1.py', '2.py'], 'maxTurns': 4, 'path':'', 'turn': 1, 'whoPlays': -1, 'width': 16, 'height': 16}
+        self.game = {'id': -1, 'ias': ['1.py', '2.py'], 'maxTurns': 10, 'path':'', 'turn': 1, 'whoPlays': -1, 'width': 16, 'height': 16}
         self.players = [
-            {'x': 1, 'y': 1, 'id': 0},
-            {'x': self.game['width']-2, 'y': self.game['height']-2, 'id': 1}
+            {'x': 1, 'y': 1, 'mp': 3, 'id': 0},
+            {'x': self.game['width']-2, 'y': self.game['height']-2, 'mp': 3, 'id': 1}
             ]
-        self.map = [[[-1] for i in range(self.game['width'])] for o in range(self.game['height'])]
+        self.map = [[-1 for i in range(self.game['width'])] for o in range(self.game['height'])]
         self.globals = {}
         with open('globals.dat', 'r') as file:
             self.globals = json.loads(file.read())
@@ -84,9 +84,10 @@ class Coordinator():
                         item = action[3]
 
 
-        #Save replay:
+        # Save replay:
         with open(self.game['path'] + 'replay.dat', 'w') as file:
             file.write('\n'.join(self.history))
+        subprocess.run(['python', 'player.py', self.game['path'] + 'replay.dat'], stdout=subprocess.PIPE)# Play replay
                 
 
 Coordinator()
