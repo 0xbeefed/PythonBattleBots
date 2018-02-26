@@ -66,7 +66,7 @@ def watchReplay(replay):
         elif action[0] == '[TURN]':
             turn = int(action[1])
             
-        time.sleep(0.025)
+        time.sleep(0.075)
  
 startButton = Button(informationPanel, text = 'start replay', command = lambda : watchReplay(replay))
 startButton.grid(row = 2, column = 0)

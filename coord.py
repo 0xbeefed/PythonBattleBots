@@ -15,8 +15,8 @@ class Coordinator():
         # VARIABLES #
         self.game = {'id': -1, 'ias': ['1.py', '2.py'], 'maxTurns': 10, 'path':'', 'turn': 1, 'whoPlays': -1, 'width': 16, 'height': 16}
         self.players = [
-            {'x': 1, 'y': 1, 'mp': 3, 'id': 0},
-            {'x': self.game['width']-2, 'y': self.game['height']-2, 'mp': 3, 'id': 1}
+            {'x': 1, 'y': 1, 'maxMp': 3, 'mp': 3, 'id': 0},
+            {'x': self.game['width']-2, 'y': self.game['height']-2, 'maxMp': 3, 'mp': 3, 'id': 1}
             ]
         self.map = [[-1 for i in range(self.game['width'])] for o in range(self.game['height'])]
         self.globals = {}
@@ -51,6 +51,7 @@ class Coordinator():
                 self.game['whoPlays'] = i
                 self.history.append('[WHOPLAYS] ' + str(self.game['whoPlays']))
                 ia = self.game['ias'][self.game['whoPlays']]
+                self.players[self.game['whoPlays']]['mp'] = self.players[self.game['whoPlays']]['maxMp']
 
                 # UPDATE CHANGES
                 with open(self.game['path'] + 'players.dat', 'w') as file:
@@ -71,11 +72,17 @@ class Coordinator():
                         x = int(action[1])
                         y = int(action[2])
 
-                        self.map[self.players[self.game['whoPlays']]['y']][self.players[self.game['whoPlays']]['x']] = 0
-                        self.players[self.game['whoPlays']]['x'] = x
-                        self.players[self.game['whoPlays']]['y'] = y
-                        self.map[y][x] = self.game['whoPlays']
-                        self.history.append(' '.join(action))
+                        if (abs(self.players[self.game['whoPlays']]['y'] - y) + abs(self.players[self.game['whoPlays']]['x'] - x) == 1
+                            and x >= 0 and y >= 0 and y < len(self.map) and x < len(self.map[y])
+                            and self.map[y][x] == -1
+                            and self.players[self.game['whoPlays']]['mp'] >= 1):
+                            
+                            self.map[self.players[self.game['whoPlays']]['y']][self.players[self.game['whoPlays']]['x']] = 0
+                            self.players[self.game['whoPlays']]['x'] = x
+                            self.players[self.game['whoPlays']]['y'] = y
+                            self.map[y][x] = self.game['whoPlays']
+                            self.players[self.game['whoPlays']]['mp'] -= 1
+                            self.history.append(' '.join(action))
 
                         
                     elif len(action) and action[0] == '[ATTACK]':
