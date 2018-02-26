@@ -6,7 +6,7 @@ import json
 if (len(sys.argv) > 1):
     path = sys.argv[1]
 else:
-    path = 'replayFormat2'
+    path = 'replay.dat'
 VERBOSE = False
 replay = open(path, 'r')
 replay = replay.read().split('\n')
@@ -24,33 +24,13 @@ gameCanvas.grid(row = 0, column = 0)
 
 informationPanel = Label(root)
 informationPanel.grid(row = 0, column = 1)
-turnLabel = Label(informationPanel, text = '-----Player Red Turn-----')
+turnLabel = Label(informationPanel, text = '-----Replay-----')
 turnLabel.grid(row = 0, column = 0)
 controlPanel = Label(informationPanel)
 controlPanel.grid(row = 1, column = 0)
 
-def move(action, index_player):    
-    if action == 'up':
-        dx, dy = 0, -1
-    elif action == 'down':
-        dx, dy = 0, 1
-    elif action == 'left':
-        dx, dy = -1, 0
-    elif action == 'right':
-        dx, dy = 1, 0
-
-    player = players[index_player].copy()
-    
-    player['x'] += dx
-    player['y'] += dy
-    if 0 <= player['x'] <= game['width'] and 0 <= player['y'] <= game['height']:
-        gameCanvas.coords(player['icon'],player['x']*game['cellSize'],player['y']*game['cellSize'], (player['x']+1)*game['cellSize'], (player['y']+1)*game['cellSize'])
-        players[index_player] = player 
-           
-    root.update()
-
 def watchReplay(replay):
-    global VERBOSE
+    global VERBOSE, players
     player = 0
     turn = 0
     for action in replay:
@@ -58,20 +38,23 @@ def watchReplay(replay):
             print(action)
         action = action.split(' ')
         if action[0] == '[MOVE]':
-            direction = [players[player]['y']-int(action[2]), players[player]['x']-int(action[1])]
-            if direction == [0, 1]: move('left', player)
-            elif direction == [0 ,-1]: move('right', player)
-            elif direction == [1, 0]: move('up', player)
-            elif direction == [-1, 0]: move('down', player)
+            x = int(action[1])
+            y = int(action[2])
+
+            players[player]['x'] = x
+            players[player]['y'] = y
+            gameCanvas.coords(players[player]['icon'], players[player]['x']*game['cellSize'],players[player]['y']*game['cellSize'], (players[player]['x']+1)*game['cellSize'], (players[player]['y']+1)*game['cellSize'])
             
         elif action[0] == '[WHOPLAYS]':
             player = int(action[1])
+            
         elif action[0] == '[TURN]':
             turn = int(action[1])
-            
+
+        root.update()
         time.sleep(0.075)
  
-startButton = Button(informationPanel, text = 'start replay', command = lambda : watchReplay(replay))
+startButton = Button(informationPanel, text = 'Play', command = lambda : watchReplay(replay))
 startButton.grid(row = 2, column = 0)
    
 # Grid
