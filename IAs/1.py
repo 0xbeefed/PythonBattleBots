@@ -8,8 +8,8 @@ def astar(start, end, path, visited):
         if n in neighbours[end[1]][end[0]]:
             newPath = path.copy()
             newPath.append(n)
-            if len(path) < bestPath[1]:
-                bestPath = [newPath, len(newPath)+1]
+            if len(newPath) < bestPath[1]:
+                bestPath = [newPath, len(newPath)]
             break
         else:
             if n not in visited:
