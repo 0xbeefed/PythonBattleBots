@@ -32,7 +32,7 @@ for y in range(16):
         neighbours[y].append([])
         for n in [[1, 0], [0, 1], [-1, 0], [0, -1]]:
             nPos = [x + n[0], y + n[1]]
-            if nPos[0] >= 0 and nPos[1] >= 0 and nPos[0] < 16 and nPos[1] < 16 and lib.getCellContent(nPos[0], nPos[1]) == 0:
+            if nPos[0] >= 0 and nPos[1] >= 0 and nPos[0] < 16 and nPos[1] < 16 and lib.getCellContent(nPos[0], nPos[1]) == lib.CELL_EMPTY:
                 neighbours[y][x].append(nPos)
         neighbours[y][x] = sorted(neighbours[y][x], key=lambda o: abs(o[0] - enemyPos[0]) + abs(o[1] - enemyPos[1]))
 

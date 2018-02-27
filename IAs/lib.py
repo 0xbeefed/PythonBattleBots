@@ -5,6 +5,7 @@ import json
 # GLOBALS
 CELL_EMPTY = -1
 CELL_OBSTACLE = -2
+CELL_PLAYER = 1
 
 # GRABBING INFOS
 PATH = os.getcwd().replace('\\', '/') + '/' + sys.argv[1]
@@ -34,8 +35,12 @@ def getCell(entity):
 def getCellContent(x, y):
     global MAP_DAT
     if y >= 0 and x >= 0 and y < len(MAP_DAT) and x < len(MAP_DAT[y]):
-        if MAP_DAT[y][x] > 0: return 0
-        else: return MAP_DAT[y][x]
+        if MAP_DAT[y][x] == -2:
+            return CELL_OBSTACLE
+        elif MAP_DAT[y][x] == -1:
+            return CELL_EMPTY
+        else:
+            return CELL_PLAYER
     else:
         return CELL_OBSTACLE
 
