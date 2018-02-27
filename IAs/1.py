@@ -40,5 +40,6 @@ print(neighbours[pos[1]][pos[0]])
 astar(pos, enemyPos, [], [])
 print(bestPath)
 for move in bestPath[0]:
+    lib.mark(move[0], move[1], 'blue')
     lib.moveOn(move[0], move[1])
         

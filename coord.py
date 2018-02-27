@@ -99,7 +99,9 @@ class Coordinator():
                             self.map[y][x] = self.game['whoPlays']
                             self.players[self.game['whoPlays']]['mp'] -= 1
                             self.history.append(' '.join(action))
-                            
+
+                    elif len(action) and action[0] == '[MARK]':
+                        self.history.append(' '.join(action))
 
                         
                     elif len(action) and action[0] == '[ATTACK]':

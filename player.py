@@ -7,7 +7,6 @@ if (len(sys.argv) > 1):
     path = sys.argv[1]
 else:
     path = 'replay.dat'
-VERBOSE = False
 replay = open(path, 'r')
 replay = replay.read().split('\n')
 Map = json.loads(replay[0])
@@ -33,10 +32,10 @@ def watchReplay(replay):
     global VERBOSE, players
     player = 0
     turn = 0
+    marks = []
     for action in replay:
-        if VERBOSE:
-            print(action)
         action = action.split(' ')
+
         if action[0] == '[MOVE]':
             x = int(action[1])
             y = int(action[2])
@@ -44,9 +43,18 @@ def watchReplay(replay):
             players[player]['x'] = x
             players[player]['y'] = y
             gameCanvas.coords(players[player]['icon'], players[player]['x']*game['cellSize'],players[player]['y']*game['cellSize'], (players[player]['x']+1)*game['cellSize'], (players[player]['y']+1)*game['cellSize'])
-            
+
+        if action[0] == '[MARK]':
+            x = int(action[1])
+            y = int(action[2])
+            color = action[3]
+            marks.append(gameCanvas.create_rectangle(x*game['cellSize'],y*game['cellSize'], (x+1)*game['cellSize'], (y+1)*game['cellSize'], fill=color, stipple='gray50'))
+        
         elif action[0] == '[WHOPLAYS]':
             player = int(action[1])
+            for mark in marks:
+                gameCanvas.delete(mark)
+            marks = []
             
         elif action[0] == '[TURN]':
             turn = int(action[1])
