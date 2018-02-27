@@ -45,7 +45,7 @@ def ldv(pos, pos2):
 
 for y in range(16):
     for x in range(16):
-        if not ldv(pos, [x, y]):
+        if not lib.getLineOfSight(pos, [x, y]):
             lib.mark(x, y, 'red')
         else:
             lib.mark(x, y, 'black')
