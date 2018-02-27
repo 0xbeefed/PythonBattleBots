@@ -3,8 +3,8 @@ import os
 import json
 
 # GLOBALS
-CELL_EMPTY = 0
-CELL_OBSTACLE = 1
+CELL_EMPTY = -1
+CELL_OBSTACLE = -2
 
 # GRABBING INFOS
 PATH = os.getcwd().replace('\\', '/') + '/' + sys.argv[1]
@@ -34,19 +34,25 @@ def getCell(entity):
 def getCellContent(x, y):
     global MAP_DAT
     if y >= 0 and x >= 0 and y < len(MAP_DAT) and x < len(MAP_DAT[y]):
-        return 0 if MAP_DAT[y][x] == -1 else 1
+        if MAP_DAT[y][x] > 0: return 0
+        else: return MAP_DAT[y][x]
     else:
-        return 1
+        return CELL_OBSTACLE
+
+def getObstacles():
+    global MAP_DAT
+    OBSTACLES = []
+    HEIGHT = len(MAP_DAT)
+    WIDTH = len(MAP_DAT[0])
+    for y in range(HEIGHT):
+        for x in range(WIDTH):
+            if getCellContent(x,y) == CELL_OBSTACLE:
+                OBSTACLES.append([x,y])
+    return OBSTACLES
 
 def getLineOfSight(pos, pos2):
     
-    OBSTACLES = []
-    
-    for y in range(16):
-        for x in range(16):
-            if getCellContent(x,y):
-                OBSTACLES.append([x,y])
-                
+    OBSTACLES = getObstacles()      
     if pos2[0] != pos[0]:
         for obstacle in OBSTACLES:
             u = 0
@@ -70,7 +76,6 @@ def getLineOfSight(pos, pos2):
     return 1
     
 
-    
 
 # ACTION FUNCTIONS
 def moveOn(x, y):

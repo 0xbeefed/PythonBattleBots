@@ -6,13 +6,16 @@ pos = lib.getCell(mId)
 enemyCell = lib.getCell(lib.getEnemyId())
 
 tab = []
-OBSTACLES = []
+OBSTACLES = lib.getObstacles()
+
+for obstacle in OBSTACLES:
+    lib.mark(obstacle[0], obstacle[1], 'yellow')
 for y in range(16):
     tab.append([0]*16)
     for x in range(16):
         if lib.getCellContent(x,y):
             tab[y][x] = 0
-            OBSTACLES.append([x,y])
+             #OBSTACLES.append([x,y])
         else:
             tab[y][x] = 1
             
