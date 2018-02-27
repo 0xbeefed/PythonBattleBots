@@ -35,6 +35,7 @@ def watchReplay(replay):
     marks = []
     for action in replay:
         action = action.split(' ')
+        delay = 0
 
         if action[0] == '[MOVE]':
             x = int(action[1])
@@ -43,24 +44,29 @@ def watchReplay(replay):
             players[player]['x'] = x
             players[player]['y'] = y
             gameCanvas.coords(players[player]['icon'], players[player]['x']*game['cellSize'],players[player]['y']*game['cellSize'], (players[player]['x']+1)*game['cellSize'], (players[player]['y']+1)*game['cellSize'])
+            root.update()
+            time.sleep(0.12)
 
         if action[0] == '[MARK]':
             x = int(action[1])
             y = int(action[2])
             color = action[3]
             marks.append(gameCanvas.create_rectangle(x*game['cellSize'],y*game['cellSize'], (x+1)*game['cellSize'], (y+1)*game['cellSize'], fill=color, stipple='gray50'))
+            root.update()
+            time.sleep(0.02)
         
         elif action[0] == '[WHOPLAYS]':
             player = int(action[1])
+            time.sleep(0.15) # wait before erasing marks
             for mark in marks:
                 gameCanvas.delete(mark)
             marks = []
+            root.update()
+            
             
         elif action[0] == '[TURN]':
             turn = int(action[1])
-
-        root.update()
-        time.sleep(0.09)
+            time.sleep(0.15)
  
 startButton = Button(informationPanel, text = 'Play', command = lambda : watchReplay(replay))
 startButton.grid(row = 2, column = 0)
