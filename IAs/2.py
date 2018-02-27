@@ -19,32 +19,33 @@ for y in range(16):
 print(tab)
 print('OBSTACLES : ', OBSTACLES)
 
-def ldv(pos, x, y):
-    if x != pos[0]:
+def ldv(pos, pos2):
+    if pos2[0] != pos[0]:
         for obstacle in OBSTACLES:
             u = 0
             d = 0
-            if abs(obstacle[0]-pos[0])+abs(obstacle[1]-pos[1]) < abs(pos[0]-x)+abs(pos[1]-y) and obstacle != pos:
+            if (obstacle[0] > pos[0]) == (pos2[0] > pos[0]) and (obstacle[1] > pos[1]) == (pos2[1] > pos[1]) and abs(obstacle[0]-pos[0])+abs(obstacle[1]-pos[1]) < abs(pos[0]-pos2[0])+abs(pos[1]-pos2[1]) and obstacle != pos:
                 for a, b in [[0,0], [0,1], [1,0], [1,1]]: # Check that the 4 corners of the obstacle are below or above the line between pos and [x,y]
-                    if obstacle[1]+b > ((pos[1]-y)/(pos[0]-x))*(obstacle[0]+a-x-0.5)+y+0.5:
+                    if obstacle[1]+b > ((pos[1]-pos2[1])/(pos[0]-pos2[0]))*(obstacle[0]+a-pos2[0]-0.5)+pos2[1]+0.5:
                         u += 1
-                    if obstacle[1]+b < ((pos[1]-y)/(pos[0]-x))*(obstacle[0]+a-x-0.5)+y+0.5:
+                    if obstacle[1]+b < ((pos[1]-pos2[1])/(pos[0]-pos2[0]))*(obstacle[0]+a-pos2[0]-0.5)+pos2[1]+0.5:
                         d += 1
-                    if obstacle[1]+b == ((pos[1]-y)/(pos[0]-x))*(obstacle[0]+a-x-0.5)+y+0.5:
+                    if obstacle[1]+b == ((pos[1]-pos2[1])/(pos[0]-pos2[0]))*(obstacle[0]+a-pos2[0]-0.5)+pos2[1]+0.5:
                         u += 1
                         d += 1
                 if d != 4 and u != 4:
-                    print(x,y,obstacle)
+                    print(pos2[0],pos2[1],obstacle)
                     return 0
     else:
         for obstacle in OBSTACLES:
-            if obstacle[0] == x and (min(pos[1], y) < obstacle[1] < max(pos[1], y)):
+            if obstacle[0] == pos2[0] and (min(pos[1], pos2[1]) < obstacle[1] < max(pos[1], pos2[1])):
                 return 0    
     return 1
 
+
 for y in range(16):
     for x in range(16):
-        if not ldv(pos, x, y):
+        if not ldv(pos, [x, y]):
             lib.mark(x, y, 'red')
         else:
             lib.mark(x, y, 'black')
