@@ -72,11 +72,13 @@ class replayThread(Thread):
                     y = int(action[2])
                     color = action[3]
                     marks.append(gameCanvas.create_rectangle(x*self.game['cellSize'],y*self.game['cellSize'], (x+1)*self.game['cellSize'], (y+1)*self.game['cellSize'], fill=color, stipple='gray25'))
-                    root.update()
+                    
                 
                 elif action[0] == '[WHOPLAYS]':
-                    player = int(action[1])
-                    time.sleep(0.20) # wait before erasing marks
+                    root.update()
+                    time.sleep(0.25) # wait before erasing marks
+
+                    self.game['whoPlays'] = int(action[1])
                     for mark in marks:
                         gameCanvas.delete(mark)
                     marks = []
