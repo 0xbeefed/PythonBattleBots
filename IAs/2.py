@@ -57,7 +57,8 @@ def astar(start, end):
 path = lib.getPath(pos, enemyCell)
 if path == -1:
     lib.mark(pos[0], pos[1], 'black')
-for cell in path:
-    lib.mark(cell[0], cell[1], 'green')
+else:
+    for cell in path:
+        lib.mark(cell[0], cell[1], 'green')
 
  
