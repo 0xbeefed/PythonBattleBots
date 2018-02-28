@@ -43,7 +43,7 @@ class Coordinator():
         for player in self.players:
             self.map[player['y']][player['x']] = player['id']
         placedObstacles = 0
-        obstaclesToPlace = 90
+        obstaclesToPlace = 40
         while placedObstacles < obstaclesToPlace:
             y = randint(0, len(self.map)-1)
             x = randint(0, len(self.map[y])-1)

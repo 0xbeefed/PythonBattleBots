@@ -118,7 +118,7 @@ def getPath(start, end):
     while tmp != start:
         path.append(tmp)
         tmp = parents[str(tmp)]
-    return path
+    return path[::-1]
 
 
 # ACTION FUNCTIONS
