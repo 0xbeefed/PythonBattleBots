@@ -46,20 +46,17 @@ def getCellContent(x, y):
 
 def getObstacles():
     global MAP_DAT
-    OBSTACLES = []
-    HEIGHT = len(MAP_DAT)
-    WIDTH = len(MAP_DAT[0])
-    for y in range(HEIGHT):
-        for x in range(WIDTH):
+    obstacles = []
+    for y in range(len(MAP_DAT)):
+        for x in range(len(MAP_DAT[0])):
             if getCellContent(x,y) == CELL_OBSTACLE:
-                OBSTACLES.append([x,y])
-    return OBSTACLES
+                obstacles.append([x,y])
+    return obstacles
 
 def getLineOfSight(pos, pos2):
-    
-    OBSTACLES = getObstacles()      
+    obstacles = getObstacles()      
     if pos2[0] != pos[0]:
-        for obstacle in OBSTACLES:
+        for obstacle in obstacles:
             u = 0
             d = 0
             if (obstacle[0] > pos[0]) == (pos2[0] > pos[0]) and (obstacle[1] > pos[1]) == (pos2[1] > pos[1]) and abs(obstacle[0]-pos[0])+abs(obstacle[1]-pos[1]) < abs(pos[0]-pos2[0])+abs(pos[1]-pos2[1]) and obstacle != pos:
@@ -72,10 +69,10 @@ def getLineOfSight(pos, pos2):
                         u += 1
                         d += 1
                 if d != 4 and u != 4:
-                    print(pos2[0],pos2[1],obstacle)
+                    #print(pos2[0],pos2[1],obstacle)
                     return 0
     else:
-        for obstacle in OBSTACLES:
+        for obstacle in obstacles:
             if obstacle[0] == pos2[0] and (min(pos[1], pos2[1]) < obstacle[1] < max(pos[1], pos2[1])):
                 return 0    
     return 1
