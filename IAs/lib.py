@@ -77,6 +77,48 @@ def getLineOfSight(pos, pos2):
                 return 0    
     return 1
     
+def getDistance(pos, pos2):
+    return abs(pos[0]-pos2[0])+abs(pos[1]-pos2[1])
+
+def getPath(start, end):
+    openList = [start]
+    closedList = []
+    parents = {}
+    
+    while len(openList) != 0:
+        
+        current = openList[0]
+        for tmp in openList:
+            if getDistance(start, tmp) + getDistance(tmp, end) < getDistance(start, current) + getDistance(current, end):
+                current = tmp
+        
+        if current == end:
+            break
+        
+        del openList[openList.index(current)]
+        closedList.append(current)
+        
+        for a,b in [[0,1], [0,-1], [1,0], [-1,0]]:
+            X = current[0] + a
+            Y = current[1] + b
+            if getCellContent(X, Y) == -2 or [X,Y] in closedList:
+                continue
+            elif not [X,Y] in openList:
+                openList.append([X,Y])
+                parents[str([X,Y])] = current
+            else:
+                if not str([X,Y]) in parents:
+                    parents[str([X,Y])] = current
+     
+    if current != end: # if the path does not exist
+        return -1 
+    
+    tmp = parents[str(end)]
+    path = []
+    while tmp != start:
+        path.append(tmp)
+        tmp = parents[str(tmp)]
+    return path
 
 
 # ACTION FUNCTIONS
