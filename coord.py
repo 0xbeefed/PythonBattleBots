@@ -5,6 +5,7 @@ import shutil
 from threading import Thread
 import time
 from random import randint
+import math
 
 fightInProgress = False
 turn = 1
@@ -14,10 +15,10 @@ class Coordinator():
 
     def __init__(self):
         # VARIABLES #
-        self.game = {'id': -1, 'ias': ['1.py', '2.py'], 'maxTurns': 16, 'path':'', 'turn': 1, 'whoPlays': -1, 'width': 16, 'height': 16}
+        self.game = {'id': -1, 'ias': ['attack.py', '2.py'], 'maxTurns': 16, 'path':'', 'turn': 1, 'whoPlays': -1, 'width': 16, 'height': 16}
         self.players = [
-            {'x': 1, 'y': 1, 'maxMp': 3, 'mp': 3, 'id': 0},
-            {'x': self.game['width']-2, 'y': self.game['height']-2, 'maxMp': 3, 'mp': 3, 'id': 1}
+            {'x': 1, 'y': 1, 'maxMp': 3, 'mp': 3, 'id': 0, 'maxTp': 6, 'tp': 6, 'hp': 100},
+            {'x': self.game['width']-2, 'y': self.game['height']-2, 'maxMp': 3, 'mp': 3, 'id': 1, 'maxTp': 6, 'tp': 6, 'hp': 100}
             ]
         self.globals = {}
         with open('globals.dat', 'r') as file:
@@ -68,6 +69,7 @@ class Coordinator():
 
                 # Stats
                 self.players[self.game['whoPlays']]['mp'] = self.players[self.game['whoPlays']]['maxMp']
+                self.players[self.game['whoPlays']]['tp'] = self.players[self.game['whoPlays']]['maxTp']
 
                 # UPDATE CHANGES
                 with open(self.game['path'] + 'players.dat', 'w') as file:
@@ -88,7 +90,6 @@ class Coordinator():
                         x = int(action[1])
                         y = int(action[2])
 
-                        
                         if (abs(self.players[self.game['whoPlays']]['y'] - y) + abs(self.players[self.game['whoPlays']]['x'] - x) == 1
                             and x >= 0 and y >= 0 and y < len(self.map) and x < len(self.map[y])
                             and self.map[y][x] == -1
@@ -106,9 +107,44 @@ class Coordinator():
 
                         
                     elif len(action) and action[0] == '[ATTACK]':
-                        x = action[1]
-                        y = action[2]
-                        item = action[3]
+                        x = int(action[1])
+                        y = int(action[2])
+                        distance = math.sqrt((self.players[self.game['whoPlays']]['y'] - x)**2 + (self.players[self.game['whoPlays']]['y'] - y)**2)
+                        
+                        if distance <= 5 and self.players[self.game['whoPlays']]['tp'] >= 4: # 5 is max range of the weapon, 4 is the cost of attack
+                            # CHECK LOS
+                            obstacles = []
+                            for y1 in range(len(self.map)):
+                                for x1 in range(len(self.map[0])):
+                                    if self.map[y1][x1] != -1:
+                                        obstacles.append([x1, y1])
+
+                            los = 1
+                            pos = [self.players[self.game['whoPlays']]['x'], self.players[self.game['whoPlays']]['y']]
+                            pos2 = [x, y]
+                            for obstacle in obstacles:
+                                u = 0
+                                d = 0
+                                if (obstacle[0] > pos[0]) == (pos2[0] > pos[0]) and (obstacle[1] > pos[1]) == (pos2[1] > pos[1]) and abs(obstacle[0]-pos[0])+abs(obstacle[1]-pos[1]) < abs(pos[0]-pos2[0])+abs(pos[1]-pos2[1]) and obstacle != pos:
+                                    for a, b in [[0,0], [0,1], [1,0], [1,1]]: # Check that the 4 corners of the obstacle are below or above the line between pos and [x,y]
+                                        if obstacle[1]+b > ((pos[1]-pos2[1])/(pos[0]-pos2[0]))*(obstacle[0]+a-pos2[0]-0.5)+pos2[1]+0.5:
+                                            u += 1
+                                        if obstacle[1]+b < ((pos[1]-pos2[1])/(pos[0]-pos2[0]))*(obstacle[0]+a-pos2[0]-0.5)+pos2[1]+0.5:
+                                            d += 1
+                                        if obstacle[1]+b == ((pos[1]-pos2[1])/(pos[0]-pos2[0]))*(obstacle[0]+a-pos2[0]-0.5)+pos2[1]+0.5:
+                                            u += 1
+                                            d += 1
+                                    if d != 4 and u != 4:
+                                        print(pos2[0],pos2[1],obstacle)
+                                        los = -1
+                            if los:
+                                for i in range(len(self.players)):
+                                    if self.players[i]['x'] == x and self.players[i]['y'] == y:
+                                        self.players[i]['hp'] -= 10
+                                        self.players[self.game['whoPlays']]['tp'] -= 4
+                                        self.history.append(' '.join(action))
+                                        if (self.players[i]['hp'] <= 0):
+                                            self.history.append('[DEATH] ' + str(self.players[i]['id']))
 
 
         # Save replay:

@@ -17,8 +17,8 @@ class replayThread(Thread):
         self.replay = self.replay[1:]
         self.game = {'width': len(self.map), 'height': len(self.map[0]), 'cellSize': 32}
         self.players = []
-        self.players.append({'hp': 100, 'x': 1, 'y': 1, 'color': 'blue'})
-        self.players.append({'hp': 100, 'x': self.game['width']-2, 'y': self.game['height']-2, 'color': 'red'})
+        self.players.append({'maxHp': 100, 'hp': 100, 'x': 1, 'y': 1, 'color': 'blue'})
+        self.players.append({'maxHp': 100, 'hp': 100, 'x': self.game['width']-2, 'y': self.game['height']-2, 'color': 'red'})
         gameCanvas.config(height = self.game['width']*self.game['cellSize'], width = self.game['height']*self.game['cellSize'])
         pickTurnScale.config(length=self.game['width']*self.game['cellSize'])
 
@@ -43,7 +43,16 @@ class replayThread(Thread):
         # Players
         for i in range(len(self.players)):
             self.players[i]['icon'] = gameCanvas.create_oval(self.players[i]['x']*self.game['cellSize'], self.players[i]['y']*self.game['cellSize'], (self.players[i]['x']+1)*self.game['cellSize'], (self.players[i]['y']+1)*self.game['cellSize'], fill=self.players[i]['color'])
-
+            self.players[i]['hpBar'] = [gameCanvas.create_rectangle(self.players[i]['x']*self.game['cellSize'],
+                                                                   (self.players[i]['y']-0.15)*self.game['cellSize'],
+                                                                   (self.players[i]['x']+1)*self.game['cellSize'],
+                                                                   self.players[i]['y']*self.game['cellSize'],
+                                                                   fill='red'),
+                                        gameCanvas.create_rectangle(self.players[i]['x']*self.game['cellSize'],
+                                                                   (self.players[i]['y']-0.15)*self.game['cellSize'],
+                                                                   ((self.players[i]['x']+1)*self.game['cellSize'])*(self.players[i]['hp']/self.players[i]['maxHp']),
+                                                                   self.players[i]['y']*self.game['cellSize'],
+                                                                   fill='green')]
 
     def run(self):
         global playing, pickTurn
@@ -64,15 +73,33 @@ class replayThread(Thread):
                     self.players[self.game['whoPlays']]['x'] = x
                     self.players[self.game['whoPlays']]['y'] = y
                     gameCanvas.coords(self.players[self.game['whoPlays']]['icon'], self.players[self.game['whoPlays']]['x']*self.game['cellSize'], self.players[self.game['whoPlays']]['y']*self.game['cellSize'], (self.players[self.game['whoPlays']]['x']+1)*self.game['cellSize'], (self.players[self.game['whoPlays']]['y']+1)*self.game['cellSize'])
+                    gameCanvas.coords(self.players[self.game['whoPlays']]['hpBar'][0], self.players[self.game['whoPlays']]['x']*self.game['cellSize'], (self.players[self.game['whoPlays']]['y']-0.15)*self.game['cellSize'], (self.players[self.game['whoPlays']]['x']+1)*self.game['cellSize'], self.players[self.game['whoPlays']]['y']*self.game['cellSize'])
+                    gameCanvas.coords(self.players[self.game['whoPlays']]['hpBar'][1], self.players[self.game['whoPlays']]['x']*self.game['cellSize'], (self.players[self.game['whoPlays']]['y']-0.15)*self.game['cellSize'], ((self.players[self.game['whoPlays']]['x']+1)*self.game['cellSize'])*(self.players[self.game['whoPlays']]['hp']/self.players[self.game['whoPlays']]['maxHp']), self.players[self.game['whoPlays']]['y']*self.game['cellSize'])
                     root.update()
                     time.sleep(0.12)
 
-                if action[0] == '[MARK]':
+                elif action[0] == '[MARK]':
                     x = int(action[1])
                     y = int(action[2])
                     color = action[3]
                     marks.append(gameCanvas.create_rectangle(x*self.game['cellSize'],y*self.game['cellSize'], (x+1)*self.game['cellSize'], (y+1)*self.game['cellSize'], fill=color, stipple='gray25'))
-                    
+
+                elif action[0] == '[ATTACK]':
+                    x = int(action[1])
+                    y = int(action[2])
+
+                    target = -1
+                    for i in range(len(self.players)):
+                        if self.players[i]['x'] == x and self.players[i]['y'] == y:
+                            target = i
+                            break
+
+                    if (target != -1):
+                        self.players[target]['hp'] = max(self.players[target]['hp']-10, 0)
+                        gameCanvas.coords(self.players[target]['hpBar'][0], self.players[target]['x']*self.game['cellSize'], (self.players[target]['y']-0.15)*self.game['cellSize'], (self.players[target]['x']+1)*self.game['cellSize'], self.players[target]['y']*self.game['cellSize'])
+                        gameCanvas.coords(self.players[target]['hpBar'][1], self.players[target]['x']*self.game['cellSize'], (self.players[target]['y']-0.15)*self.game['cellSize'], ((self.players[target]['x']+(self.players[target]['hp']/self.players[target]['maxHp']))*self.game['cellSize']), self.players[target]['y']*self.game['cellSize'])
+                        root.update()
+                        
                 
                 elif action[0] == '[WHOPLAYS]':
                     root.update()
@@ -83,6 +110,7 @@ class replayThread(Thread):
                         gameCanvas.delete(mark)
                     marks = []
                     root.update()
+
 
                 elif action[0] == '[TURN]':
                     self.game['turn'] = int(action[1])

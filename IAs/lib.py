@@ -87,3 +87,7 @@ def moveOn(x, y):
 def mark(x, y, color):
     print('[MARK] {0} {1} {2}'.format(x, y, color))
     return 1
+
+def attackOn(x, y):
+    print('[ATTACK] {0} {1}'.format(x, y))
+    return 1
