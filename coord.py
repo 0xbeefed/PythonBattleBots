@@ -109,7 +109,7 @@ class Coordinator():
                     elif len(action) and action[0] == '[ATTACK]':
                         x = int(action[1])
                         y = int(action[2])
-                        distance = math.sqrt((self.players[self.game['whoPlays']]['y'] - x)**2 + (self.players[self.game['whoPlays']]['y'] - y)**2)
+                        distance = math.sqrt((self.players[self.game['whoPlays']]['x'] - x)**2 + (self.players[self.game['whoPlays']]['y'] - y)**2)
                         
                         if distance <= 5 and self.players[self.game['whoPlays']]['tp'] >= 4: # 5 is max range of the weapon, 4 is the cost of attack
                             # CHECK LOS
@@ -135,7 +135,7 @@ class Coordinator():
                                             u += 1
                                             d += 1
                                     if d != 4 and u != 4:
-                                        los = -1
+                                        los = 0
                             if los:
                                 for i in range(len(self.players)):
                                     if self.players[i]['x'] == x and self.players[i]['y'] == y:
