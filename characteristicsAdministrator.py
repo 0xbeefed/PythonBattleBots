@@ -4,15 +4,15 @@ import json
 import os
 
 filename = ''
-data = {'hp' : '-', 'mp' : '-', 'tp' : '-', 'cp' : '-', 'pseudo' : '-'}
-values = {'hp' : 20, 'mp' : 1, 'tp' : 1}
+data = {'maxHp' : '-', 'maxMp' : '-', 'maxTp' : '-', 'cp' : '-', 'pseudo' : '-'}
+values = {'maxHp' : 20, 'maxMp' : 1, 'maxTp' : 1}
 
 def refresh():
     global data
     cpLabel.config(text = 'cp : ' + str(data['cp']))
-    hpLabel.config(text = 'hp : ' + str(data['hp']))
-    mpLabel.config(text = 'mp : ' + str(data['mp']))
-    tpLabel.config(text = 'tp : ' + str(data['tp']))
+    hpLabel.config(text = 'hp : ' + str(data['maxHp']))
+    mpLabel.config(text = 'mp : ' + str(data['maxMp']))
+    tpLabel.config(text = 'tp : ' + str(data['maxTp']))
     root.update()
     
 def disableButtons():
@@ -56,7 +56,7 @@ def save():
     data['pseudo'] = pseudoEntry.get()
     with open(filename, 'w') as file:
         file.write(json.dumps(data))
-    data = {'hp' : '-', 'mp' : '-', 'tp' : '-', 'cp' : '-', 'pseudo' : '-'}
+    data = {'maxHp' : '-', 'maxMp' : '-', 'maxTp' : '-', 'cp' : '-', 'pseudo' : '-'}
     pseudoEntry.delete(0,END)
     pseudoEntry.insert(0, data['pseudo'])
     refresh()
@@ -66,8 +66,8 @@ def createProfil():
     global filename, data
     with open('globals.dat', 'r') as file:
         var = json.loads(file.read())
-    data = {'hp' : 100, 'mp' : 3, 'tp' : 6, 'cp' : 0, 'pseudo' : 'user' + str(var['usersCount'])}
-    filename = 'users/user' + str(var['usersCount']) + '/'
+    data = {'maxHp' : 100, 'maxMp' : 3, 'maxTp' : 6, 'cp' : 0, 'pseudo' : 'user' + str(var['usersCount'])}
+    filename = 'users/' + str(var['usersCount']) + '/'
     os.makedirs(filename)
     filename += 'stat.dat'
     with open(filename, 'w+') as file:
@@ -75,7 +75,7 @@ def createProfil():
     var['usersCount'] += 1  
     with open('globals.dat', 'w+') as file:
             file.write(json.dumps(var))
-    updateStat('hp', 0)
+    updateStat('maxHp', 0)
     pseudoEntry.delete(0,END)
     pseudoEntry.insert(0, data['pseudo'])
     activateButtons()
@@ -105,25 +105,25 @@ pseudoEntry.insert(0,data['pseudo'])
 cpLabel = Label(statsLabel, text = 'cp : ' + str(data['cp']))
 cpLabel.grid(row = 1, column = 0)
 
-hpLabel = Label(statsLabel, text = 'hp : ' + str(data['hp']))
+hpLabel = Label(statsLabel, text = 'hp : ' + str(data['maxHp']))
 hpLabel.grid(row = 2, column = 0)
-moreHpButton = Button(statsLabel, text = '+', state = DISABLED, command = lambda : updateStat('hp', values['hp']))
+moreHpButton = Button(statsLabel, text = '+', state = DISABLED, command = lambda : updateStat('maxHp', values['maxHp']))
 moreHpButton.grid(row = 2, column = 1)
-lessHpButton = Button(statsLabel, text = '-', state = DISABLED, command = lambda : updateStat('hp', -values['hp']))
+lessHpButton = Button(statsLabel, text = '-', state = DISABLED, command = lambda : updateStat('maxHp', -values['maxHp']))
 lessHpButton.grid(row = 2, column = 2)
 
-mpLabel = Label(statsLabel, text = 'mp : ' + str(data['mp']))
+mpLabel = Label(statsLabel, text = 'mp : ' + str(data['maxMp']))
 mpLabel.grid(row = 3, column = 0)
-moreMpButton = Button(statsLabel, text = '+', state = DISABLED, command = lambda : updateStat('mp', values['mp']))
+moreMpButton = Button(statsLabel, text = '+', state = DISABLED, command = lambda : updateStat('maxMp', values['maxMp']))
 moreMpButton.grid(row = 3, column = 1)
-lessMpButton = Button(statsLabel, text = '-', state = DISABLED, command = lambda : updateStat('mp', -values['mp']))
+lessMpButton = Button(statsLabel, text = '-', state = DISABLED, command = lambda : updateStat('maxMp', -values['maxMp']))
 lessMpButton.grid(row = 3, column = 2)
 
-tpLabel = Label(statsLabel, text = 'tp : ' + str(data['tp']))
+tpLabel = Label(statsLabel, text = 'tp : ' + str(data['maxTp']))
 tpLabel.grid(row = 4, column = 0)
-moreTpButton = Button(statsLabel, text = '+', state = DISABLED, command = lambda : updateStat('tp', values['tp']))
+moreTpButton = Button(statsLabel, text = '+', state = DISABLED, command = lambda : updateStat('maxTp', values['maxTp']))
 moreTpButton.grid(row = 4, column = 1)
-lessTpButton = Button(statsLabel, text = '-', state = DISABLED, command = lambda : updateStat('tp', -values['tp']))
+lessTpButton = Button(statsLabel, text = '-', state = DISABLED, command = lambda : updateStat('maxTp', -values['maxTp']))
 lessTpButton.grid(row = 4, column = 2)
 
 root.mainloop()

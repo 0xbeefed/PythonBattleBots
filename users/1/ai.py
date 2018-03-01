@@ -1,3 +1,5 @@
+import sys
+sys.path.append(sys.path[0] + "/..")
 import lib
 
 mId = lib.myId()

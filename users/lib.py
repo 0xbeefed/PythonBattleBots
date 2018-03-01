@@ -9,7 +9,7 @@ CELL_PLAYER = 1
 
 # GRABBING INFOS
 PATH = os.getcwd().replace('\\', '/') + '/' + sys.argv[1]
-#PATH = 'C:/Users/arthc/Desktop/PythonBattleBots/Fights/45/'
+#PATH = 'C:/Users/arthc/Desktop/PythonBattleBots/Fights/25/'
 with open(PATH + 'game.dat', 'r') as file:
     GAME_DAT = json.loads(file.read())
 with open(PATH + 'players.dat', 'r') as file:

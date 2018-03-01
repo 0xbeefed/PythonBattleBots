@@ -1,0 +1,745 @@
+[[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, 0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -2, -2, -1, -1, -1, -1, -2, -1, -1, -1, -1, -2, -1, -1, -1], [-1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -2, -1, -1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -2], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1], [-1, -1, -1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1]]
+[TURN] 0
+[WHOPLAYS] 0
+[MARK] 2 1 blue
+[MOVE] 2 1
+[MARK] 3 1 blue
+[MOVE] 3 1
+[MARK] 4 1 blue
+[MOVE] 4 1
+[MARK] 5 1 blue
+[MARK] 6 1 blue
+[MARK] 7 1 blue
+[MARK] 8 1 blue
+[MARK] 9 1 blue
+[MARK] 10 1 blue
+[MARK] 11 1 blue
+[MARK] 12 1 blue
+[MARK] 13 1 blue
+[MARK] 14 1 blue
+[MARK] 14 2 blue
+[MARK] 14 3 blue
+[MARK] 14 4 blue
+[MARK] 14 5 blue
+[MARK] 14 6 blue
+[MARK] 14 7 blue
+[MARK] 14 8 blue
+[MARK] 14 9 blue
+[MARK] 15 9 blue
+[MARK] 15 8 blue
+[MARK] 15 7 blue
+[MARK] 15 6 blue
+[MARK] 15 5 blue
+[MARK] 15 4 blue
+[MARK] 15 3 blue
+[MARK] 15 2 blue
+[MARK] 15 1 blue
+[MARK] 15 0 blue
+[MARK] 14 0 blue
+[MARK] 13 0 blue
+[MARK] 12 0 blue
+[MARK] 11 0 blue
+[MARK] 10 0 blue
+[MARK] 9 0 blue
+[MARK] 8 0 blue
+[MARK] 7 0 blue
+[MARK] 6 0 blue
+[MARK] 5 0 blue
+[MARK] 4 0 blue
+[MARK] 3 0 blue
+[MARK] 2 0 blue
+[MARK] 1 0 blue
+[MARK] 0 0 blue
+[MARK] 0 1 blue
+[MARK] 0 2 blue
+[MARK] 1 2 blue
+[MARK] 2 2 blue
+[MARK] 3 2 blue
+[MARK] 4 2 blue
+[MARK] 5 2 blue
+[MARK] 6 2 blue
+[MARK] 7 2 blue
+[MARK] 8 2 blue
+[MARK] 9 2 blue
+[MARK] 10 2 blue
+[MARK] 11 2 blue
+[MARK] 12 2 blue
+[MARK] 13 2 blue
+[MARK] 13 3 blue
+[MARK] 13 4 blue
+[MARK] 13 5 blue
+[MARK] 13 6 blue
+[MARK] 13 7 blue
+[MARK] 13 8 blue
+[MARK] 12 8 blue
+[MARK] 12 9 blue
+[MARK] 12 10 blue
+[MARK] 13 10 blue
+[MARK] 13 11 blue
+[MARK] 13 12 blue
+[MARK] 14 12 blue
+[MARK] 14 13 blue
+[WHOPLAYS] 1
+[MARK] 5 1 green
+[MARK] 6 1 green
+[MARK] 7 1 green
+[MARK] 8 1 green
+[MARK] 9 1 green
+[MARK] 10 1 green
+[MARK] 11 1 green
+[MARK] 11 2 green
+[MARK] 11 3 green
+[MARK] 11 4 green
+[MARK] 12 4 green
+[MARK] 12 5 green
+[MARK] 12 6 green
+[MARK] 12 7 green
+[MARK] 12 8 green
+[MARK] 12 9 green
+[MARK] 12 10 green
+[MARK] 13 10 green
+[MARK] 13 11 green
+[MARK] 13 12 green
+[MARK] 14 12 green
+[MARK] 14 13 green
+[TURN] 1
+[WHOPLAYS] 0
+[MARK] 5 1 blue
+[MOVE] 5 1
+[MARK] 6 1 blue
+[MOVE] 6 1
+[MARK] 7 1 blue
+[MOVE] 7 1
+[MARK] 8 1 blue
+[MARK] 9 1 blue
+[MARK] 10 1 blue
+[MARK] 11 1 blue
+[MARK] 12 1 blue
+[MARK] 13 1 blue
+[MARK] 14 1 blue
+[MARK] 14 2 blue
+[MARK] 14 3 blue
+[MARK] 14 4 blue
+[MARK] 14 5 blue
+[MARK] 14 6 blue
+[MARK] 14 7 blue
+[MARK] 14 8 blue
+[MARK] 14 9 blue
+[MARK] 15 9 blue
+[MARK] 15 8 blue
+[MARK] 15 7 blue
+[MARK] 15 6 blue
+[MARK] 15 5 blue
+[MARK] 15 4 blue
+[MARK] 15 3 blue
+[MARK] 15 2 blue
+[MARK] 15 1 blue
+[MARK] 15 0 blue
+[MARK] 14 0 blue
+[MARK] 13 0 blue
+[MARK] 12 0 blue
+[MARK] 11 0 blue
+[MARK] 10 0 blue
+[MARK] 9 0 blue
+[MARK] 8 0 blue
+[MARK] 7 0 blue
+[MARK] 6 0 blue
+[MARK] 5 0 blue
+[MARK] 4 0 blue
+[MARK] 3 0 blue
+[MARK] 3 1 blue
+[MARK] 3 2 blue
+[MARK] 4 2 blue
+[MARK] 5 2 blue
+[MARK] 6 2 blue
+[MARK] 7 2 blue
+[MARK] 8 2 blue
+[MARK] 9 2 blue
+[MARK] 10 2 blue
+[MARK] 11 2 blue
+[MARK] 12 2 blue
+[MARK] 13 2 blue
+[MARK] 13 3 blue
+[MARK] 13 4 blue
+[MARK] 13 5 blue
+[MARK] 13 6 blue
+[MARK] 13 7 blue
+[MARK] 13 8 blue
+[MARK] 12 8 blue
+[MARK] 12 9 blue
+[MARK] 12 10 blue
+[MARK] 13 10 blue
+[MARK] 13 11 blue
+[MARK] 13 12 blue
+[MARK] 14 12 blue
+[MARK] 14 13 blue
+[WHOPLAYS] 1
+[MARK] 8 1 green
+[MARK] 9 1 green
+[MARK] 10 1 green
+[MARK] 11 1 green
+[MARK] 11 2 green
+[MARK] 11 3 green
+[MARK] 11 4 green
+[MARK] 12 4 green
+[MARK] 12 5 green
+[MARK] 12 6 green
+[MARK] 12 7 green
+[MARK] 12 8 green
+[MARK] 12 9 green
+[MARK] 12 10 green
+[MARK] 13 10 green
+[MARK] 13 11 green
+[MARK] 13 12 green
+[MARK] 14 12 green
+[MARK] 14 13 green
+[TURN] 2
+[WHOPLAYS] 0
+[MARK] 8 1 blue
+[MOVE] 8 1
+[MARK] 9 1 blue
+[MOVE] 9 1
+[MARK] 10 1 blue
+[MOVE] 10 1
+[MARK] 11 1 blue
+[MARK] 12 1 blue
+[MARK] 13 1 blue
+[MARK] 14 1 blue
+[MARK] 14 2 blue
+[MARK] 14 3 blue
+[MARK] 14 4 blue
+[MARK] 14 5 blue
+[MARK] 14 6 blue
+[MARK] 14 7 blue
+[MARK] 14 8 blue
+[MARK] 14 9 blue
+[MARK] 15 9 blue
+[MARK] 15 8 blue
+[MARK] 15 7 blue
+[MARK] 15 6 blue
+[MARK] 15 5 blue
+[MARK] 15 4 blue
+[MARK] 15 3 blue
+[MARK] 15 2 blue
+[MARK] 15 1 blue
+[MARK] 15 0 blue
+[MARK] 14 0 blue
+[MARK] 13 0 blue
+[MARK] 12 0 blue
+[MARK] 11 0 blue
+[MARK] 10 0 blue
+[MARK] 9 0 blue
+[MARK] 8 0 blue
+[MARK] 7 0 blue
+[MARK] 6 0 blue
+[MARK] 6 1 blue
+[MARK] 6 2 blue
+[MARK] 7 2 blue
+[MARK] 8 2 blue
+[MARK] 9 2 blue
+[MARK] 10 2 blue
+[MARK] 11 2 blue
+[MARK] 12 2 blue
+[MARK] 13 2 blue
+[MARK] 13 3 blue
+[MARK] 13 4 blue
+[MARK] 13 5 blue
+[MARK] 13 6 blue
+[MARK] 13 7 blue
+[MARK] 13 8 blue
+[MARK] 12 8 blue
+[MARK] 12 9 blue
+[MARK] 12 10 blue
+[MARK] 13 10 blue
+[MARK] 13 11 blue
+[MARK] 13 12 blue
+[MARK] 14 12 blue
+[MARK] 14 13 blue
+[WHOPLAYS] 1
+[MARK] 11 1 green
+[MARK] 11 2 green
+[MARK] 11 3 green
+[MARK] 11 4 green
+[MARK] 12 4 green
+[MARK] 12 5 green
+[MARK] 12 6 green
+[MARK] 12 7 green
+[MARK] 12 8 green
+[MARK] 12 9 green
+[MARK] 12 10 green
+[MARK] 13 10 green
+[MARK] 13 11 green
+[MARK] 13 12 green
+[MARK] 14 12 green
+[MARK] 14 13 green
+[TURN] 3
+[WHOPLAYS] 0
+[MARK] 11 1 blue
+[MOVE] 11 1
+[MARK] 12 1 blue
+[MOVE] 12 1
+[MARK] 13 1 blue
+[MOVE] 13 1
+[MARK] 14 1 blue
+[MARK] 14 2 blue
+[MARK] 14 3 blue
+[MARK] 14 4 blue
+[MARK] 14 5 blue
+[MARK] 14 6 blue
+[MARK] 14 7 blue
+[MARK] 14 8 blue
+[MARK] 14 9 blue
+[MARK] 15 9 blue
+[MARK] 15 8 blue
+[MARK] 15 7 blue
+[MARK] 15 6 blue
+[MARK] 15 5 blue
+[MARK] 15 4 blue
+[MARK] 15 3 blue
+[MARK] 15 2 blue
+[MARK] 15 1 blue
+[MARK] 15 0 blue
+[MARK] 14 0 blue
+[MARK] 13 0 blue
+[MARK] 12 0 blue
+[MARK] 11 0 blue
+[MARK] 10 0 blue
+[MARK] 9 0 blue
+[MARK] 9 1 blue
+[MARK] 9 2 blue
+[MARK] 10 2 blue
+[MARK] 11 2 blue
+[MARK] 12 2 blue
+[MARK] 13 2 blue
+[MARK] 13 3 blue
+[MARK] 13 4 blue
+[MARK] 13 5 blue
+[MARK] 13 6 blue
+[MARK] 13 7 blue
+[MARK] 13 8 blue
+[MARK] 12 8 blue
+[MARK] 12 9 blue
+[MARK] 12 10 blue
+[MARK] 13 10 blue
+[MARK] 13 11 blue
+[MARK] 13 12 blue
+[MARK] 14 12 blue
+[MARK] 14 13 blue
+[WHOPLAYS] 1
+[MARK] 13 2 green
+[MARK] 13 3 green
+[MARK] 13 4 green
+[MARK] 13 5 green
+[MARK] 13 6 green
+[MARK] 13 7 green
+[MARK] 13 8 green
+[MARK] 12 8 green
+[MARK] 12 9 green
+[MARK] 12 10 green
+[MARK] 13 10 green
+[MARK] 13 11 green
+[MARK] 13 12 green
+[MARK] 14 12 green
+[MARK] 14 13 green
+[TURN] 4
+[WHOPLAYS] 0
+[MARK] 14 1 blue
+[MOVE] 14 1
+[MARK] 14 2 blue
+[MOVE] 14 2
+[MARK] 14 3 blue
+[MOVE] 14 3
+[MARK] 14 4 blue
+[MARK] 14 5 blue
+[MARK] 14 6 blue
+[MARK] 14 7 blue
+[MARK] 14 8 blue
+[MARK] 14 9 blue
+[MARK] 15 9 blue
+[MARK] 15 8 blue
+[MARK] 15 7 blue
+[MARK] 15 6 blue
+[MARK] 15 5 blue
+[MARK] 15 4 blue
+[MARK] 15 3 blue
+[MARK] 15 2 blue
+[MARK] 15 1 blue
+[MARK] 15 0 blue
+[MARK] 14 0 blue
+[MARK] 13 0 blue
+[MARK] 12 0 blue
+[MARK] 12 1 blue
+[MARK] 12 2 blue
+[MARK] 13 2 blue
+[MARK] 13 3 blue
+[MARK] 13 4 blue
+[MARK] 13 5 blue
+[MARK] 13 6 blue
+[MARK] 13 7 blue
+[MARK] 13 8 blue
+[MARK] 12 8 blue
+[MARK] 12 9 blue
+[MARK] 12 10 blue
+[MARK] 13 10 blue
+[MARK] 13 11 blue
+[MARK] 13 12 blue
+[MARK] 14 12 blue
+[MARK] 14 13 blue
+[WHOPLAYS] 1
+[MARK] 14 4 green
+[MARK] 14 5 green
+[MARK] 14 6 green
+[MARK] 14 7 green
+[MARK] 14 8 green
+[MARK] 13 8 green
+[MARK] 12 8 green
+[MARK] 12 9 green
+[MARK] 12 10 green
+[MARK] 13 10 green
+[MARK] 13 11 green
+[MARK] 13 12 green
+[MARK] 14 12 green
+[MARK] 14 13 green
+[TURN] 5
+[WHOPLAYS] 0
+[MARK] 14 4 blue
+[MOVE] 14 4
+[MARK] 14 5 blue
+[MOVE] 14 5
+[MARK] 14 6 blue
+[MOVE] 14 6
+[MARK] 14 7 blue
+[MARK] 14 8 blue
+[MARK] 14 9 blue
+[MARK] 15 9 blue
+[MARK] 15 8 blue
+[MARK] 15 7 blue
+[MARK] 15 6 blue
+[MARK] 15 5 blue
+[MARK] 15 4 blue
+[MARK] 15 3 blue
+[MARK] 15 2 blue
+[MARK] 14 2 blue
+[MARK] 13 2 blue
+[MARK] 13 3 blue
+[MARK] 13 4 blue
+[MARK] 13 5 blue
+[MARK] 13 6 blue
+[MARK] 13 7 blue
+[MARK] 13 8 blue
+[MARK] 12 8 blue
+[MARK] 12 9 blue
+[MARK] 12 10 blue
+[MARK] 13 10 blue
+[MARK] 13 11 blue
+[MARK] 13 12 blue
+[MARK] 14 12 blue
+[MARK] 14 13 blue
+[WHOPLAYS] 1
+[MARK] 14 7 green
+[MARK] 14 8 green
+[MARK] 13 8 green
+[MARK] 12 8 green
+[MARK] 12 9 green
+[MARK] 12 10 green
+[MARK] 13 10 green
+[MARK] 13 11 green
+[MARK] 13 12 green
+[MARK] 14 12 green
+[MARK] 14 13 green
+[TURN] 6
+[WHOPLAYS] 0
+[MARK] 14 7 blue
+[MOVE] 14 7
+[MARK] 14 8 blue
+[MOVE] 14 8
+[MARK] 14 9 blue
+[MOVE] 14 9
+[MARK] 15 9 blue
+[MARK] 15 8 blue
+[MARK] 15 7 blue
+[MARK] 15 6 blue
+[MARK] 15 5 blue
+[MARK] 14 5 blue
+[MARK] 13 5 blue
+[MARK] 13 6 blue
+[MARK] 13 7 blue
+[MARK] 13 8 blue
+[MARK] 12 8 blue
+[MARK] 12 9 blue
+[MARK] 12 10 blue
+[MARK] 13 10 blue
+[MARK] 13 11 blue
+[MARK] 13 12 blue
+[MARK] 14 12 blue
+[MARK] 14 13 blue
+[WHOPLAYS] 1
+[MARK] 14 8 green
+[MARK] 13 8 green
+[MARK] 12 8 green
+[MARK] 12 9 green
+[MARK] 12 10 green
+[MARK] 13 10 green
+[MARK] 13 11 green
+[MARK] 13 12 green
+[MARK] 14 12 green
+[MARK] 14 13 green
+[TURN] 7
+[WHOPLAYS] 0
+[MARK] 15 9 blue
+[MOVE] 15 9
+[MARK] 15 8 blue
+[MOVE] 15 8
+[MARK] 14 8 blue
+[MOVE] 14 8
+[MARK] 13 8 blue
+[MARK] 12 8 blue
+[MARK] 12 9 blue
+[MARK] 12 10 blue
+[MARK] 13 10 blue
+[MARK] 13 11 blue
+[MARK] 13 12 blue
+[MARK] 14 12 blue
+[MARK] 14 13 blue
+[WHOPLAYS] 1
+[MARK] 13 8 green
+[MARK] 12 8 green
+[MARK] 12 9 green
+[MARK] 12 10 green
+[MARK] 13 10 green
+[MARK] 13 11 green
+[MARK] 13 12 green
+[MARK] 14 12 green
+[MARK] 14 13 green
+[TURN] 8
+[WHOPLAYS] 0
+[MARK] 14 9 blue
+[MOVE] 14 9
+[MARK] 15 9 blue
+[MOVE] 15 9
+[MARK] 15 8 blue
+[MOVE] 15 8
+[MARK] 15 7 blue
+[MARK] 14 7 blue
+[MARK] 13 7 blue
+[MARK] 13 8 blue
+[MARK] 12 8 blue
+[MARK] 12 9 blue
+[MARK] 12 10 blue
+[MARK] 13 10 blue
+[MARK] 13 11 blue
+[MARK] 13 12 blue
+[MARK] 14 12 blue
+[MARK] 14 13 blue
+[WHOPLAYS] 1
+[MARK] 14 8 green
+[MARK] 13 8 green
+[MARK] 12 8 green
+[MARK] 12 9 green
+[MARK] 12 10 green
+[MARK] 13 10 green
+[MARK] 13 11 green
+[MARK] 13 12 green
+[MARK] 14 12 green
+[MARK] 14 13 green
+[TURN] 9
+[WHOPLAYS] 0
+[MARK] 15 9 blue
+[MOVE] 15 9
+[MARK] 14 9 blue
+[MOVE] 14 9
+[MARK] 14 8 blue
+[MOVE] 14 8
+[MARK] 13 8 blue
+[MARK] 12 8 blue
+[MARK] 12 9 blue
+[MARK] 12 10 blue
+[MARK] 13 10 blue
+[MARK] 13 11 blue
+[MARK] 13 12 blue
+[MARK] 14 12 blue
+[MARK] 14 13 blue
+[WHOPLAYS] 1
+[MARK] 13 8 green
+[MARK] 12 8 green
+[MARK] 12 9 green
+[MARK] 12 10 green
+[MARK] 13 10 green
+[MARK] 13 11 green
+[MARK] 13 12 green
+[MARK] 14 12 green
+[MARK] 14 13 green
+[TURN] 10
+[WHOPLAYS] 0
+[MARK] 14 9 blue
+[MOVE] 14 9
+[MARK] 15 9 blue
+[MOVE] 15 9
+[MARK] 15 8 blue
+[MOVE] 15 8
+[MARK] 15 7 blue
+[MARK] 14 7 blue
+[MARK] 13 7 blue
+[MARK] 13 8 blue
+[MARK] 12 8 blue
+[MARK] 12 9 blue
+[MARK] 12 10 blue
+[MARK] 13 10 blue
+[MARK] 13 11 blue
+[MARK] 13 12 blue
+[MARK] 14 12 blue
+[MARK] 14 13 blue
+[WHOPLAYS] 1
+[MARK] 14 8 green
+[MARK] 13 8 green
+[MARK] 12 8 green
+[MARK] 12 9 green
+[MARK] 12 10 green
+[MARK] 13 10 green
+[MARK] 13 11 green
+[MARK] 13 12 green
+[MARK] 14 12 green
+[MARK] 14 13 green
+[TURN] 11
+[WHOPLAYS] 0
+[MARK] 15 9 blue
+[MOVE] 15 9
+[MARK] 14 9 blue
+[MOVE] 14 9
+[MARK] 14 8 blue
+[MOVE] 14 8
+[MARK] 13 8 blue
+[MARK] 12 8 blue
+[MARK] 12 9 blue
+[MARK] 12 10 blue
+[MARK] 13 10 blue
+[MARK] 13 11 blue
+[MARK] 13 12 blue
+[MARK] 14 12 blue
+[MARK] 14 13 blue
+[WHOPLAYS] 1
+[MARK] 13 8 green
+[MARK] 12 8 green
+[MARK] 12 9 green
+[MARK] 12 10 green
+[MARK] 13 10 green
+[MARK] 13 11 green
+[MARK] 13 12 green
+[MARK] 14 12 green
+[MARK] 14 13 green
+[TURN] 12
+[WHOPLAYS] 0
+[MARK] 14 9 blue
+[MOVE] 14 9
+[MARK] 15 9 blue
+[MOVE] 15 9
+[MARK] 15 8 blue
+[MOVE] 15 8
+[MARK] 15 7 blue
+[MARK] 14 7 blue
+[MARK] 13 7 blue
+[MARK] 13 8 blue
+[MARK] 12 8 blue
+[MARK] 12 9 blue
+[MARK] 12 10 blue
+[MARK] 13 10 blue
+[MARK] 13 11 blue
+[MARK] 13 12 blue
+[MARK] 14 12 blue
+[MARK] 14 13 blue
+[WHOPLAYS] 1
+[MARK] 14 8 green
+[MARK] 13 8 green
+[MARK] 12 8 green
+[MARK] 12 9 green
+[MARK] 12 10 green
+[MARK] 13 10 green
+[MARK] 13 11 green
+[MARK] 13 12 green
+[MARK] 14 12 green
+[MARK] 14 13 green
+[TURN] 13
+[WHOPLAYS] 0
+[MARK] 15 9 blue
+[MOVE] 15 9
+[MARK] 14 9 blue
+[MOVE] 14 9
+[MARK] 14 8 blue
+[MOVE] 14 8
+[MARK] 13 8 blue
+[MARK] 12 8 blue
+[MARK] 12 9 blue
+[MARK] 12 10 blue
+[MARK] 13 10 blue
+[MARK] 13 11 blue
+[MARK] 13 12 blue
+[MARK] 14 12 blue
+[MARK] 14 13 blue
+[WHOPLAYS] 1
+[MARK] 13 8 green
+[MARK] 12 8 green
+[MARK] 12 9 green
+[MARK] 12 10 green
+[MARK] 13 10 green
+[MARK] 13 11 green
+[MARK] 13 12 green
+[MARK] 14 12 green
+[MARK] 14 13 green
+[TURN] 14
+[WHOPLAYS] 0
+[MARK] 14 9 blue
+[MOVE] 14 9
+[MARK] 15 9 blue
+[MOVE] 15 9
+[MARK] 15 8 blue
+[MOVE] 15 8
+[MARK] 15 7 blue
+[MARK] 14 7 blue
+[MARK] 13 7 blue
+[MARK] 13 8 blue
+[MARK] 12 8 blue
+[MARK] 12 9 blue
+[MARK] 12 10 blue
+[MARK] 13 10 blue
+[MARK] 13 11 blue
+[MARK] 13 12 blue
+[MARK] 14 12 blue
+[MARK] 14 13 blue
+[WHOPLAYS] 1
+[MARK] 14 8 green
+[MARK] 13 8 green
+[MARK] 12 8 green
+[MARK] 12 9 green
+[MARK] 12 10 green
+[MARK] 13 10 green
+[MARK] 13 11 green
+[MARK] 13 12 green
+[MARK] 14 12 green
+[MARK] 14 13 green
+[TURN] 15
+[WHOPLAYS] 0
+[MARK] 15 9 blue
+[MOVE] 15 9
+[MARK] 14 9 blue
+[MOVE] 14 9
+[MARK] 14 8 blue
+[MOVE] 14 8
+[MARK] 13 8 blue
+[MARK] 12 8 blue
+[MARK] 12 9 blue
+[MARK] 12 10 blue
+[MARK] 13 10 blue
+[MARK] 13 11 blue
+[MARK] 13 12 blue
+[MARK] 14 12 blue
+[MARK] 14 13 blue
+[WHOPLAYS] 1
+[MARK] 13 8 green
+[MARK] 12 8 green
+[MARK] 12 9 green
+[MARK] 12 10 green
+[MARK] 13 10 green
+[MARK] 13 11 green
+[MARK] 13 12 green
+[MARK] 14 12 green
+[MARK] 14 13 green

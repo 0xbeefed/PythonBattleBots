@@ -13,12 +13,17 @@ whoPlays = -1
 
 class Coordinator():
 
-    def __init__(self):
+    def __init__(self, pId1, pId2):
         # VARIABLES #
-        self.game = {'id': -1, 'ias': ['attack.py', '2.py'], 'maxTurns': 16, 'path':'', 'turn': 1, 'whoPlays': -1, 'width': 16, 'height': 16}
+        with open('users/' + str(pId1) + '/stat.dat') as file:
+            user1Stat = json.loads(file.read())
+        with open('users/' + str(pId2) + '/stat.dat') as file:
+            user2Stat = json.loads(file.read())
+            
+        self.game = {'id': -1, 'maxTurns': 16, 'path':'', 'turn': 1, 'whoPlays': -1, 'width': 16, 'height': 16}
         self.players = [
-            {'x': 1, 'y': 1, 'maxMp': 3, 'mp': 3, 'id': 0, 'maxTp': 6, 'tp': 6, 'hp': 100},
-            {'x': self.game['width']-2, 'y': self.game['height']-2, 'maxMp': 3, 'mp': 3, 'id': 1, 'maxTp': 6, 'tp': 6, 'hp': 100}
+            {'pseudo': user1Stat['pseudo'], 'x': 1, 'y': 1, 'ia': 'users/' + str(pId1) + '/ai.py', 'maxMp': user1Stat['maxMp'], 'mp': user1Stat['maxMp'], 'id': 0, 'maxTp': user1Stat['maxTp'], 'tp': user1Stat['maxTp'], 'hp': user1Stat['maxHp'], 'maxHp': user1Stat['maxHp']},
+            {'pseudo': user2Stat['pseudo'], 'x': self.game['width']-2, 'y': self.game['height']-2, 'ia': 'users/' + str(pId2) + '/ai.py', 'maxMp': user2Stat['maxMp'], 'mp': user2Stat['maxMp'], 'id': 1, 'maxTp': user2Stat['maxTp'], 'tp': user2Stat['maxTp'], 'hp': user2Stat['maxHp'], 'maxHp': user2Stat['maxHp']}
             ]
         self.globals = {}
         with open('globals.dat', 'r') as file:
@@ -31,8 +36,6 @@ class Coordinator():
         os.makedirs(self.game['path'])
 
         # DAT #
-        with open(self.game['path'] + 'actionX.dat', 'w') as file:
-            file.write('')
         self.globals['gamesCount'] += 1
         with open('globals.dat', 'w+') as file:
             file.write(json.dumps(self.globals))
@@ -62,10 +65,10 @@ class Coordinator():
             print('Generating turn ' + str(self.game['turn']) + ' / ' + str(self.game['maxTurns']-1))
             self.history.append('[TURN] ' + str(self.game['turn']))
             
-            for i in range(len(self.game['ias'])):
+            for i in range(len(self.players)):
                 self.game['whoPlays'] = i
                 self.history.append('[WHOPLAYS] ' + str(self.game['whoPlays']))
-                ia = self.game['ias'][self.game['whoPlays']]
+                ia = self.players[self.game['whoPlays']]['ia']
 
                 # Stats
                 self.players[self.game['whoPlays']]['mp'] = self.players[self.game['whoPlays']]['maxMp']
@@ -80,8 +83,8 @@ class Coordinator():
                     file.write(json.dumps(self.game)) 
                 
                 # LAUNCH
-                result = str(subprocess.run(['python', 'IAs/' + ia, self.game['path']], stdout=subprocess.PIPE).stdout.decode('utf-8'))
-                with open(self.game['path'] + ia + '.dat', 'a') as file: # Debug
+                result = str(subprocess.run(['python', ia, self.game['path']], stdout=subprocess.PIPE).stdout.decode('utf-8'))
+                with open(self.game['path'] + self.players[self.game['whoPlays']]['pseudo'] + '.dat', 'a') as file: # Debug
                     file.write('\nTurn ' + str(self.game['turn']) + ': ' + result)
                 for action in result.split('\r\n'):
                     action = action.split(' ')
@@ -152,4 +155,4 @@ class Coordinator():
         subprocess.run(['python', 'player.py', self.game['path'] + 'replay.dat'], stdout=subprocess.PIPE)# Play replay
                 
 
-Coordinator()
+Coordinator(0, 1)
