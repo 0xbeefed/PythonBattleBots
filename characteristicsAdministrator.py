@@ -6,13 +6,12 @@ data = {'hp' : '-', 'mp' : '-', 'tp' : '-', 'cp' : '-'}
 values = {'hp' : 20, 'mp' : 1, 'tp' : 1}
 
 def loadFile():
-    global filename
+    global filename, data
     filename = filedialog.askopenfilename(parent = root)
     file = open(filename, 'r')
     data = eval(file.read())
     file.close()
 
-    print(data)
     moreHpButton.config(state = NORMAL)
     lessHpButton.config(state = NORMAL)
     
@@ -28,6 +27,7 @@ def loadFile():
     tpLabel.config(text = 'tp : ' + str(data['tp']))
 
 def updateStat(stat, value):
+    global data
     if data['cp'] - value//values[stat] >= 0 and data[stat] + value > 0:
         data[stat] += value
         data['cp'] -= value//values[stat]
@@ -37,7 +37,7 @@ def updateStat(stat, value):
         tpLabel.config(text = 'tp : ' + str(data['tp']))
         
 def save():
-    global filename
+    global filename, data
     file = open(filename, 'w')
     file.write(str(data))
     file.close()
