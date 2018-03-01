@@ -89,7 +89,7 @@ def getPath(start, end):
         
         current = openList[0]
         for tmp in openList:
-            if getDistance(start, tmp) + getDistance(tmp, end) < getDistance(start, current) + getDistance(current, end):
+            if getDistance(tmp, end) < getDistance(current, end):
                 current = tmp
         
         if current == end:
@@ -101,7 +101,7 @@ def getPath(start, end):
         for a,b in [[0,1], [0,-1], [1,0], [-1,0]]:
             X = current[0] + a
             Y = current[1] + b
-            if getCellContent(X, Y) == -2 or [X,Y] in closedList:
+            if getCellContent(X, Y) == CELL_OBSTACLE or [X,Y] in closedList:
                 continue
             elif not [X,Y] in openList:
                 openList.append([X,Y])
