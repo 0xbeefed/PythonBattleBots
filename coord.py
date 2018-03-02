@@ -22,8 +22,8 @@ class Coordinator():
             
         self.game = {'id': -1, 'maxTurns': 16, 'path':'', 'turn': 1, 'whoPlays': -1, 'width': 16, 'height': 16}
         self.players = [
-            {'pseudo': user1Stat['pseudo'], 'x': 1, 'y': 1, 'ia': 'users/' + str(pId1) + '/ai.py', 'maxMp': user1Stat['maxMp'], 'mp': user1Stat['maxMp'], 'id': 0, 'maxTp': user1Stat['maxTp'], 'tp': user1Stat['maxTp'], 'hp': user1Stat['maxHp'], 'maxHp': user1Stat['maxHp']},
-            {'pseudo': user2Stat['pseudo'], 'x': self.game['width']-2, 'y': self.game['height']-2, 'ia': 'users/' + str(pId2) + '/ai.py', 'maxMp': user2Stat['maxMp'], 'mp': user2Stat['maxMp'], 'id': 1, 'maxTp': user2Stat['maxTp'], 'tp': user2Stat['maxTp'], 'hp': user2Stat['maxHp'], 'maxHp': user2Stat['maxHp']}
+            {'pseudo': user1Stat['pseudo'], 'color': 'blue', 'x': 1, 'y': 1, 'ia': 'users/' + str(pId1) + '/ai.py', 'maxMp': user1Stat['maxMp'], 'mp': user1Stat['maxMp'], 'id': 0, 'maxTp': user1Stat['maxTp'], 'tp': user1Stat['maxTp'], 'hp': user1Stat['maxHp'], 'maxHp': user1Stat['maxHp']},
+            {'pseudo': user2Stat['pseudo'], 'color': 'red', 'x': self.game['width']-2, 'y': self.game['height']-2, 'ia': 'users/' + str(pId2) + '/ai.py', 'maxMp': user2Stat['maxMp'], 'mp': user2Stat['maxMp'], 'id': 1, 'maxTp': user2Stat['maxTp'], 'tp': user2Stat['maxTp'], 'hp': user2Stat['maxHp'], 'maxHp': user2Stat['maxHp']}
             ]
         self.globals = {}
         with open('globals.dat', 'r') as file:
@@ -53,6 +53,7 @@ class Coordinator():
             if (self.map[y][x] == -1):
                 placedObstacles += 1
                 self.map[y][x] = -2
+        self.history.append(json.dumps(self.players))
         self.history.append(json.dumps(self.map))
 
         # LAUNCH GAME #

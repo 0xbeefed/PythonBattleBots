@@ -12,13 +12,11 @@ class replayThread(Thread):
         # GET FIGHT DATA
         with open(path, 'r') as file:
             self.replay = file.read().split('\n')
-            
-        self.map = json.loads(self.replay[0])
-        self.replay = self.replay[1:]
+
+        self.players = json.loads(self.replay[0])    
+        self.map = json.loads(self.replay[1])
+        self.replay = self.replay[2:]
         self.game = {'width': len(self.map), 'height': len(self.map[0]), 'cellSize': 32}
-        self.players = []
-        self.players.append({'maxHp': 100, 'hp': 100, 'x': 1, 'y': 1, 'color': 'blue'})
-        self.players.append({'maxHp': 100, 'hp': 100, 'x': self.game['width']-2, 'y': self.game['height']-2, 'color': 'red'})
         gameCanvas.config(height = self.game['width']*self.game['cellSize'], width = self.game['height']*self.game['cellSize'])
         pickTurnScale.config(length=self.game['width']*self.game['cellSize'])
 

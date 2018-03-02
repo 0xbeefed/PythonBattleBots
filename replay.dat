@@ -1,745 +1,325 @@
-[[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, 0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -2, -2, -1, -1, -1, -1, -2, -1, -1, -1, -1, -2, -1, -1, -1], [-1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -2, -1, -1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -2], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1], [-1, -1, -1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1]]
+[{"pseudo": "user0", "color": "blue", "x": 1, "y": 1, "ia": "users/0/ai.py", "maxMp": 3, "mp": 3, "id": 0, "maxTp": 6, "tp": 6, "hp": 100, "maxHp": 100}, {"pseudo": "user1", "color": "red", "x": 14, "y": 14, "ia": "users/1/ai.py", "maxMp": 3, "mp": 3, "id": 1, "maxTp": 6, "tp": 6, "hp": 100, "maxHp": 100}]
+[[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1, -1], [-1, 0, -1, -1, -1, -1, -2, -2, -2, -1, -1, -1, -1, -1, -1, -2], [-2, -1, -2, -1, -1, -1, -2, -1, -1, -1, -2, -1, -1, -1, -1, -1], [-2, -1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -2, -1, -1, -2, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1], [-2, -2, -1, -1, -2, -1, -2, -1, -1, -1, -1, -2, -1, -1, -1, -2], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1], [-2, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -2], [-1, -2, -1, -2, -1, -1, -2, -1, -1, -1, -2, -1, -1, -1, -1, -1], [-1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -1, -1, -2, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -2, -1], [-2, -1, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1, -1, -1, 1, -1], [-1, -2, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]]
 [TURN] 0
 [WHOPLAYS] 0
-[MARK] 2 1 blue
-[MOVE] 2 1
-[MARK] 3 1 blue
-[MOVE] 3 1
-[MARK] 4 1 blue
-[MOVE] 4 1
-[MARK] 5 1 blue
-[MARK] 6 1 blue
-[MARK] 7 1 blue
-[MARK] 8 1 blue
-[MARK] 9 1 blue
-[MARK] 10 1 blue
-[MARK] 11 1 blue
-[MARK] 12 1 blue
-[MARK] 13 1 blue
-[MARK] 14 1 blue
-[MARK] 14 2 blue
-[MARK] 14 3 blue
-[MARK] 14 4 blue
-[MARK] 14 5 blue
-[MARK] 14 6 blue
-[MARK] 14 7 blue
-[MARK] 14 8 blue
-[MARK] 14 9 blue
-[MARK] 15 9 blue
-[MARK] 15 8 blue
-[MARK] 15 7 blue
-[MARK] 15 6 blue
-[MARK] 15 5 blue
-[MARK] 15 4 blue
-[MARK] 15 3 blue
-[MARK] 15 2 blue
-[MARK] 15 1 blue
-[MARK] 15 0 blue
-[MARK] 14 0 blue
-[MARK] 13 0 blue
-[MARK] 12 0 blue
-[MARK] 11 0 blue
-[MARK] 10 0 blue
-[MARK] 9 0 blue
-[MARK] 8 0 blue
-[MARK] 7 0 blue
-[MARK] 6 0 blue
-[MARK] 5 0 blue
-[MARK] 4 0 blue
-[MARK] 3 0 blue
-[MARK] 2 0 blue
-[MARK] 1 0 blue
-[MARK] 0 0 blue
-[MARK] 0 1 blue
-[MARK] 0 2 blue
-[MARK] 1 2 blue
-[MARK] 2 2 blue
-[MARK] 3 2 blue
-[MARK] 4 2 blue
-[MARK] 5 2 blue
-[MARK] 6 2 blue
-[MARK] 7 2 blue
-[MARK] 8 2 blue
-[MARK] 9 2 blue
-[MARK] 10 2 blue
-[MARK] 11 2 blue
-[MARK] 12 2 blue
-[MARK] 13 2 blue
-[MARK] 13 3 blue
-[MARK] 13 4 blue
-[MARK] 13 5 blue
-[MARK] 13 6 blue
-[MARK] 13 7 blue
-[MARK] 13 8 blue
-[MARK] 12 8 blue
-[MARK] 12 9 blue
-[MARK] 12 10 blue
-[MARK] 13 10 blue
-[MARK] 13 11 blue
-[MARK] 13 12 blue
-[MARK] 14 12 blue
-[MARK] 14 13 blue
+[MARK] 1 2 black
+[MOVE] 1 2
+[MARK] 1 3 black
+[MOVE] 1 3
+[MARK] 1 4 black
+[MOVE] 1 4
+[MARK] 1 5 black
+[MARK] 2 5 black
+[MARK] 2 6 black
+[MARK] 2 7 black
+[MARK] 2 8 black
+[MARK] 3 8 black
+[MARK] 4 8 black
+[MARK] 4 9 black
+[MARK] 4 10 black
+[MARK] 4 11 black
+[MARK] 4 12 black
+[MARK] 4 13 black
+[MARK] 4 14 black
+[MARK] 5 14 black
+[MARK] 6 14 black
+[MARK] 7 14 black
+[MARK] 7 15 black
+[MARK] 8 15 black
+[MARK] 9 15 black
+[MARK] 9 14 black
+[MARK] 10 14 black
+[MARK] 11 14 black
+[MARK] 12 14 black
+[MARK] 13 14 black
 [WHOPLAYS] 1
-[MARK] 5 1 green
-[MARK] 6 1 green
-[MARK] 7 1 green
-[MARK] 8 1 green
-[MARK] 9 1 green
-[MARK] 10 1 green
-[MARK] 11 1 green
-[MARK] 11 2 green
-[MARK] 11 3 green
-[MARK] 11 4 green
-[MARK] 12 4 green
-[MARK] 12 5 green
-[MARK] 12 6 green
-[MARK] 12 7 green
-[MARK] 12 8 green
-[MARK] 12 9 green
+[MARK] 13 14 green
+[MARK] 12 14 green
+[MARK] 12 13 green
+[MARK] 12 12 green
+[MARK] 12 11 green
 [MARK] 12 10 green
-[MARK] 13 10 green
-[MARK] 13 11 green
-[MARK] 13 12 green
-[MARK] 14 12 green
-[MARK] 14 13 green
+[MARK] 12 9 green
+[MARK] 12 8 green
+[MARK] 12 7 green
+[MARK] 12 6 green
+[MARK] 12 5 green
+[MARK] 11 5 green
+[MARK] 11 4 green
+[MARK] 10 4 green
+[MARK] 9 4 green
+[MARK] 8 4 green
+[MARK] 7 4 green
+[MARK] 6 4 green
+[MARK] 6 5 green
+[MARK] 5 5 green
+[MARK] 4 5 green
+[MARK] 3 5 green
+[MARK] 2 5 green
+[MARK] 1 5 green
 [TURN] 1
 [WHOPLAYS] 0
-[MARK] 5 1 blue
-[MOVE] 5 1
-[MARK] 6 1 blue
-[MOVE] 6 1
-[MARK] 7 1 blue
-[MOVE] 7 1
-[MARK] 8 1 blue
-[MARK] 9 1 blue
-[MARK] 10 1 blue
-[MARK] 11 1 blue
-[MARK] 12 1 blue
-[MARK] 13 1 blue
-[MARK] 14 1 blue
-[MARK] 14 2 blue
-[MARK] 14 3 blue
-[MARK] 14 4 blue
-[MARK] 14 5 blue
-[MARK] 14 6 blue
-[MARK] 14 7 blue
-[MARK] 14 8 blue
-[MARK] 14 9 blue
-[MARK] 15 9 blue
-[MARK] 15 8 blue
-[MARK] 15 7 blue
-[MARK] 15 6 blue
-[MARK] 15 5 blue
-[MARK] 15 4 blue
-[MARK] 15 3 blue
-[MARK] 15 2 blue
-[MARK] 15 1 blue
-[MARK] 15 0 blue
-[MARK] 14 0 blue
-[MARK] 13 0 blue
-[MARK] 12 0 blue
-[MARK] 11 0 blue
-[MARK] 10 0 blue
-[MARK] 9 0 blue
-[MARK] 8 0 blue
-[MARK] 7 0 blue
-[MARK] 6 0 blue
-[MARK] 5 0 blue
-[MARK] 4 0 blue
-[MARK] 3 0 blue
-[MARK] 3 1 blue
-[MARK] 3 2 blue
-[MARK] 4 2 blue
-[MARK] 5 2 blue
-[MARK] 6 2 blue
-[MARK] 7 2 blue
-[MARK] 8 2 blue
-[MARK] 9 2 blue
-[MARK] 10 2 blue
-[MARK] 11 2 blue
-[MARK] 12 2 blue
-[MARK] 13 2 blue
-[MARK] 13 3 blue
-[MARK] 13 4 blue
-[MARK] 13 5 blue
-[MARK] 13 6 blue
-[MARK] 13 7 blue
-[MARK] 13 8 blue
-[MARK] 12 8 blue
-[MARK] 12 9 blue
-[MARK] 12 10 blue
-[MARK] 13 10 blue
-[MARK] 13 11 blue
-[MARK] 13 12 blue
-[MARK] 14 12 blue
-[MARK] 14 13 blue
+[MARK] 1 5 black
+[MOVE] 1 5
+[MARK] 2 5 black
+[MOVE] 2 5
+[MARK] 2 6 black
+[MOVE] 2 6
+[MARK] 2 7 black
+[MARK] 2 8 black
+[MARK] 3 8 black
+[MARK] 4 8 black
+[MARK] 4 9 black
+[MARK] 4 10 black
+[MARK] 4 11 black
+[MARK] 4 12 black
+[MARK] 4 13 black
+[MARK] 4 14 black
+[MARK] 5 14 black
+[MARK] 6 14 black
+[MARK] 7 14 black
+[MARK] 7 15 black
+[MARK] 8 15 black
+[MARK] 9 15 black
+[MARK] 9 14 black
+[MARK] 10 14 black
+[MARK] 11 14 black
+[MARK] 12 14 black
+[MARK] 13 14 black
 [WHOPLAYS] 1
-[MARK] 8 1 green
-[MARK] 9 1 green
-[MARK] 10 1 green
-[MARK] 11 1 green
-[MARK] 11 2 green
-[MARK] 11 3 green
-[MARK] 11 4 green
-[MARK] 12 4 green
-[MARK] 12 5 green
-[MARK] 12 6 green
-[MARK] 12 7 green
-[MARK] 12 8 green
-[MARK] 12 9 green
+[MARK] 13 14 green
+[MARK] 12 14 green
+[MARK] 12 13 green
+[MARK] 12 12 green
+[MARK] 12 11 green
 [MARK] 12 10 green
-[MARK] 13 10 green
-[MARK] 13 11 green
-[MARK] 13 12 green
-[MARK] 14 12 green
-[MARK] 14 13 green
+[MARK] 12 9 green
+[MARK] 12 8 green
+[MARK] 12 7 green
+[MARK] 11 7 green
+[MARK] 10 7 green
+[MARK] 10 6 green
+[MARK] 9 6 green
+[MARK] 8 6 green
+[MARK] 7 6 green
+[MARK] 7 7 green
+[MARK] 6 7 green
+[MARK] 5 7 green
+[MARK] 4 7 green
+[MARK] 3 7 green
+[MARK] 3 6 green
 [TURN] 2
 [WHOPLAYS] 0
-[MARK] 8 1 blue
-[MOVE] 8 1
-[MARK] 9 1 blue
-[MOVE] 9 1
-[MARK] 10 1 blue
-[MOVE] 10 1
-[MARK] 11 1 blue
-[MARK] 12 1 blue
-[MARK] 13 1 blue
-[MARK] 14 1 blue
-[MARK] 14 2 blue
-[MARK] 14 3 blue
-[MARK] 14 4 blue
-[MARK] 14 5 blue
-[MARK] 14 6 blue
-[MARK] 14 7 blue
-[MARK] 14 8 blue
-[MARK] 14 9 blue
-[MARK] 15 9 blue
-[MARK] 15 8 blue
-[MARK] 15 7 blue
-[MARK] 15 6 blue
-[MARK] 15 5 blue
-[MARK] 15 4 blue
-[MARK] 15 3 blue
-[MARK] 15 2 blue
-[MARK] 15 1 blue
-[MARK] 15 0 blue
-[MARK] 14 0 blue
-[MARK] 13 0 blue
-[MARK] 12 0 blue
-[MARK] 11 0 blue
-[MARK] 10 0 blue
-[MARK] 9 0 blue
-[MARK] 8 0 blue
-[MARK] 7 0 blue
-[MARK] 6 0 blue
-[MARK] 6 1 blue
-[MARK] 6 2 blue
-[MARK] 7 2 blue
-[MARK] 8 2 blue
-[MARK] 9 2 blue
-[MARK] 10 2 blue
-[MARK] 11 2 blue
-[MARK] 12 2 blue
-[MARK] 13 2 blue
-[MARK] 13 3 blue
-[MARK] 13 4 blue
-[MARK] 13 5 blue
-[MARK] 13 6 blue
-[MARK] 13 7 blue
-[MARK] 13 8 blue
-[MARK] 12 8 blue
-[MARK] 12 9 blue
-[MARK] 12 10 blue
-[MARK] 13 10 blue
-[MARK] 13 11 blue
-[MARK] 13 12 blue
-[MARK] 14 12 blue
-[MARK] 14 13 blue
+[MARK] 2 7 black
+[MOVE] 2 7
+[MARK] 2 8 black
+[MOVE] 2 8
+[MARK] 3 8 black
+[MOVE] 3 8
+[MARK] 4 8 black
+[MARK] 4 9 black
+[MARK] 4 10 black
+[MARK] 4 11 black
+[MARK] 4 12 black
+[MARK] 4 13 black
+[MARK] 4 14 black
+[MARK] 5 14 black
+[MARK] 6 14 black
+[MARK] 7 14 black
+[MARK] 7 15 black
+[MARK] 8 15 black
+[MARK] 9 15 black
+[MARK] 9 14 black
+[MARK] 10 14 black
+[MARK] 11 14 black
+[MARK] 12 14 black
+[MARK] 13 14 black
 [WHOPLAYS] 1
-[MARK] 11 1 green
-[MARK] 11 2 green
-[MARK] 11 3 green
-[MARK] 11 4 green
-[MARK] 12 4 green
-[MARK] 12 5 green
-[MARK] 12 6 green
-[MARK] 12 7 green
-[MARK] 12 8 green
-[MARK] 12 9 green
+[MARK] 13 14 green
+[MARK] 12 14 green
+[MARK] 12 13 green
+[MARK] 12 12 green
+[MARK] 12 11 green
 [MARK] 12 10 green
-[MARK] 13 10 green
-[MARK] 13 11 green
-[MARK] 13 12 green
-[MARK] 14 12 green
-[MARK] 14 13 green
+[MARK] 12 9 green
+[MARK] 12 8 green
+[MARK] 11 8 green
+[MARK] 10 8 green
+[MARK] 9 8 green
+[MARK] 8 8 green
+[MARK] 8 7 green
+[MARK] 7 7 green
+[MARK] 6 7 green
+[MARK] 6 8 green
+[MARK] 5 8 green
+[MARK] 4 8 green
 [TURN] 3
 [WHOPLAYS] 0
-[MARK] 11 1 blue
-[MOVE] 11 1
-[MARK] 12 1 blue
-[MOVE] 12 1
-[MARK] 13 1 blue
-[MOVE] 13 1
-[MARK] 14 1 blue
-[MARK] 14 2 blue
-[MARK] 14 3 blue
-[MARK] 14 4 blue
-[MARK] 14 5 blue
-[MARK] 14 6 blue
-[MARK] 14 7 blue
-[MARK] 14 8 blue
-[MARK] 14 9 blue
-[MARK] 15 9 blue
-[MARK] 15 8 blue
-[MARK] 15 7 blue
-[MARK] 15 6 blue
-[MARK] 15 5 blue
-[MARK] 15 4 blue
-[MARK] 15 3 blue
-[MARK] 15 2 blue
-[MARK] 15 1 blue
-[MARK] 15 0 blue
-[MARK] 14 0 blue
-[MARK] 13 0 blue
-[MARK] 12 0 blue
-[MARK] 11 0 blue
-[MARK] 10 0 blue
-[MARK] 9 0 blue
-[MARK] 9 1 blue
-[MARK] 9 2 blue
-[MARK] 10 2 blue
-[MARK] 11 2 blue
-[MARK] 12 2 blue
-[MARK] 13 2 blue
-[MARK] 13 3 blue
-[MARK] 13 4 blue
-[MARK] 13 5 blue
-[MARK] 13 6 blue
-[MARK] 13 7 blue
-[MARK] 13 8 blue
-[MARK] 12 8 blue
-[MARK] 12 9 blue
-[MARK] 12 10 blue
-[MARK] 13 10 blue
-[MARK] 13 11 blue
-[MARK] 13 12 blue
-[MARK] 14 12 blue
-[MARK] 14 13 blue
+[MARK] 4 8 black
+[MOVE] 4 8
+[MARK] 4 9 black
+[MOVE] 4 9
+[MARK] 4 10 black
+[MOVE] 4 10
+[MARK] 4 11 black
+[MARK] 4 12 black
+[MARK] 4 13 black
+[MARK] 4 14 black
+[MARK] 5 14 black
+[MARK] 6 14 black
+[MARK] 7 14 black
+[MARK] 7 15 black
+[MARK] 8 15 black
+[MARK] 9 15 black
+[MARK] 9 14 black
+[MARK] 10 14 black
+[MARK] 11 14 black
+[MARK] 12 14 black
+[MARK] 13 14 black
 [WHOPLAYS] 1
-[MARK] 13 2 green
-[MARK] 13 3 green
-[MARK] 13 4 green
-[MARK] 13 5 green
-[MARK] 13 6 green
-[MARK] 13 7 green
-[MARK] 13 8 green
-[MARK] 12 8 green
-[MARK] 12 9 green
+[MARK] 13 14 green
+[MARK] 12 14 green
+[MARK] 12 13 green
+[MARK] 12 12 green
+[MARK] 12 11 green
 [MARK] 12 10 green
-[MARK] 13 10 green
-[MARK] 13 11 green
-[MARK] 13 12 green
-[MARK] 14 12 green
-[MARK] 14 13 green
+[MARK] 11 10 green
+[MARK] 10 10 green
+[MARK] 9 10 green
+[MARK] 8 10 green
+[MARK] 7 10 green
+[MARK] 6 10 green
+[MARK] 5 10 green
 [TURN] 4
 [WHOPLAYS] 0
-[MARK] 14 1 blue
-[MOVE] 14 1
-[MARK] 14 2 blue
-[MOVE] 14 2
-[MARK] 14 3 blue
-[MOVE] 14 3
-[MARK] 14 4 blue
-[MARK] 14 5 blue
-[MARK] 14 6 blue
-[MARK] 14 7 blue
-[MARK] 14 8 blue
-[MARK] 14 9 blue
-[MARK] 15 9 blue
-[MARK] 15 8 blue
-[MARK] 15 7 blue
-[MARK] 15 6 blue
-[MARK] 15 5 blue
-[MARK] 15 4 blue
-[MARK] 15 3 blue
-[MARK] 15 2 blue
-[MARK] 15 1 blue
-[MARK] 15 0 blue
-[MARK] 14 0 blue
-[MARK] 13 0 blue
-[MARK] 12 0 blue
-[MARK] 12 1 blue
-[MARK] 12 2 blue
-[MARK] 13 2 blue
-[MARK] 13 3 blue
-[MARK] 13 4 blue
-[MARK] 13 5 blue
-[MARK] 13 6 blue
-[MARK] 13 7 blue
-[MARK] 13 8 blue
-[MARK] 12 8 blue
-[MARK] 12 9 blue
-[MARK] 12 10 blue
-[MARK] 13 10 blue
-[MARK] 13 11 blue
-[MARK] 13 12 blue
-[MARK] 14 12 blue
-[MARK] 14 13 blue
+[MARK] 4 11 black
+[MOVE] 4 11
+[MARK] 4 12 black
+[MOVE] 4 12
+[MARK] 4 13 black
+[MOVE] 4 13
+[MARK] 4 14 black
+[MARK] 5 14 black
+[MARK] 6 14 black
+[MARK] 7 14 black
+[MARK] 7 15 black
+[MARK] 8 15 black
+[MARK] 9 15 black
+[MARK] 9 14 black
+[MARK] 10 14 black
+[MARK] 11 14 black
+[MARK] 12 14 black
+[MARK] 13 14 black
 [WHOPLAYS] 1
-[MARK] 14 4 green
-[MARK] 14 5 green
-[MARK] 14 6 green
-[MARK] 14 7 green
-[MARK] 14 8 green
-[MARK] 13 8 green
-[MARK] 12 8 green
-[MARK] 12 9 green
-[MARK] 12 10 green
-[MARK] 13 10 green
-[MARK] 13 11 green
-[MARK] 13 12 green
-[MARK] 14 12 green
-[MARK] 14 13 green
+[MARK] 13 14 green
+[MARK] 12 14 green
+[MARK] 12 13 green
+[MARK] 11 13 green
+[MARK] 10 13 green
+[MARK] 9 13 green
+[MARK] 8 13 green
+[MARK] 7 13 green
+[MARK] 6 13 green
+[MARK] 5 13 green
 [TURN] 5
 [WHOPLAYS] 0
-[MARK] 14 4 blue
-[MOVE] 14 4
-[MARK] 14 5 blue
-[MOVE] 14 5
-[MARK] 14 6 blue
-[MOVE] 14 6
-[MARK] 14 7 blue
-[MARK] 14 8 blue
-[MARK] 14 9 blue
-[MARK] 15 9 blue
-[MARK] 15 8 blue
-[MARK] 15 7 blue
-[MARK] 15 6 blue
-[MARK] 15 5 blue
-[MARK] 15 4 blue
-[MARK] 15 3 blue
-[MARK] 15 2 blue
-[MARK] 14 2 blue
-[MARK] 13 2 blue
-[MARK] 13 3 blue
-[MARK] 13 4 blue
-[MARK] 13 5 blue
-[MARK] 13 6 blue
-[MARK] 13 7 blue
-[MARK] 13 8 blue
-[MARK] 12 8 blue
-[MARK] 12 9 blue
-[MARK] 12 10 blue
-[MARK] 13 10 blue
-[MARK] 13 11 blue
-[MARK] 13 12 blue
-[MARK] 14 12 blue
-[MARK] 14 13 blue
+[MARK] 4 14 black
+[MOVE] 4 14
+[MARK] 5 14 black
+[MOVE] 5 14
+[MARK] 6 14 black
+[MOVE] 6 14
+[MARK] 7 14 black
+[MARK] 7 15 black
+[MARK] 8 15 black
+[MARK] 9 15 black
+[MARK] 9 14 black
+[MARK] 10 14 black
+[MARK] 11 14 black
+[MARK] 12 14 black
+[MARK] 13 14 black
 [WHOPLAYS] 1
-[MARK] 14 7 green
-[MARK] 14 8 green
-[MARK] 13 8 green
-[MARK] 12 8 green
-[MARK] 12 9 green
-[MARK] 12 10 green
-[MARK] 13 10 green
-[MARK] 13 11 green
-[MARK] 13 12 green
-[MARK] 14 12 green
-[MARK] 14 13 green
+[MARK] 13 14 green
+[MARK] 12 14 green
+[MARK] 11 14 green
+[MARK] 10 14 green
+[MARK] 9 14 green
+[MARK] 9 15 green
+[MARK] 8 15 green
+[MARK] 7 15 green
+[MARK] 7 14 green
 [TURN] 6
 [WHOPLAYS] 0
-[MARK] 14 7 blue
-[MOVE] 14 7
-[MARK] 14 8 blue
-[MOVE] 14 8
-[MARK] 14 9 blue
-[MOVE] 14 9
-[MARK] 15 9 blue
-[MARK] 15 8 blue
-[MARK] 15 7 blue
-[MARK] 15 6 blue
-[MARK] 15 5 blue
-[MARK] 14 5 blue
-[MARK] 13 5 blue
-[MARK] 13 6 blue
-[MARK] 13 7 blue
-[MARK] 13 8 blue
-[MARK] 12 8 blue
-[MARK] 12 9 blue
-[MARK] 12 10 blue
-[MARK] 13 10 blue
-[MARK] 13 11 blue
-[MARK] 13 12 blue
-[MARK] 14 12 blue
-[MARK] 14 13 blue
+[MARK] 7 14 black
+[MOVE] 7 14
+[MARK] 7 15 black
+[MOVE] 7 15
+[MARK] 8 15 black
+[MOVE] 8 15
+[MARK] 9 15 black
+[MARK] 9 14 black
+[MARK] 10 14 black
+[MARK] 11 14 black
+[MARK] 12 14 black
+[MARK] 13 14 black
 [WHOPLAYS] 1
-[MARK] 14 8 green
-[MARK] 13 8 green
-[MARK] 12 8 green
-[MARK] 12 9 green
-[MARK] 12 10 green
-[MARK] 13 10 green
-[MARK] 13 11 green
-[MARK] 13 12 green
-[MARK] 14 12 green
-[MARK] 14 13 green
+[MARK] 14 15 green
+[MARK] 13 15 green
+[MARK] 12 15 green
+[MARK] 11 15 green
+[MARK] 10 15 green
+[MARK] 9 15 green
 [TURN] 7
 [WHOPLAYS] 0
-[MARK] 15 9 blue
-[MOVE] 15 9
-[MARK] 15 8 blue
-[MOVE] 15 8
-[MARK] 14 8 blue
-[MOVE] 14 8
-[MARK] 13 8 blue
-[MARK] 12 8 blue
-[MARK] 12 9 blue
-[MARK] 12 10 blue
-[MARK] 13 10 blue
-[MARK] 13 11 blue
-[MARK] 13 12 blue
-[MARK] 14 12 blue
-[MARK] 14 13 blue
+[MARK] 9 15 black
+[MOVE] 9 15
+[MARK] 9 14 black
+[MOVE] 9 14
+[MARK] 10 14 black
+[MOVE] 10 14
+[MARK] 11 14 black
+[MARK] 12 14 black
+[MARK] 13 14 black
+[ATTACK] 14 14
 [WHOPLAYS] 1
-[MARK] 13 8 green
-[MARK] 12 8 green
-[MARK] 12 9 green
-[MARK] 12 10 green
-[MARK] 13 10 green
-[MARK] 13 11 green
-[MARK] 13 12 green
-[MARK] 14 12 green
-[MARK] 14 13 green
+[MARK] 13 14 green
+[MARK] 12 14 green
+[MARK] 11 14 green
 [TURN] 8
 [WHOPLAYS] 0
-[MARK] 14 9 blue
-[MOVE] 14 9
-[MARK] 15 9 blue
-[MOVE] 15 9
-[MARK] 15 8 blue
-[MOVE] 15 8
-[MARK] 15 7 blue
-[MARK] 14 7 blue
-[MARK] 13 7 blue
-[MARK] 13 8 blue
-[MARK] 12 8 blue
-[MARK] 12 9 blue
-[MARK] 12 10 blue
-[MARK] 13 10 blue
-[MARK] 13 11 blue
-[MARK] 13 12 blue
-[MARK] 14 12 blue
-[MARK] 14 13 blue
+[MARK] 11 14 black
+[MOVE] 11 14
+[MARK] 12 14 black
+[MOVE] 12 14
+[MARK] 13 14 black
+[MOVE] 13 14
+[ATTACK] 14 14
 [WHOPLAYS] 1
-[MARK] 14 8 green
-[MARK] 13 8 green
-[MARK] 12 8 green
-[MARK] 12 9 green
-[MARK] 12 10 green
-[MARK] 13 10 green
-[MARK] 13 11 green
-[MARK] 13 12 green
-[MARK] 14 12 green
-[MARK] 14 13 green
 [TURN] 9
 [WHOPLAYS] 0
-[MARK] 15 9 blue
-[MOVE] 15 9
-[MARK] 14 9 blue
-[MOVE] 14 9
-[MARK] 14 8 blue
-[MOVE] 14 8
-[MARK] 13 8 blue
-[MARK] 12 8 blue
-[MARK] 12 9 blue
-[MARK] 12 10 blue
-[MARK] 13 10 blue
-[MARK] 13 11 blue
-[MARK] 13 12 blue
-[MARK] 14 12 blue
-[MARK] 14 13 blue
+[ATTACK] 14 14
 [WHOPLAYS] 1
-[MARK] 13 8 green
-[MARK] 12 8 green
-[MARK] 12 9 green
-[MARK] 12 10 green
-[MARK] 13 10 green
-[MARK] 13 11 green
-[MARK] 13 12 green
-[MARK] 14 12 green
-[MARK] 14 13 green
 [TURN] 10
 [WHOPLAYS] 0
-[MARK] 14 9 blue
-[MOVE] 14 9
-[MARK] 15 9 blue
-[MOVE] 15 9
-[MARK] 15 8 blue
-[MOVE] 15 8
-[MARK] 15 7 blue
-[MARK] 14 7 blue
-[MARK] 13 7 blue
-[MARK] 13 8 blue
-[MARK] 12 8 blue
-[MARK] 12 9 blue
-[MARK] 12 10 blue
-[MARK] 13 10 blue
-[MARK] 13 11 blue
-[MARK] 13 12 blue
-[MARK] 14 12 blue
-[MARK] 14 13 blue
+[ATTACK] 14 14
 [WHOPLAYS] 1
-[MARK] 14 8 green
-[MARK] 13 8 green
-[MARK] 12 8 green
-[MARK] 12 9 green
-[MARK] 12 10 green
-[MARK] 13 10 green
-[MARK] 13 11 green
-[MARK] 13 12 green
-[MARK] 14 12 green
-[MARK] 14 13 green
 [TURN] 11
 [WHOPLAYS] 0
-[MARK] 15 9 blue
-[MOVE] 15 9
-[MARK] 14 9 blue
-[MOVE] 14 9
-[MARK] 14 8 blue
-[MOVE] 14 8
-[MARK] 13 8 blue
-[MARK] 12 8 blue
-[MARK] 12 9 blue
-[MARK] 12 10 blue
-[MARK] 13 10 blue
-[MARK] 13 11 blue
-[MARK] 13 12 blue
-[MARK] 14 12 blue
-[MARK] 14 13 blue
+[ATTACK] 14 14
 [WHOPLAYS] 1
-[MARK] 13 8 green
-[MARK] 12 8 green
-[MARK] 12 9 green
-[MARK] 12 10 green
-[MARK] 13 10 green
-[MARK] 13 11 green
-[MARK] 13 12 green
-[MARK] 14 12 green
-[MARK] 14 13 green
 [TURN] 12
 [WHOPLAYS] 0
-[MARK] 14 9 blue
-[MOVE] 14 9
-[MARK] 15 9 blue
-[MOVE] 15 9
-[MARK] 15 8 blue
-[MOVE] 15 8
-[MARK] 15 7 blue
-[MARK] 14 7 blue
-[MARK] 13 7 blue
-[MARK] 13 8 blue
-[MARK] 12 8 blue
-[MARK] 12 9 blue
-[MARK] 12 10 blue
-[MARK] 13 10 blue
-[MARK] 13 11 blue
-[MARK] 13 12 blue
-[MARK] 14 12 blue
-[MARK] 14 13 blue
+[ATTACK] 14 14
 [WHOPLAYS] 1
-[MARK] 14 8 green
-[MARK] 13 8 green
-[MARK] 12 8 green
-[MARK] 12 9 green
-[MARK] 12 10 green
-[MARK] 13 10 green
-[MARK] 13 11 green
-[MARK] 13 12 green
-[MARK] 14 12 green
-[MARK] 14 13 green
 [TURN] 13
 [WHOPLAYS] 0
-[MARK] 15 9 blue
-[MOVE] 15 9
-[MARK] 14 9 blue
-[MOVE] 14 9
-[MARK] 14 8 blue
-[MOVE] 14 8
-[MARK] 13 8 blue
-[MARK] 12 8 blue
-[MARK] 12 9 blue
-[MARK] 12 10 blue
-[MARK] 13 10 blue
-[MARK] 13 11 blue
-[MARK] 13 12 blue
-[MARK] 14 12 blue
-[MARK] 14 13 blue
+[ATTACK] 14 14
 [WHOPLAYS] 1
-[MARK] 13 8 green
-[MARK] 12 8 green
-[MARK] 12 9 green
-[MARK] 12 10 green
-[MARK] 13 10 green
-[MARK] 13 11 green
-[MARK] 13 12 green
-[MARK] 14 12 green
-[MARK] 14 13 green
 [TURN] 14
 [WHOPLAYS] 0
-[MARK] 14 9 blue
-[MOVE] 14 9
-[MARK] 15 9 blue
-[MOVE] 15 9
-[MARK] 15 8 blue
-[MOVE] 15 8
-[MARK] 15 7 blue
-[MARK] 14 7 blue
-[MARK] 13 7 blue
-[MARK] 13 8 blue
-[MARK] 12 8 blue
-[MARK] 12 9 blue
-[MARK] 12 10 blue
-[MARK] 13 10 blue
-[MARK] 13 11 blue
-[MARK] 13 12 blue
-[MARK] 14 12 blue
-[MARK] 14 13 blue
+[ATTACK] 14 14
 [WHOPLAYS] 1
-[MARK] 14 8 green
-[MARK] 13 8 green
-[MARK] 12 8 green
-[MARK] 12 9 green
-[MARK] 12 10 green
-[MARK] 13 10 green
-[MARK] 13 11 green
-[MARK] 13 12 green
-[MARK] 14 12 green
-[MARK] 14 13 green
 [TURN] 15
 [WHOPLAYS] 0
-[MARK] 15 9 blue
-[MOVE] 15 9
-[MARK] 14 9 blue
-[MOVE] 14 9
-[MARK] 14 8 blue
-[MOVE] 14 8
-[MARK] 13 8 blue
-[MARK] 12 8 blue
-[MARK] 12 9 blue
-[MARK] 12 10 blue
-[MARK] 13 10 blue
-[MARK] 13 11 blue
-[MARK] 13 12 blue
-[MARK] 14 12 blue
-[MARK] 14 13 blue
+[ATTACK] 14 14
 [WHOPLAYS] 1
-[MARK] 13 8 green
-[MARK] 12 8 green
-[MARK] 12 9 green
-[MARK] 12 10 green
-[MARK] 13 10 green
-[MARK] 13 11 green
-[MARK] 13 12 green
-[MARK] 14 12 green
-[MARK] 14 13 green
