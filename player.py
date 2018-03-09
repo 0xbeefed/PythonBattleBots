@@ -18,6 +18,7 @@ class replayThread(Thread):
         self.map = json.loads(self.replay[1])
         self.replay = self.replay[2:]
         self.game = {'width': len(self.map), 'height': len(self.map[0]), 'cellSize': 32}
+        self.fightLog = []
         gameCanvas.config(height = self.game['width']*self.game['cellSize'], width = self.game['height']*self.game['cellSize'])
         pickTurnScale.config(length=self.game['width']*self.game['cellSize'])
 
@@ -31,14 +32,15 @@ class replayThread(Thread):
         # Numerotation
         for x in range(self.game['width']):
             for y in range(self.game['height']):
-                gameCanvas.create_text((x+0.5)*self.game['cellSize'], (y+0.5)*self.game['cellSize'], text='[{0}, {1}]'.format(x, y), justify='center', font=("Arial", 5))
+                gameCanvas.create_text((x+0.5)*self.game['cellSize'], (y+0.5)*self.game['cellSize'], text='[{0}, {1}]'.format(x, y), justify='center', font=("Arial", 5), fill='white' if self.map[y][x] == -2 else 'black')
 
         # Obstacles
         for y in range(self.game['height']):
             for x in range(self.game['width']):
                 if self.map[y][x] == -2:
-                    gameCanvas.create_rectangle(x*self.game['cellSize'],y*self.game['cellSize'], (x+1)*self.game['cellSize'], (y+1)*self.game['cellSize'], fill='black')
-
+                    obs = gameCanvas.create_rectangle(x*self.game['cellSize'],y*self.game['cellSize'], (x+1)*self.game['cellSize'], (y+1)*self.game['cellSize'], fill='black')
+                    gameCanvas.tag_lower(obs)
+                    
         # Players
         for i in range(len(self.players)):
             self.players[i]['icon'] = gameCanvas.create_oval(self.players[i]['x']*self.game['cellSize'], self.players[i]['y']*self.game['cellSize'], (self.players[i]['x']+1)*self.game['cellSize'], (self.players[i]['y']+1)*self.game['cellSize'], fill=self.players[i]['color'])
@@ -80,7 +82,7 @@ class replayThread(Thread):
                     gameCanvas.coords(self.players[self.game['whoPlays']]['hpBar'][0], self.players[self.game['whoPlays']]['x']*self.game['cellSize'], (self.players[self.game['whoPlays']]['y']-0.15)*self.game['cellSize'], (self.players[self.game['whoPlays']]['x']+1)*self.game['cellSize'], self.players[self.game['whoPlays']]['y']*self.game['cellSize'])
                     gameCanvas.coords(self.players[self.game['whoPlays']]['hpBar'][1], self.players[self.game['whoPlays']]['x']*self.game['cellSize'], (self.players[self.game['whoPlays']]['y']-0.15)*self.game['cellSize'], ((self.players[self.game['whoPlays']]['x']+1)*self.game['cellSize'])*(self.players[self.game['whoPlays']]['hp']/self.players[self.game['whoPlays']]['maxHp']), self.players[self.game['whoPlays']]['y']*self.game['cellSize'])
                     gameCanvas.coords(self.players[self.game['whoPlays']]['pseudoLabel'], (self.players[self.game['whoPlays']]['x']+0.5)*self.game['cellSize'], (self.players[self.game['whoPlays']]['y']+0.5)*self.game['cellSize'])
-
+                    
                     root.update()
                     time.sleep(0.12)
 
@@ -89,10 +91,13 @@ class replayThread(Thread):
                     y = int(action[2])
                     color = action[3]
                     marks.append(gameCanvas.create_rectangle(x*self.game['cellSize'],y*self.game['cellSize'], (x+1)*self.game['cellSize'], (y+1)*self.game['cellSize'], fill=color, stipple='gray50'))
+                    gameCanvas.tag_lower(marks[len(marks) - 1])
 
                 elif action[0] == '[ATTACK]':
                     x = int(action[1])
                     y = int(action[2])
+                    
+                    self.fightLog.append(self.players[self.game['whoPlays']]['pseudo'] + ' attaque sur [' + str(x) + ', ' + str(y) + ']')
 
                     target = -1
                     for i in range(len(self.players)):
@@ -101,7 +106,8 @@ class replayThread(Thread):
                             break
 
                     if (target != -1):
-                        self.players[target]['hp'] = max(self.players[target]['hp']-10, 0)
+                        self.fightLog.append(self.players[target]['pseudo'] + ' perd 10HP')
+                        self.players[target]['hp'] = max(self.players[target]['hp'] - 10, 0)
                         gameCanvas.coords(self.players[target]['hpBar'][0], self.players[target]['x']*self.game['cellSize'], (self.players[target]['y']-0.15)*self.game['cellSize'], (self.players[target]['x']+1)*self.game['cellSize'], self.players[target]['y']*self.game['cellSize'])
                         gameCanvas.coords(self.players[target]['hpBar'][1], self.players[target]['x']*self.game['cellSize'], (self.players[target]['y']-0.15)*self.game['cellSize'], ((self.players[target]['x']+(self.players[target]['hp']/self.players[target]['maxHp']))*self.game['cellSize']), self.players[target]['y']*self.game['cellSize'])
                         root.update()
@@ -121,8 +127,13 @@ class replayThread(Thread):
                 elif action[0] == '[TURN]':
                     self.game['turn'] = int(action[1])
                     pickTurnScale.set(self.game['turn'])
+                    self.fightLog.append('Tour ' + str(self.game['turn']))
                     root.update()
                     time.sleep(0.15)
+
+                if len(self.fightLog) > (self.game['height']*self.game['cellSize'])/12:
+                    del self.fightLog[0]
+                logLabel['text'] = '\n'.join(self.fightLog)
             togglePlaying()
             
 
@@ -134,7 +145,7 @@ def togglePlaying():
 
 def pickTurnUpdate(e):
     global pickTurn
-    turn = pickTurnScale.get()
+    #turn = pickTurnScale.get()
 
 # Check if a path is given
 if (len(sys.argv) > 1):
@@ -150,13 +161,20 @@ pickTurn = 0
 root = Tk()
 gameCanvas = Canvas(root, width=100, height=100, background='white')
 gameCanvas.grid(row=0, column=0)
-informationPanel = Label(root)
-informationPanel.grid(row=1, column=0)
-pickTurnScale = Scale(informationPanel, from_=0, to=16, tickinterval=1, length=600, orient=HORIZONTAL, command=pickTurnUpdate
-                      )
+
+# Player frame
+playerFrame = Frame(root)
+playerFrame.grid(row=1, column=0)
+pickTurnScale = Scale(playerFrame, from_=0, to=16, tickinterval=1, length=600, orient=HORIZONTAL, command=pickTurnUpdate)
 pickTurnScale.grid(row=0, column=0)
-togglePlayingButton = Button(informationPanel, text = 'Play', command = lambda: togglePlaying())
+togglePlayingButton = Button(playerFrame, text='Play', command=lambda: togglePlaying())
 togglePlayingButton.grid(row=1, column=0)
+
+# Infos frame
+infosFrame = Frame(root, width=20)
+infosFrame.grid(row=0, column=1)
+logLabel = Label(infosFrame, text='Information Frame here', anchor="nw", justify=LEFT, width=20, font=("Helvetica", 10, "normal"))
+logLabel.grid(row=0, column=0)
 
 # Fight Thread
 fightThread = replayThread(path)
