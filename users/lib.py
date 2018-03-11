@@ -82,15 +82,14 @@ def getDistance(pos, pos2):
 
 def getPath(start, end):
     openList = [start]
-    distance = {str(start) : 0}
+    nodes = {str(start) : ['',0]} # nodes['[x, y]'] = [parent, distance from the start]
     closedList = []
-    parents = {}
     
     while len(openList) != 0:
         
         current = openList[0]
         for tmp in openList:
-            if distance[str(tmp)] + getDistance(tmp, end) < distance[str(current)] + getDistance(current, end):
+            if nodes[str(tmp)][1] + getDistance(tmp, end) < nodes[str(current)][1] + getDistance(current, end):
                 current = tmp
         
         if current == end:
@@ -106,21 +105,18 @@ def getPath(start, end):
                 continue
             elif not [X,Y] in openList:
                 openList.append([X,Y])
-                parents[str([X,Y])] = current
-                distance[str([X,Y])] = distance[str(current)] + 1
-            else:
-                if not str([X,Y]) in parents or distance[str([X,Y])] > distance[str(current)] + 1:
-                    parents[str([X,Y])] = current
-                    distance[str([X,Y])] = distance[str(current)] + 1
+                nodes[str([X,Y])] = [current, nodes[str(current)][1] + 1]
+            elif not str([X,Y]) in nodes or nodes[str([X,Y])][1] > nodes[str(current)][1] + 1:
+                nodes[str([X,Y])] = [current, nodes[str(current)][1] + 1]
      
     if current != end: # if the path does not exist
         return -1 
     
-    tmp = parents[str(end)]
+    tmp = nodes[str(end)][0]
     path = []
-    while tmp != start:
+    while tmp != start: # rewind the parents of the nodes to get the path
         path.append(tmp)
-        tmp = parents[str(tmp)]
+        tmp = nodes[str(tmp)][0]
     return path[::-1]
 
 
