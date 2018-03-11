@@ -82,6 +82,7 @@ def getDistance(pos, pos2):
 
 def getPath(start, end):
     openList = [start]
+    distance = {str(start) : 0}
     closedList = []
     parents = {}
     
@@ -89,7 +90,7 @@ def getPath(start, end):
         
         current = openList[0]
         for tmp in openList:
-            if getDistance(tmp, end) < getDistance(current, end):
+            if distance[str(tmp)] + getDistance(tmp, end) < distance[str(current)] + getDistance(current, end):
                 current = tmp
         
         if current == end:
@@ -106,9 +107,11 @@ def getPath(start, end):
             elif not [X,Y] in openList:
                 openList.append([X,Y])
                 parents[str([X,Y])] = current
+                distance[str([X,Y])] = distance[str(current)] + 1
             else:
-                if not str([X,Y]) in parents:
+                if not str([X,Y]) in parents or distance[str([X,Y])] > distance[str(current)] + 1:
                     parents[str([X,Y])] = current
+                    distance[str([X,Y])] = distance[str(current)] + 1
      
     if current != end: # if the path does not exist
         return -1 
