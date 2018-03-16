@@ -17,9 +17,9 @@ class Coordinator():
     def __init__(self, pId1, pId2):
         # VARIABLES #
         self.history = []
-        with open('users/' + str(pId1) + '/stat.dat') as file:
+        with open('users/user' + str(pId1) + '/stat.dat') as file:
             user1Stat = json.loads(file.read())
-        with open('users/' + str(pId2) + '/stat.dat') as file:
+        with open('users/user' + str(pId2) + '/stat.dat') as file:
             user2Stat = json.loads(file.read())
             
         self.game = {'id': -1, 'maxTurns': 16, 'path':'', 'turn': 1, 'whoPlays': -1, 'width': 16, 'height': 16}
@@ -29,12 +29,11 @@ class Coordinator():
             ]
 
         self.history.append(json.dumps(self.players))
-        sys.path.append(sys.path[0] + '/users/' + str(pId1))
-        import ai as u1
+        exec("from users.user{0} import ai{1} as u1".format(pId1, pId1), globals())
         self.players[0]['ai'] = u1
-        sys.path.append(sys.path[0] + '/users/' + str(pId2))
-        import ai as u2
+        exec("from users.user{0} import ai{1} as u2".format(pId2, pId2), globals())
         self.players[1]['ai'] = u2
+        
         
         self.globals = {}
         with open('globals.dat', 'r') as file:

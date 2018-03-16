@@ -76,11 +76,21 @@ class replayThread(Thread):
                     x = int(action[1])
                     y = int(action[2])
 
+                    print((self.players[self.game['whoPlays']]['hp']/self.players[self.game['whoPlays']]['maxHp']))
+
                     self.players[self.game['whoPlays']]['x'] = x
                     self.players[self.game['whoPlays']]['y'] = y
                     gameCanvas.coords(self.players[self.game['whoPlays']]['icon'], self.players[self.game['whoPlays']]['x']*self.game['cellSize'], self.players[self.game['whoPlays']]['y']*self.game['cellSize'], (self.players[self.game['whoPlays']]['x']+1)*self.game['cellSize'], (self.players[self.game['whoPlays']]['y']+1)*self.game['cellSize'])
-                    gameCanvas.coords(self.players[self.game['whoPlays']]['hpBar'][0], self.players[self.game['whoPlays']]['x']*self.game['cellSize'], (self.players[self.game['whoPlays']]['y']-0.15)*self.game['cellSize'], (self.players[self.game['whoPlays']]['x']+1)*self.game['cellSize'], self.players[self.game['whoPlays']]['y']*self.game['cellSize'])
-                    gameCanvas.coords(self.players[self.game['whoPlays']]['hpBar'][1], self.players[self.game['whoPlays']]['x']*self.game['cellSize'], (self.players[self.game['whoPlays']]['y']-0.15)*self.game['cellSize'], ((self.players[self.game['whoPlays']]['x']+1)*self.game['cellSize'])*(self.players[self.game['whoPlays']]['hp']/self.players[self.game['whoPlays']]['maxHp']), self.players[self.game['whoPlays']]['y']*self.game['cellSize'])
+                    gameCanvas.coords(self.players[self.game['whoPlays']]['hpBar'][0],
+                                      self.players[self.game['whoPlays']]['x']*self.game['cellSize'],
+                                      (self.players[self.game['whoPlays']]['y']-0.15)*self.game['cellSize'],
+                                      (self.players[self.game['whoPlays']]['x']+1)*self.game['cellSize'],
+                                      self.players[self.game['whoPlays']]['y']*self.game['cellSize'])
+                    gameCanvas.coords(self.players[self.game['whoPlays']]['hpBar'][1],
+                                      self.players[self.game['whoPlays']]['x']*self.game['cellSize'],
+                                      (self.players[self.game['whoPlays']]['y']-0.15)*self.game['cellSize'],
+                                      ((self.players[self.game['whoPlays']]['x']+1)*self.game['cellSize'])*(self.players[self.game['whoPlays']]['hp']/self.players[self.game['whoPlays']]['maxHp']),
+                                      self.players[self.game['whoPlays']]['y']*self.game['cellSize'])
                     gameCanvas.coords(self.players[self.game['whoPlays']]['pseudoLabel'], (self.players[self.game['whoPlays']]['x']+0.5)*self.game['cellSize'], (self.players[self.game['whoPlays']]['y']+0.5)*self.game['cellSize'])
                     
                     root.update()
