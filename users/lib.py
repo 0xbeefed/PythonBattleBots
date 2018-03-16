@@ -1,21 +1,20 @@
 import sys
 import os
 import json
+global actions
+
+actions = []
+mapData = []
+GAME_DAT = []
+PLAYERS_DAT = []
+MAP_DAT = []
+
 
 # GLOBALS
 CELL_EMPTY = -1
 CELL_OBSTACLE = -2
 CELL_PLAYER = 1
 
-# GRABBING INFOS
-PATH = os.getcwd().replace('\\', '/') + '/' + sys.argv[1]
-#PATH = 'C:/Users/arthc/Desktop/PythonBattleBots/Fights/25/'
-with open(PATH + 'game.dat', 'r') as file:
-    GAME_DAT = json.loads(file.read())
-with open(PATH + 'players.dat', 'r') as file:
-    PLAYERS_DAT = json.loads(file.read())
-with open(PATH + 'map.dat', 'r') as file:
-    MAP_DAT = json.loads(file.read())
 
 # INFO FUNCTIONS
 def myId():
@@ -122,13 +121,13 @@ def getPath(start, end):
 
 # ACTION FUNCTIONS
 def moveOn(x, y):
-    print('[MOVE] {0} {1}'.format(x, y))
+    actions.append(['[MOVE]', x, y])
     return 1
 
 def mark(x, y, color):
-    print('[MARK] {0} {1} {2}'.format(x, y, color))
+    actions.append(['[MARK]', x, y, color])
     return 1
 
 def attackOn(x, y):
-    print('[ATTACK] {0} {1}'.format(x, y))
+    actions.append(['[ATTACK]', x, y])
     return 1

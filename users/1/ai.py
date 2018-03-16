@@ -1,14 +1,6 @@
 import sys
-sys.path.append(sys.path[0] + "/..")
+sys.path.append(sys.path[0] + "/users/")
 import lib
-
-mId = lib.myId()
-pos = lib.getCell(mId)
-
-enemyCell = lib.getCell(lib.getEnemyId())
-
-tab = []
-OBSTACLES = lib.getObstacles()
 
 def cellDistance(pos, pos2):
     return abs(pos[0]-pos2[0])+abs(pos[1]-pos2[1])
@@ -55,12 +47,23 @@ def astar(start, end):
     
     return path
 
+def main():
+    mId = lib.myId()
+    pos = lib.getCell(mId)
 
-path = lib.getPath(pos, enemyCell)
-if path == -1:
-    lib.mark(pos[0], pos[1], 'black')
-else:
-    for cell in path:
-        lib.mark(cell[0], cell[1], 'green')
+    enemyCell = lib.getCell(lib.getEnemyId())
 
- 
+    tab = []
+    OBSTACLES = lib.getObstacles()
+
+
+
+
+    path = lib.getPath(pos, enemyCell)
+    if path == -1:
+        lib.mark(pos[0], pos[1], 'black')
+    else:
+        for cell in path:
+            lib.mark(cell[0], cell[1], 'green')
+
+

@@ -1,5 +1,5 @@
-[{"pseudo": "user0", "color": "blue", "x": 1, "y": 1, "ia": "users/0/ai.py", "maxMp": 3, "mp": 3, "id": 0, "maxTp": 6, "tp": 6, "hp": 100, "maxHp": 100}, {"pseudo": "user1", "color": "red", "x": 14, "y": 14, "ia": "users/1/ai.py", "maxMp": 3, "mp": 3, "id": 1, "maxTp": 6, "tp": 6, "hp": 100, "maxHp": 100}]
-[[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1, -1], [-1, 0, -1, -1, -1, -1, -2, -2, -2, -1, -1, -1, -1, -1, -1, -2], [-2, -1, -2, -1, -1, -1, -2, -1, -1, -1, -2, -1, -1, -1, -1, -1], [-2, -1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -2, -1, -1, -2, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1], [-2, -2, -1, -1, -2, -1, -2, -1, -1, -1, -1, -2, -1, -1, -1, -2], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1], [-2, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -2], [-1, -2, -1, -2, -1, -1, -2, -1, -1, -1, -2, -1, -1, -1, -1, -1], [-1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -1, -1, -2, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -2, -1], [-2, -1, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1, -1, -1, 1, -1], [-1, -2, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]]
+[{"pseudo": "user0", "color": "blue", "x": 1, "y": 1, "maxMp": 3, "mp": 3, "id": 0, "maxTp": 6, "tp": 6, "hp": 100, "maxHp": 100}, {"pseudo": "user1", "color": "red", "x": 14, "y": 14, "maxMp": 3, "mp": 3, "id": 1, "maxTp": 6, "tp": 6, "hp": 100, "maxHp": 100}]
+[[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1], [-1, 0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -1, -2, -1, -1], [-1, -1, -2, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -2], [-1, -1, -2, -1, -1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -2, -1], [-1, -1, -1, -2, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -2, -1], [-1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -2, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -2], [-1, -1, -1, -1, -1, -1, -2, -2, -1, -1, -1, -2, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -2, -1, -1, -2, -2, -1, -1, -1, -2, -2, -1], [-1, -2, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1, -2, -1, -1, -1], [-2, -1, -1, -1, -1, -2, -1, -2, -1, -1, -1, -1, -1, -2, -1, -1], [-2, -1, -1, -1, -2, -1, -1, -1, -2, -1, -1, -1, -2, -1, 1, -1], [-2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1, -2, -1]]
 [TURN] 0
 [WHOPLAYS] 0
 [MARK] 1 2 black
@@ -8,318 +8,237 @@
 [MOVE] 1 3
 [MARK] 1 4 black
 [MOVE] 1 4
-[MARK] 1 5 black
+[MARK] 2 4 black
 [MARK] 2 5 black
 [MARK] 2 6 black
-[MARK] 2 7 black
-[MARK] 2 8 black
+[MARK] 3 6 black
+[MARK] 3 7 black
 [MARK] 3 8 black
-[MARK] 4 8 black
+[MARK] 3 9 black
 [MARK] 4 9 black
-[MARK] 4 10 black
-[MARK] 4 11 black
-[MARK] 4 12 black
-[MARK] 4 13 black
-[MARK] 4 14 black
-[MARK] 5 14 black
-[MARK] 6 14 black
-[MARK] 7 14 black
-[MARK] 7 15 black
-[MARK] 8 15 black
-[MARK] 9 15 black
-[MARK] 9 14 black
+[MARK] 5 9 black
+[MARK] 6 9 black
+[MARK] 6 10 black
+[MARK] 7 10 black
+[MARK] 8 10 black
+[MARK] 9 10 black
+[MARK] 10 10 black
+[MARK] 10 11 black
+[MARK] 10 12 black
+[MARK] 10 13 black
 [MARK] 10 14 black
 [MARK] 11 14 black
-[MARK] 12 14 black
+[MARK] 11 15 black
+[MARK] 12 15 black
+[MARK] 13 15 black
 [MARK] 13 14 black
 [WHOPLAYS] 1
-[MARK] 13 14 green
-[MARK] 12 14 green
-[MARK] 12 13 green
-[MARK] 12 12 green
-[MARK] 12 11 green
-[MARK] 12 10 green
-[MARK] 12 9 green
-[MARK] 12 8 green
-[MARK] 12 7 green
-[MARK] 12 6 green
-[MARK] 12 5 green
-[MARK] 11 5 green
-[MARK] 11 4 green
-[MARK] 10 4 green
-[MARK] 9 4 green
-[MARK] 8 4 green
-[MARK] 7 4 green
-[MARK] 6 4 green
-[MARK] 6 5 green
-[MARK] 5 5 green
-[MARK] 4 5 green
-[MARK] 3 5 green
-[MARK] 2 5 green
-[MARK] 1 5 green
+[MARK] 14 13 black
+[MOVE] 14 13
+[MARK] 14 12 black
+[MOVE] 14 12
+[MARK] 15 12 black
+[MOVE] 15 12
+[MARK] 15 11 black
+[MARK] 15 10 black
+[MARK] 15 9 black
+[MARK] 15 8 black
+[MARK] 14 8 black
+[MARK] 14 7 black
+[MARK] 14 6 black
+[MARK] 14 5 black
+[MARK] 13 5 black
+[MARK] 12 5 black
+[MARK] 11 5 black
+[MARK] 10 5 black
+[MARK] 9 5 black
+[MARK] 8 5 black
+[MARK] 7 5 black
+[MARK] 6 5 black
+[MARK] 5 5 black
+[MARK] 4 5 black
+[MARK] 3 5 black
+[MARK] 2 5 black
+[MARK] 2 4 black
 [TURN] 1
 [WHOPLAYS] 0
-[MARK] 1 5 black
-[MOVE] 1 5
+[MARK] 2 4 black
+[MOVE] 2 4
 [MARK] 2 5 black
 [MOVE] 2 5
 [MARK] 2 6 black
 [MOVE] 2 6
-[MARK] 2 7 black
-[MARK] 2 8 black
+[MARK] 3 6 black
+[MARK] 3 7 black
 [MARK] 3 8 black
-[MARK] 4 8 black
+[MARK] 3 9 black
 [MARK] 4 9 black
-[MARK] 4 10 black
-[MARK] 4 11 black
-[MARK] 4 12 black
-[MARK] 4 13 black
-[MARK] 4 14 black
-[MARK] 5 14 black
-[MARK] 6 14 black
-[MARK] 7 14 black
-[MARK] 7 15 black
-[MARK] 8 15 black
-[MARK] 9 15 black
-[MARK] 9 14 black
-[MARK] 10 14 black
-[MARK] 11 14 black
-[MARK] 12 14 black
-[MARK] 13 14 black
+[MARK] 5 9 black
+[MARK] 6 9 black
+[MARK] 6 10 black
+[MARK] 7 10 black
+[MARK] 8 10 black
+[MARK] 9 10 black
+[MARK] 10 10 black
+[MARK] 11 10 black
+[MARK] 12 10 black
+[MARK] 13 10 black
+[MARK] 14 10 black
+[MARK] 15 10 black
+[MARK] 15 11 black
 [WHOPLAYS] 1
-[MARK] 13 14 green
-[MARK] 12 14 green
-[MARK] 12 13 green
-[MARK] 12 12 green
-[MARK] 12 11 green
-[MARK] 12 10 green
-[MARK] 12 9 green
-[MARK] 12 8 green
-[MARK] 12 7 green
-[MARK] 11 7 green
-[MARK] 10 7 green
-[MARK] 10 6 green
-[MARK] 9 6 green
-[MARK] 8 6 green
-[MARK] 7 6 green
-[MARK] 7 7 green
-[MARK] 6 7 green
-[MARK] 5 7 green
-[MARK] 4 7 green
-[MARK] 3 7 green
-[MARK] 3 6 green
+[MARK] 15 11 black
+[MOVE] 15 11
+[MARK] 15 10 black
+[MOVE] 15 10
+[MARK] 15 9 black
+[MOVE] 15 9
+[MARK] 15 8 black
+[MARK] 14 8 black
+[MARK] 14 7 black
+[MARK] 14 6 black
+[MARK] 13 6 black
+[MARK] 12 6 black
+[MARK] 11 6 black
+[MARK] 10 6 black
+[MARK] 9 6 black
+[MARK] 8 6 black
+[MARK] 7 6 black
+[MARK] 6 6 black
+[MARK] 5 6 black
+[MARK] 4 6 black
+[MARK] 3 6 black
 [TURN] 2
 [WHOPLAYS] 0
-[MARK] 2 7 black
-[MOVE] 2 7
-[MARK] 2 8 black
-[MOVE] 2 8
+[MARK] 3 6 black
+[MOVE] 3 6
+[MARK] 3 7 black
+[MOVE] 3 7
 [MARK] 3 8 black
 [MOVE] 3 8
-[MARK] 4 8 black
+[MARK] 3 9 black
 [MARK] 4 9 black
-[MARK] 4 10 black
-[MARK] 4 11 black
-[MARK] 4 12 black
-[MARK] 4 13 black
-[MARK] 4 14 black
-[MARK] 5 14 black
-[MARK] 6 14 black
-[MARK] 7 14 black
-[MARK] 7 15 black
-[MARK] 8 15 black
-[MARK] 9 15 black
-[MARK] 9 14 black
-[MARK] 10 14 black
-[MARK] 11 14 black
-[MARK] 12 14 black
-[MARK] 13 14 black
+[MARK] 5 9 black
+[MARK] 6 9 black
+[MARK] 7 9 black
+[MARK] 8 9 black
+[MARK] 9 9 black
+[MARK] 10 9 black
+[MARK] 11 9 black
+[MARK] 12 9 black
+[MARK] 13 9 black
+[MARK] 14 9 black
 [WHOPLAYS] 1
-[MARK] 13 14 green
-[MARK] 12 14 green
-[MARK] 12 13 green
-[MARK] 12 12 green
-[MARK] 12 11 green
-[MARK] 12 10 green
-[MARK] 12 9 green
-[MARK] 12 8 green
-[MARK] 11 8 green
-[MARK] 10 8 green
-[MARK] 9 8 green
-[MARK] 8 8 green
-[MARK] 8 7 green
-[MARK] 7 7 green
-[MARK] 6 7 green
-[MARK] 6 8 green
-[MARK] 5 8 green
-[MARK] 4 8 green
+[MARK] 14 9 black
+[MOVE] 14 9
+[MARK] 13 9 black
+[MOVE] 13 9
+[MARK] 12 9 black
+[MOVE] 12 9
+[MARK] 11 9 black
+[MARK] 10 9 black
+[MARK] 9 9 black
+[MARK] 8 9 black
+[MARK] 7 9 black
+[MARK] 6 9 black
+[MARK] 5 9 black
+[MARK] 5 8 black
+[MARK] 4 8 black
 [TURN] 3
 [WHOPLAYS] 0
-[MARK] 4 8 black
-[MOVE] 4 8
+[MARK] 3 9 black
+[MOVE] 3 9
 [MARK] 4 9 black
 [MOVE] 4 9
-[MARK] 4 10 black
-[MOVE] 4 10
-[MARK] 4 11 black
-[MARK] 4 12 black
-[MARK] 4 13 black
-[MARK] 4 14 black
-[MARK] 5 14 black
-[MARK] 6 14 black
-[MARK] 7 14 black
-[MARK] 7 15 black
-[MARK] 8 15 black
-[MARK] 9 15 black
-[MARK] 9 14 black
-[MARK] 10 14 black
-[MARK] 11 14 black
-[MARK] 12 14 black
-[MARK] 13 14 black
+[MARK] 5 9 black
+[MOVE] 5 9
+[MARK] 6 9 black
+[MARK] 7 9 black
+[MARK] 8 9 black
+[MARK] 9 9 black
+[MARK] 10 9 black
+[MARK] 11 9 black
 [WHOPLAYS] 1
-[MARK] 13 14 green
-[MARK] 12 14 green
-[MARK] 12 13 green
-[MARK] 12 12 green
-[MARK] 12 11 green
-[MARK] 12 10 green
-[MARK] 11 10 green
-[MARK] 10 10 green
-[MARK] 9 10 green
-[MARK] 8 10 green
-[MARK] 7 10 green
-[MARK] 6 10 green
-[MARK] 5 10 green
+[MARK] 11 9 black
+[MOVE] 11 9
+[MARK] 10 9 black
+[MOVE] 10 9
+[MARK] 9 9 black
+[MOVE] 9 9
+[MARK] 8 9 black
+[MARK] 7 9 black
+[MARK] 6 9 black
+[ATTACK] 5 9
 [TURN] 4
 [WHOPLAYS] 0
-[MARK] 4 11 black
-[MOVE] 4 11
-[MARK] 4 12 black
-[MOVE] 4 12
-[MARK] 4 13 black
-[MOVE] 4 13
-[MARK] 4 14 black
-[MARK] 5 14 black
-[MARK] 6 14 black
-[MARK] 7 14 black
-[MARK] 7 15 black
-[MARK] 8 15 black
-[MARK] 9 15 black
-[MARK] 9 14 black
-[MARK] 10 14 black
-[MARK] 11 14 black
-[MARK] 12 14 black
-[MARK] 13 14 black
+[MARK] 6 9 black
+[MOVE] 6 9
+[MARK] 7 9 black
+[MOVE] 7 9
+[MARK] 8 9 black
+[MOVE] 8 9
+[ATTACK] 9 9
 [WHOPLAYS] 1
-[MARK] 13 14 green
-[MARK] 12 14 green
-[MARK] 12 13 green
-[MARK] 11 13 green
-[MARK] 10 13 green
-[MARK] 9 13 green
-[MARK] 8 13 green
-[MARK] 7 13 green
-[MARK] 6 13 green
-[MARK] 5 13 green
+[ATTACK] 8 9
 [TURN] 5
 [WHOPLAYS] 0
-[MARK] 4 14 black
-[MOVE] 4 14
-[MARK] 5 14 black
-[MOVE] 5 14
-[MARK] 6 14 black
-[MOVE] 6 14
-[MARK] 7 14 black
-[MARK] 7 15 black
-[MARK] 8 15 black
-[MARK] 9 15 black
-[MARK] 9 14 black
-[MARK] 10 14 black
-[MARK] 11 14 black
-[MARK] 12 14 black
-[MARK] 13 14 black
+[ATTACK] 9 9
 [WHOPLAYS] 1
-[MARK] 13 14 green
-[MARK] 12 14 green
-[MARK] 11 14 green
-[MARK] 10 14 green
-[MARK] 9 14 green
-[MARK] 9 15 green
-[MARK] 8 15 green
-[MARK] 7 15 green
-[MARK] 7 14 green
+[ATTACK] 8 9
 [TURN] 6
 [WHOPLAYS] 0
-[MARK] 7 14 black
-[MOVE] 7 14
-[MARK] 7 15 black
-[MOVE] 7 15
-[MARK] 8 15 black
-[MOVE] 8 15
-[MARK] 9 15 black
-[MARK] 9 14 black
-[MARK] 10 14 black
-[MARK] 11 14 black
-[MARK] 12 14 black
-[MARK] 13 14 black
+[ATTACK] 9 9
 [WHOPLAYS] 1
-[MARK] 14 15 green
-[MARK] 13 15 green
-[MARK] 12 15 green
-[MARK] 11 15 green
-[MARK] 10 15 green
-[MARK] 9 15 green
+[ATTACK] 8 9
 [TURN] 7
 [WHOPLAYS] 0
-[MARK] 9 15 black
-[MOVE] 9 15
-[MARK] 9 14 black
-[MOVE] 9 14
-[MARK] 10 14 black
-[MOVE] 10 14
-[MARK] 11 14 black
-[MARK] 12 14 black
-[MARK] 13 14 black
-[ATTACK] 14 14
+[ATTACK] 9 9
 [WHOPLAYS] 1
-[MARK] 13 14 green
-[MARK] 12 14 green
-[MARK] 11 14 green
+[ATTACK] 8 9
 [TURN] 8
 [WHOPLAYS] 0
-[MARK] 11 14 black
-[MOVE] 11 14
-[MARK] 12 14 black
-[MOVE] 12 14
-[MARK] 13 14 black
-[MOVE] 13 14
-[ATTACK] 14 14
+[ATTACK] 9 9
 [WHOPLAYS] 1
+[ATTACK] 8 9
 [TURN] 9
 [WHOPLAYS] 0
-[ATTACK] 14 14
+[ATTACK] 9 9
 [WHOPLAYS] 1
+[ATTACK] 8 9
 [TURN] 10
 [WHOPLAYS] 0
-[ATTACK] 14 14
+[ATTACK] 9 9
 [WHOPLAYS] 1
+[ATTACK] 8 9
 [TURN] 11
 [WHOPLAYS] 0
-[ATTACK] 14 14
+[ATTACK] 9 9
 [WHOPLAYS] 1
+[ATTACK] 8 9
 [TURN] 12
 [WHOPLAYS] 0
-[ATTACK] 14 14
+[ATTACK] 9 9
 [WHOPLAYS] 1
+[ATTACK] 8 9
+[DEATH] 0
 [TURN] 13
 [WHOPLAYS] 0
-[ATTACK] 14 14
+[ATTACK] 9 9
+[DEATH] 1
 [WHOPLAYS] 1
+[ATTACK] 8 9
+[DEATH] 0
 [TURN] 14
 [WHOPLAYS] 0
-[ATTACK] 14 14
+[ATTACK] 9 9
+[DEATH] 1
 [WHOPLAYS] 1
+[ATTACK] 8 9
+[DEATH] 0
 [TURN] 15
 [WHOPLAYS] 0
-[ATTACK] 14 14
+[ATTACK] 9 9
+[DEATH] 1
 [WHOPLAYS] 1
+[ATTACK] 8 9
+[DEATH] 0

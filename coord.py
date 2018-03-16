@@ -6,6 +6,7 @@ from threading import Thread
 import time
 from random import randint
 import math
+import sys
 
 fightInProgress = False
 turn = 1
@@ -15,6 +16,7 @@ class Coordinator():
 
     def __init__(self, pId1, pId2):
         # VARIABLES #
+        self.history = []
         with open('users/' + str(pId1) + '/stat.dat') as file:
             user1Stat = json.loads(file.read())
         with open('users/' + str(pId2) + '/stat.dat') as file:
@@ -22,13 +24,22 @@ class Coordinator():
             
         self.game = {'id': -1, 'maxTurns': 16, 'path':'', 'turn': 1, 'whoPlays': -1, 'width': 16, 'height': 16}
         self.players = [
-            {'pseudo': user1Stat['pseudo'], 'color': 'blue', 'x': 1, 'y': 1, 'ia': 'users/' + str(pId1) + '/ai.py', 'maxMp': user1Stat['maxMp'], 'mp': user1Stat['maxMp'], 'id': 0, 'maxTp': user1Stat['maxTp'], 'tp': user1Stat['maxTp'], 'hp': user1Stat['maxHp'], 'maxHp': user1Stat['maxHp']},
-            {'pseudo': user2Stat['pseudo'], 'color': 'red', 'x': self.game['width']-2, 'y': self.game['height']-2, 'ia': 'users/' + str(pId2) + '/ai.py', 'maxMp': user2Stat['maxMp'], 'mp': user2Stat['maxMp'], 'id': 1, 'maxTp': user2Stat['maxTp'], 'tp': user2Stat['maxTp'], 'hp': user2Stat['maxHp'], 'maxHp': user2Stat['maxHp']}
+            {'pseudo': user1Stat['pseudo'], 'color': 'blue', 'x': 1, 'y': 1, 'maxMp': user1Stat['maxMp'], 'mp': user1Stat['maxMp'], 'id': 0, 'maxTp': user1Stat['maxTp'], 'tp': user1Stat['maxTp'], 'hp': user1Stat['maxHp'], 'maxHp': user1Stat['maxHp']},
+            {'pseudo': user2Stat['pseudo'], 'color': 'red', 'x': self.game['width']-2, 'y': self.game['height']-2, 'maxMp': user2Stat['maxMp'], 'mp': user2Stat['maxMp'], 'id': 1, 'maxTp': user2Stat['maxTp'], 'tp': user2Stat['maxTp'], 'hp': user2Stat['maxHp'], 'maxHp': user2Stat['maxHp']}
             ]
+
+        self.history.append(json.dumps(self.players))
+        sys.path.append(sys.path[0] + '/users/' + str(pId1))
+        import ai as u1
+        self.players[0]['ai'] = u1
+        sys.path.append(sys.path[0] + '/users/' + str(pId1))
+        import ai as u2
+        self.players[1]['ai'] = u2
+        
         self.globals = {}
         with open('globals.dat', 'r') as file:
             self.globals = json.loads(file.read())
-        self.history = []
+        
 
         # GAME TREE #
         self.game['id'] = self.globals['gamesCount']
@@ -53,7 +64,7 @@ class Coordinator():
             if (self.map[y][x] == -1):
                 placedObstacles += 1
                 self.map[y][x] = -2
-        self.history.append(json.dumps(self.players))
+                
         self.history.append(json.dumps(self.map))
 
         # LAUNCH GAME #
@@ -69,26 +80,20 @@ class Coordinator():
             for i in range(len(self.players)):
                 self.game['whoPlays'] = i
                 self.history.append('[WHOPLAYS] ' + str(self.game['whoPlays']))
-                ia = self.players[self.game['whoPlays']]['ia']
 
                 # Stats
                 self.players[self.game['whoPlays']]['mp'] = self.players[self.game['whoPlays']]['maxMp']
                 self.players[self.game['whoPlays']]['tp'] = self.players[self.game['whoPlays']]['maxTp']
 
-                # UPDATE CHANGES
-                with open(self.game['path'] + 'players.dat', 'w') as file:
-                    file.write(json.dumps(self.players))
-                with open(self.game['path'] + 'map.dat', 'w') as file:
-                    file.write(json.dumps(self.map))
-                with open(self.game['path'] + 'game.dat', 'w') as file:
-                    file.write(json.dumps(self.game)) 
-                
                 # LAUNCH
-                result = str(subprocess.run(['python', ia, self.game['path']], stdout=subprocess.PIPE).stdout.decode('utf-8'))
-                with open(self.game['path'] + self.players[self.game['whoPlays']]['pseudo'] + '.dat', 'a') as file: # Debug
-                    file.write('\nTurn ' + str(self.game['turn']) + ': ' + result)
-                for action in result.split('\r\n'):
-                    action = action.split(' ')
+                self.players[self.game['whoPlays']]['ai'].lib.MAP_DAT = self.map.copy()
+                self.players[self.game['whoPlays']]['ai'].lib.GAME_DAT = self.game.copy()
+                self.players[self.game['whoPlays']]['ai'].lib.PLAYERS_DAT = self.players.copy()
+                self.players[self.game['whoPlays']]['ai'].lib.actions = []
+                self.players[self.game['whoPlays']]['ai'].main()
+                result = self.players[self.game['whoPlays']]['ai'].lib.actions
+                
+                for action in result:
 
                     if len(action) and action[0] == '[MOVE]':
                         x = int(action[1])
@@ -104,10 +109,10 @@ class Coordinator():
                             self.players[self.game['whoPlays']]['y'] = y
                             self.map[y][x] = self.game['whoPlays']
                             self.players[self.game['whoPlays']]['mp'] -= 1
-                            self.history.append(' '.join(action))
+                            self.history.append(' '.join([str(a) for a in action]))
 
                     elif len(action) and action[0] == '[MARK]':
-                        self.history.append(' '.join(action))
+                        self.history.append(' '.join([str(a) for a in action]))
 
                         
                     elif len(action) and action[0] == '[ATTACK]':
@@ -145,7 +150,7 @@ class Coordinator():
                                     if self.players[i]['x'] == x and self.players[i]['y'] == y:
                                         self.players[i]['hp'] -= 10
                                         self.players[self.game['whoPlays']]['tp'] -= 4
-                                        self.history.append(' '.join(action))
+                                        self.history.append(' '.join([str(a) for a in action]))
                                         if (self.players[i]['hp'] <= 0):
                                             self.history.append('[DEATH] ' + str(self.players[i]['id']))
 

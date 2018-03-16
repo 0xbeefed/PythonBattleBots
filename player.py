@@ -131,7 +131,7 @@ class replayThread(Thread):
                     root.update()
                     time.sleep(0.15)
 
-                if len(self.fightLog) > (self.game['height']*self.game['cellSize'])/12:
+                if len(self.fightLog) > (self.game['height']*self.game['cellSize'])/20:
                     del self.fightLog[0]
                 logLabel['text'] = '\n'.join(self.fightLog)
             togglePlaying()
