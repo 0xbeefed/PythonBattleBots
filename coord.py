@@ -32,7 +32,7 @@ class Coordinator():
         sys.path.append(sys.path[0] + '/users/' + str(pId1))
         import ai as u1
         self.players[0]['ai'] = u1
-        sys.path.append(sys.path[0] + '/users/' + str(pId1))
+        sys.path.append(sys.path[0] + '/users/' + str(pId2))
         import ai as u2
         self.players[1]['ai'] = u2
         
