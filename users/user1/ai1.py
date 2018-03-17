@@ -50,6 +50,7 @@ def main():
                 lib.moveOn(move[0], move[1])
                 selfMp -= 1
             lib.attackOn(enemyPos[0], enemyPos[1])
+            lib.mark(bestMove[0][0], bestMove[0][1], 'yellow')
             selfPos = bestMove[0]
 
     # Flee on safe cell
@@ -59,7 +60,7 @@ def main():
     for selfSimu in selfMoveMap:
         safeCell = True
         for enemySimu in enemyMoveMap:
-            if lib.getDistance(selfSimu, enemySimu) <= 5 and lib.getLineOfSight(selfSimu, enemySimu):
+            if lib.getDistance(selfSimu, enemySimu) <= 6 and lib.getLineOfSight(selfSimu, enemySimu):
                 # If user can hit us, then cell isn't safe
                 safeCell = False
                 break
