@@ -37,11 +37,10 @@ def main():
     bestMove = [[], -1]
     for simulated in selfMoveMap:
         # Find far cell where we can attack
-        if lib.getDistance(simulated, enemyPos) < 5 and lib.getLineOfSight(simulated, enemyPos):
+        if lib.getDistance(simulated, enemyPos) <= 5 and lib.getLineOfSight(simulated, enemyPos):
             if lib.getDistance(simulated, enemyPos) >= bestMove[1]:
                 bestMove = [simulated.copy(), lib.getDistance(simulated, enemyPos)]
                 canHit = True
-    print(canHit)
     
     if canHit:
         lib.mark(bestMove[0][0], bestMove[0][1], 'blue')
@@ -60,7 +59,7 @@ def main():
     for selfSimu in selfMoveMap:
         safeCell = True
         for enemySimu in enemyMoveMap:
-            if lib.getDistance(selfSimu, enemySimu) < 5 and lib.getLineOfSight(selfSimu, enemySimu):
+            if lib.getDistance(selfSimu, enemySimu) <= 5 and lib.getLineOfSight(selfSimu, enemySimu):
                 # If user can hit us, then cell isn't safe
                 safeCell = False
                 break

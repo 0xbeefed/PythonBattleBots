@@ -7,6 +7,7 @@ import time
 from random import randint
 import math
 import sys
+import users.lib
 
 fightInProgress = False
 turn = 1
@@ -130,23 +131,9 @@ class Coordinator():
                                     if self.map[y1][x1] != -1:
                                         obstacles.append([x1, y1])
 
-                            los = 1
                             pos = [self.players[self.game['whoPlays']]['x'], self.players[self.game['whoPlays']]['y']]
                             pos2 = [x, y]
-                            for obstacle in obstacles:
-                                u = 0
-                                d = 0
-                                if (obstacle[0] > pos[0]) == (pos2[0] > pos[0]) and (obstacle[1] > pos[1]) == (pos2[1] > pos[1]) and abs(obstacle[0]-pos[0])+abs(obstacle[1]-pos[1]) < abs(pos[0]-pos2[0])+abs(pos[1]-pos2[1]) and obstacle != pos:
-                                    for a, b in [[0,0], [0,1], [1,0], [1,1]]: # Check that the 4 corners of the obstacle are below or above the line between pos and [x,y]
-                                        if obstacle[1]+b > ((pos[1]-pos2[1])/(pos[0]-pos2[0]))*(obstacle[0]+a-pos2[0]-0.5)+pos2[1]+0.5:
-                                            u += 1
-                                        if obstacle[1]+b < ((pos[1]-pos2[1])/(pos[0]-pos2[0]))*(obstacle[0]+a-pos2[0]-0.5)+pos2[1]+0.5:
-                                            d += 1
-                                        if obstacle[1]+b == ((pos[1]-pos2[1])/(pos[0]-pos2[0]))*(obstacle[0]+a-pos2[0]-0.5)+pos2[1]+0.5:
-                                            u += 1
-                                            d += 1
-                                    if d != 4 and u != 4:
-                                        los = 0
+                            los = users.lib.getLineOfSight(pos, pos2)
                             if los:
                                 for i in range(len(self.players)):
                                     if self.players[i]['x'] == x and self.players[i]['y'] == y:
