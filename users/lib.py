@@ -118,7 +118,7 @@ def getPath(start, end):
         return -1 
     
     tmp = nodes[str(end)][0]
-    path = []
+    path = [end]
     while tmp != start: # rewind the parents of the nodes to get the path
         path.append(tmp)
         tmp = nodes[str(tmp)][0]
