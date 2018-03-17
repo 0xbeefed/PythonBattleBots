@@ -27,6 +27,12 @@ def getEnemyId():
         if player['id'] != myId():
             return player['id']
 
+def getMapWidth():
+    return len(MAP_DAT)
+
+def getMapHeight():
+    return len(MAP_DAT[0])
+
 def getCell(entity):
     global PLAYERS_DAT
     return [PLAYERS_DAT[entity]['x'], PLAYERS_DAT[entity]['y']]
