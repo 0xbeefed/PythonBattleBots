@@ -89,7 +89,10 @@ class Coordinator():
                 self.players[self.game['whoPlays']]['ai'].lib.GAME_DAT = self.game.copy()
                 self.players[self.game['whoPlays']]['ai'].lib.PLAYERS_DAT = self.players.copy()
                 self.players[self.game['whoPlays']]['ai'].lib.actions = []
-                self.players[self.game['whoPlays']]['ai'].main()
+                try:
+                    self.players[self.game['whoPlays']]['ai'].main()
+                except:
+                    print(self.players[self.game['whoPlays']]['pseudo'] + ': IA exit with non 0 statement')
                 result = self.players[self.game['whoPlays']]['ai'].lib.actions
                 
                 for action in result:
