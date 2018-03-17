@@ -89,7 +89,7 @@ class replayThread(Thread):
                     gameCanvas.coords(self.players[self.game['whoPlays']]['hpBar'][1],
                                       self.players[self.game['whoPlays']]['x']*self.game['cellSize'],
                                       (self.players[self.game['whoPlays']]['y']-0.15)*self.game['cellSize'],
-                                      ((self.players[self.game['whoPlays']]['x']+1)*self.game['cellSize'])*(self.players[self.game['whoPlays']]['hp']/self.players[self.game['whoPlays']]['maxHp']),
+                                      ((self.players[self.game['whoPlays']]['x']+(self.players[self.game['whoPlays']]['hp']/self.players[self.game['whoPlays']]['maxHp']))*self.game['cellSize']),
                                       self.players[self.game['whoPlays']]['y']*self.game['cellSize'])
                     gameCanvas.coords(self.players[self.game['whoPlays']]['pseudoLabel'], (self.players[self.game['whoPlays']]['x']+0.5)*self.game['cellSize'], (self.players[self.game['whoPlays']]['y']+0.5)*self.game['cellSize'])
                     
