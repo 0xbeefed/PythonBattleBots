@@ -47,15 +47,15 @@ def getCell(entity):
     global PLAYERS_DAT
     return [PLAYERS_DAT[entity]['x'], PLAYERS_DAT[entity]['y']]
 
-def getCellContent(x, y):
+def getCellContent(pos):
     """Returns the contents of the cell [x, y]"""
     global MAP_DAT
-    if y >= 0 and x >= 0 and y < len(MAP_DAT) and x < len(MAP_DAT[y]):
-        if MAP_DAT[y][x] == -3:
+    if pos[1] >= 0 and pos[0] >= 0 and pos[1] < len(MAP_DAT) and pos[0] < len(MAP_DAT[pos[1]]):
+        if MAP_DAT[pos[1]][pos[0]] == -3:
             return LAVA_HOLE
-        elif MAP_DAT[y][x] == -2:
+        elif MAP_DAT[pos[1]][pos[0]] == -2:
             return CELL_OBSTACLE
-        elif MAP_DAT[y][x] == -1:
+        elif MAP_DAT[pos[1]][pos[0]] == -1:
             return CELL_EMPTY
         else:
             return CELL_PLAYER
@@ -68,7 +68,7 @@ def getObstacles():
     obstacles = []
     for y in range(len(MAP_DAT)):
         for x in range(len(MAP_DAT[0])):
-            if getCellContent(x,y) == CELL_OBSTACLE:
+            if getCellContent([x,y]) == CELL_OBSTACLE:
                 obstacles.append([x,y])
     return obstacles
 
@@ -123,7 +123,7 @@ def getPath(start, end):
         for a,b in [[0,1], [0,-1], [1,0], [-1,0]]:
             X = current[0] + a
             Y = current[1] + b
-            if getCellContent(X, Y) == CELL_OBSTACLE or getCellContent(X, Y) == LAVA_HOLE or [X,Y] in closedList:
+            if getCellContent([X, Y]) == CELL_OBSTACLE or getCellContent([X, Y]) == LAVA_HOLE or [X,Y] in closedList:
                 continue
             elif not [X,Y] in openList:
                 openList.append([X,Y])
@@ -144,19 +144,19 @@ def getPath(start, end):
 
 # ACTION FUNCTIONS
 
-def moveOn(x, y):
+def moveOn(pos):
     """Move your player closer to a cell [x, y]"""
-    actions.append(['[MOVE]', x, y])
+    actions.append(['[MOVE]', pos[0], pos[1]])
     return 1
 
-def mark(x, y, color):
+def mark(pos, color):
     """Marks the cell [x, y] with the color in parameter"""
-    actions.append(['[MARK]', x, y, color])
+    actions.append(['[MARK]', pos[0], pos[1], color])
     return 1
 
-def attackOn(x, y):
+def attackOn(pos):
     """Attack with the current weapon on the cell [x, y]"""
-    actions.append(['[ATTACK]', x, y])
+    actions.append(['[ATTACK]', pos[0], pos[1]])
     return 1
 
 def setWeapon(weaponID):

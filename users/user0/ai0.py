@@ -18,16 +18,16 @@ def main():
         for y in range(lib.getMapHeight()):
             #print('ia1', x,y)
             if lib.getLineOfSight(pos, [x,y]):
-                lib.mark(x, y, 'yellow')
+                lib.mark([x, y], 'yellow')
             else:
-                lib.mark(x,y,'red')
+                lib.mark([x,y],'red')
               
     path = lib.getPath(pos, enemyPos)
 
     if path != -1:
         for move in path:
-            #lib.mark(move[0], move[1], 'black')
-            lib.moveOn(move[0], move[1])
-        lib.attackOn(enemyPos[0], enemyPos[1])
+            #lib.mark(move, 'black')
+            lib.moveOn(move)
+        lib.attackOn(enemyPos)
             
 

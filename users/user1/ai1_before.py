@@ -27,7 +27,7 @@ def astar(start, end):
         for a,b in [[0,1], [0,-1], [1,0], [-1,0]]:
             X = current[0] + a
             Y = current[1] + b
-            if lib.getCellContent(X, Y) == -2 or [X,Y] in closedList:
+            if lib.getCellContent([X, Y]) == -2 or [X,Y] in closedList:
                 continue
             elif not [X,Y] in openList:
                 openList.append([X,Y])
@@ -61,9 +61,9 @@ def main():
 
     path = lib.getPath(pos, enemyCell)
     if path == -1:
-        lib.mark(pos[0], pos[1], 'black')
+        lib.mark(pos, 'black')
     else:
         for cell in path:
-            lib.mark(cell[0], cell[1], 'green')
+            lib.mark(cell, 'green')
 
 

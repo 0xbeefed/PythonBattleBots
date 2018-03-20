@@ -106,6 +106,7 @@ class replayThread(Thread):
                     color = action[3]
                     marks.append(gameCanvas.create_rectangle(x*self.game['cellSize'],y*self.game['cellSize'], (x+1)*self.game['cellSize'], (y+1)*self.game['cellSize'], fill=color, stipple='gray50'))
                     gameCanvas.tag_lower(marks[len(marks) - 1])
+                    root.update()
 
                 elif action[0] == '[ATTACK]':
                     x = int(action[1])
