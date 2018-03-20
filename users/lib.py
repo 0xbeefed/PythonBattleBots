@@ -18,26 +18,32 @@ CELL_PLAYER = 1
 
 # INFO FUNCTIONS
 def myId():
+    """Returns the id of your player"""
     global GAME_DAT
     return GAME_DAT['whoPlays']
 
 def getEnemyId():
+    """Returns the id of your opponent"""
     global PLAYERS_DAT
     for player in PLAYERS_DAT:
         if player['id'] != myId():
             return player['id']
 
 def getMapWidth():
+    """Returns the width of the map"""
     return len(MAP_DAT)
 
 def getMapHeight():
+    """Returns the height of the map"""
     return len(MAP_DAT[0])
 
 def getCell(entity):
+    """Returns the cell where the entity is"""
     global PLAYERS_DAT
     return [PLAYERS_DAT[entity]['x'], PLAYERS_DAT[entity]['y']]
 
 def getCellContent(x, y):
+    """Returns the contents of the cell [x, y]"""
     global MAP_DAT
     if y >= 0 and x >= 0 and y < len(MAP_DAT) and x < len(MAP_DAT[y]):
         if MAP_DAT[y][x] == -2:
@@ -50,6 +56,7 @@ def getCellContent(x, y):
         return CELL_OBSTACLE
 
 def getObstacles():
+    """Returns the list of obstacles on the map"""
     global MAP_DAT
     obstacles = []
     for y in range(len(MAP_DAT)):
@@ -59,6 +66,7 @@ def getObstacles():
     return obstacles
 
 def getLineOfSight(pos, pos2):
+    """Returns 1 if there are a line of sight between pos1 and pos2"""
     obstacles = getObstacles()      
     if pos2[0] != pos[0]:
         for obstacle in obstacles:
@@ -83,9 +91,11 @@ def getLineOfSight(pos, pos2):
     return 1
     
 def getDistance(pos, pos2):
+    """Returns the Manhattan distance between pos1 and pos2"""
     return abs(pos[0]-pos2[0])+abs(pos[1]-pos2[1])
 
 def getPath(start, end):
+    """Returns a path between start and end, if it exists"""
     openList = [start]
     nodes = {str(start) : ['',0]} # nodes['[x, y]'] = [parent, distance from the start]
     closedList = []
@@ -126,14 +136,18 @@ def getPath(start, end):
 
 
 # ACTION FUNCTIONS
+
 def moveOn(x, y):
+    """Move your player closer to a cell [x, y]"""
     actions.append(['[MOVE]', x, y])
     return 1
 
 def mark(x, y, color):
+    """Marks the cell [x, y] with the color in parameter"""
     actions.append(['[MARK]', x, y, color])
     return 1
 
 def attackOn(x, y):
+    """Attack with the current weapon on the cell [x, y]"""
     actions.append(['[ATTACK]', x, y])
     return 1
