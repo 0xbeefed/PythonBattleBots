@@ -125,11 +125,6 @@ class Coordinator():
                         
                         if distance <= 5 and self.players[self.game['whoPlays']]['tp'] >= 4: # 5 is max range of the weapon, 4 is the cost of attack
                             # CHECK LOS
-                            obstacles = []
-                            for y1 in range(len(self.map)):
-                                for x1 in range(len(self.map[0])):
-                                    if self.map[y1][x1] != -1:
-                                        obstacles.append([x1, y1])
 
                             pos = [self.players[self.game['whoPlays']]['x'], self.players[self.game['whoPlays']]['y']]
                             pos2 = [x, y]
