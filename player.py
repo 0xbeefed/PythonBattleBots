@@ -3,6 +3,7 @@ import time
 import sys
 import json
 from threading import Thread
+import users.lib
 
 class replayThread(Thread):
 
@@ -15,8 +16,9 @@ class replayThread(Thread):
 
         self.players = json.loads(self.replay[0])
         root.title(' vs '.join([i['pseudo'] for i in self.players]))
-        self.map = json.loads(self.replay[1])
-        self.replay = self.replay[2:]
+        self.weapons = json.loads(self.replay[1])
+        self.map = json.loads(self.replay[2])
+        self.replay = self.replay[3:]
         self.game = {'width': len(self.map), 'height': len(self.map[0]), 'cellSize': 32}
         self.fightLog = []
         gameCanvas.config(height = self.game['width']*self.game['cellSize'], width = self.game['height']*self.game['cellSize'])
@@ -106,9 +108,9 @@ class replayThread(Thread):
                 elif action[0] == '[ATTACK]':
                     x = int(action[1])
                     y = int(action[2])
-                    
+                    weapon = self.players[self.game['whoPlays']]['currentWeapon']
                     self.fightLog.append(self.players[self.game['whoPlays']]['pseudo'] + ' attaque sur [' + str(x) + ', ' + str(y) + ']')
-
+                    
                     target = -1
                     for i in range(len(self.players)):
                         if self.players[i]['x'] == x and self.players[i]['y'] == y:
@@ -116,8 +118,8 @@ class replayThread(Thread):
                             break
 
                     if (target != -1):
-                        self.fightLog.append(self.players[target]['pseudo'] + ' perd 10HP')
-                        self.players[target]['hp'] = max(self.players[target]['hp'] - 10, 0)
+                        self.fightLog.append(self.players[target]['pseudo'] + ' perd ' + str(self.weapons[weapon]['damage']) + 'HP')
+                        self.players[target]['hp'] = max(self.players[target]['hp'] - self.weapons[weapon]['damage'], 0)
                         gameCanvas.coords(self.players[target]['hpBar'][0], self.players[target]['x']*self.game['cellSize'], (self.players[target]['y']-0.15)*self.game['cellSize'], (self.players[target]['x']+1)*self.game['cellSize'], self.players[target]['y']*self.game['cellSize'])
                         gameCanvas.coords(self.players[target]['hpBar'][1], self.players[target]['x']*self.game['cellSize'], (self.players[target]['y']-0.15)*self.game['cellSize'], ((self.players[target]['x']+(self.players[target]['hp']/self.players[target]['maxHp']))*self.game['cellSize']), self.players[target]['y']*self.game['cellSize'])
                         root.update()
@@ -140,7 +142,13 @@ class replayThread(Thread):
                     self.fightLog.append('Tour ' + str(self.game['turn']))
                     root.update()
                     time.sleep(0.15)
+                    
+                elif action[0] == '[SET_WEAPON]':
+                    self.players[self.game['whoPlays']]['currentWeapon'] = int(action[1])
+                    self.fightLog.append(self.players[self.game['whoPlays']]['pseudo'] + ' equipe l\'arme ' + action[2])
+                    root.update()
 
+                    
                 if len(self.fightLog) > (self.game['height']*self.game['cellSize'])/20:
                     del self.fightLog[0]
                 logLabel['text'] = '\n'.join(self.fightLog)

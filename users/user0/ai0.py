@@ -6,13 +6,13 @@ import lib
 
 def main():
     # Variables
-
+    lib.setWeapon(lib.WEAPON_SWORD)
     print('toast')
     mId = lib.getMyId()
     pos = lib.getCell(mId)
     enemy = lib.getEnemyId()
     enemyPos = lib.getCell(enemy)
-
+    
     
     for x in range(lib.getMapWidth()):
         for y in range(lib.getMapHeight()):
@@ -21,13 +21,13 @@ def main():
                 lib.mark(x, y, 'yellow')
             else:
                 lib.mark(x,y,'red')
-    """          
+              
     path = lib.getPath(pos, enemyPos)
 
     if path != -1:
         for move in path:
-            lib.mark(move[0], move[1], 'black')
+            #lib.mark(move[0], move[1], 'black')
             lib.moveOn(move[0], move[1])
-        lib.attackOn(enemyPos[0], enemyPos[1])"""
+        lib.attackOn(enemyPos[0], enemyPos[1])
             
 

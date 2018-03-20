@@ -7,12 +7,17 @@ actions = []
 GAME_DAT = []
 PLAYERS_DAT = []
 MAP_DAT = []
+WEAPONS = []
 
 
 # GLOBALS
 CELL_EMPTY = -1
 CELL_OBSTACLE = -2
 CELL_PLAYER = 1
+
+# WEAPONS
+WEAPON_SIMPLE_GUN = 0
+WEAPON_SWORD = 1
 
 
 # INFO FUNCTIONS
@@ -149,4 +154,9 @@ def mark(x, y, color):
 def attackOn(x, y):
     """Attack with the current weapon on the cell [x, y]"""
     actions.append(['[ATTACK]', x, y])
+    return 1
+
+def setWeapon(weaponID):
+    global WEAPONS
+    actions.append(['[SET_WEAPON]', weaponID, WEAPONS[weaponID]['name']])
     return 1

@@ -13,6 +13,8 @@ def moveMap(center, mp):
     return moveMap 
 
 def main():
+
+    lib.setWeapon(lib.WEAPON_SIMPLE_GUN)
     selfId = lib.getMyId()
     selfPos = lib.getCell(selfId)
     selfMp = 3

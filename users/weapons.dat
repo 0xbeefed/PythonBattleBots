@@ -1,0 +1,1 @@
+[{"name" : "SimpleGun", "maxRange" : 5, "damage" : 10, "cost" : 4}, {"name" : "Sword", "maxRange" : 1, "damage" : 20, "cost" : 5}]
