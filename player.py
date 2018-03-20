@@ -41,6 +41,9 @@ class replayThread(Thread):
                 if self.map[y][x] == -2:
                     obs = gameCanvas.create_rectangle(x*self.game['cellSize'],y*self.game['cellSize'], (x+1)*self.game['cellSize'], (y+1)*self.game['cellSize'], fill='black')
                     gameCanvas.tag_lower(obs)
+                elif self.map[y][x] == -3:
+                    lav = gameCanvas.create_rectangle(x*self.game['cellSize'],y*self.game['cellSize'], (x+1)*self.game['cellSize'], (y+1)*self.game['cellSize'], fill='red')
+                    gameCanvas.tag_lower(lav)
                     
         # Players
         for i in range(len(self.players)):

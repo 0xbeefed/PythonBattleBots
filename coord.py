@@ -60,13 +60,21 @@ class Coordinator():
         for player in self.players:
             self.map[player['y']][player['x']] = player['id']
         placedObstacles = 0
-        obstaclesToPlace = 40
+        obstaclesToPlace = 20
         while placedObstacles < obstaclesToPlace:
             y = randint(0, len(self.map)-1)
             x = randint(0, len(self.map[y])-1)
             if (self.map[y][x] == -1):
                 placedObstacles += 1
                 self.map[y][x] = -2
+        placedLavaHole = 0
+        lavaHoleToPlace = 20
+        while placedLavaHole < lavaHoleToPlace:
+            y = randint(0, len(self.map)-1)
+            x = randint(0, len(self.map[y])-1)
+            if (self.map[y][x] == -1):
+                placedLavaHole += 1
+                self.map[y][x] = -3
                 
         self.history.append(json.dumps(self.map))
 

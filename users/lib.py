@@ -13,6 +13,7 @@ WEAPONS = []
 # GLOBALS
 CELL_EMPTY = -1
 CELL_OBSTACLE = -2
+LAVA_HOLE = -3
 CELL_PLAYER = 1
 
 # WEAPONS
@@ -50,7 +51,9 @@ def getCellContent(x, y):
     """Returns the contents of the cell [x, y]"""
     global MAP_DAT
     if y >= 0 and x >= 0 and y < len(MAP_DAT) and x < len(MAP_DAT[y]):
-        if MAP_DAT[y][x] == -2:
+        if MAP_DAT[y][x] == -3:
+            return LAVA_HOLE
+        elif MAP_DAT[y][x] == -2:
             return CELL_OBSTACLE
         elif MAP_DAT[y][x] == -1:
             return CELL_EMPTY
@@ -120,7 +123,7 @@ def getPath(start, end):
         for a,b in [[0,1], [0,-1], [1,0], [-1,0]]:
             X = current[0] + a
             Y = current[1] + b
-            if getCellContent(X, Y) == CELL_OBSTACLE or [X,Y] in closedList:
+            if getCellContent(X, Y) == CELL_OBSTACLE or getCellContent(X, Y) == LAVA_HOLE or [X,Y] in closedList:
                 continue
             elif not [X,Y] in openList:
                 openList.append([X,Y])
