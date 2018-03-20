@@ -48,7 +48,7 @@ def astar(start, end):
     return path
 
 def main():
-    mId = lib.myId()
+    mId = lib.getMyId()
     pos = lib.getCell(mId)
 
     enemyCell = lib.getCell(lib.getEnemyId())

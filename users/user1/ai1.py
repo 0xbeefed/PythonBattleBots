@@ -13,7 +13,7 @@ def moveMap(center, mp):
     return moveMap 
 
 def main():
-    selfId = lib.myId()
+    selfId = lib.getMyId()
     selfPos = lib.getCell(selfId)
     selfMp = 3
 

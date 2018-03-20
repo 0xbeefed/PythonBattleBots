@@ -4,7 +4,6 @@ import json
 global actions
 
 actions = []
-mapData = []
 GAME_DAT = []
 PLAYERS_DAT = []
 MAP_DAT = []
@@ -17,7 +16,7 @@ CELL_PLAYER = 1
 
 
 # INFO FUNCTIONS
-def myId():
+def getMyId():
     """Returns the id of your player"""
     global GAME_DAT
     return GAME_DAT['whoPlays']
@@ -26,7 +25,7 @@ def getEnemyId():
     """Returns the id of your opponent"""
     global PLAYERS_DAT
     for player in PLAYERS_DAT:
-        if player['id'] != myId():
+        if player['id'] != getMyId():
             return player['id']
 
 def getMapWidth():
