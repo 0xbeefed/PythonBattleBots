@@ -3,7 +3,6 @@ import time
 import sys
 import json
 from threading import Thread
-import users.lib
 
 class replayThread(Thread):
 
