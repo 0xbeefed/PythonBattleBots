@@ -97,6 +97,9 @@ class Coordinator():
                 self.players[self.game['whoPlays']]['tp'] = self.players[self.game['whoPlays']]['maxTp']
 
                 # LAUNCH
+                users.lib.MAP_DAT = self.map.copy()
+                users.lib.GAME_DAT = self.game.copy()
+                users.lib.PLAYERS_DAT = self.players.copy()
                 self.players[self.game['whoPlays']]['ai'].lib.MAP_DAT = self.map.copy()
                 self.players[self.game['whoPlays']]['ai'].lib.GAME_DAT = self.game.copy()
                 self.players[self.game['whoPlays']]['ai'].lib.PLAYERS_DAT = self.players.copy()
@@ -127,6 +130,7 @@ class Coordinator():
                             self.map[y][x] = self.game['whoPlays']
                             self.players[self.game['whoPlays']]['mp'] -= 1
                             self.history.append(' '.join([str(a) for a in action]))
+                            users.lib.MAP_DAT = self.map.copy()
 
                     elif len(action) and action[0] == '[MARK]':
                         self.history.append(' '.join([str(a) for a in action]))
@@ -146,6 +150,7 @@ class Coordinator():
                             
                             pos = [self.players[self.game['whoPlays']]['x'], self.players[self.game['whoPlays']]['y']]
                             pos2 = [x, y]
+    
                             los = users.lib.getLineOfSight(pos, pos2)
                             if los:
                                 for i in range(len(self.players)):
@@ -155,6 +160,7 @@ class Coordinator():
                                         self.history.append(' '.join([str(a) for a in action]))
                                         if (self.players[i]['hp'] <= 0):
                                             self.history.append('[DEATH] ' + str(self.players[i]['id']))
+                                users.lib.PLAYERS_DAT = self.players.copy()
 
                     elif len(action) and action[0] == '[SET_WEAPON]':
                         if self.players[self.game['whoPlays']]['tp'] >= 1 and self.players[self.game['whoPlays']]['currentWeapon'] != action[1]:

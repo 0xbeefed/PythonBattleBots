@@ -3,7 +3,7 @@ sys.path.append(sys.path[0] + "/users/")
 import lib
 
 def moveMap(center, mp):
-    moveMap = []
+    moveMap = [center]
     for y in range(lib.getMapHeight()):
         for x in range(lib.getMapWidth()):
             if lib.getDistance([x, y], center) < mp + 1 and lib.getCellContent(x, y) == lib.CELL_EMPTY:
