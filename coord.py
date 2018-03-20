@@ -35,15 +35,12 @@ class Coordinator():
         exec("from users.user{0} import ai{1} as u2".format(pId2, pId2), globals())
         self.players[1]['ai'] = u2
 
-        # DATA WEAPONS #
-        with open('users/weapons.dat') as file:
-            self.weapons = json.loads(file.read())
-        self.history.append(json.dumps(self.weapons))
-        
         self.globals = {}
         with open('globals.dat', 'r') as file:
-            self.globals = json.loads(file.read())
-        
+            self.globals = file.read().split('\n')
+        self.history.append(self.globals[1])
+        self.weapons = json.loads(self.globals[1])
+        self.globals = json.loads(self.globals[0])
 
         # GAME TREE #
         self.game['id'] = self.globals['gamesCount']
@@ -54,6 +51,8 @@ class Coordinator():
         self.globals['gamesCount'] += 1
         with open('globals.dat', 'w+') as file:
             file.write(json.dumps(self.globals))
+            file.write('\n')
+            file.write(json.dumps(self.weapons))
         print('Created game id ' + str(self.game['id']))
 
         # GENERATING MAP #
