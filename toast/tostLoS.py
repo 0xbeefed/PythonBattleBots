@@ -6,23 +6,26 @@ root = Tk()
 
 def lineOfSight(start, end, dm):
     if start[1] > end[1]:
+        print('CHANGE POS')
         lineOfSight(end, start, dm)
     elif start[0] == end[0]:
         print('SAME X COORD')
-        """
+        print(start)
         pos = start
-        tab = [start]
-        
+        tab = [start.copy()]
         while pos != end:
-            print(pos, end)
-            pos[1] += pos[1]+dm
-            tab.append(pos)
+            pos[1] = pos[1]+dm
+            if (pos[0]-20)%40 == 0 and (pos[1]-20)%40 == 0:
+                tab.append(pos.copy())
+            
         print(tab)
+        
         for i in range(len(tab)):
             cell = tab[i]
             tab[i] = toastCanvas.create_rectangle(cell[0]-20, cell[1]-20, cell[0]+20, cell[1]+20, fill = 'blue')
             toastCanvas.tag_lower(tab[i])
-            root.update()"""
+            root.update()
+            
     elif start[1] == end[1]:
         print('same Y coord')
     else:
@@ -73,7 +76,6 @@ def lineOfSight(start, end, dm):
             lines.append(toastCanvas.create_line(tmpH[0], tmpH[1], posH[0], posH[1], fill = 'red'))
             lines.append(toastCanvas.create_line(tmpB[0], tmpB[1], posB[0], posB[1], fill = 'green'))
             root.update()
-            #time.sleep(2)
 
         print(tab)
         for i in range(len(tab)):
@@ -98,6 +100,7 @@ def create_lines():
     refreshMap()
     pos1 = [random.randint(0,15), random.randint(0,15)]
     pos2 = pos1
+
     while pos2 == pos1:
         pos2 = [random.randint(0,15), random.randint(0,15)]
 
