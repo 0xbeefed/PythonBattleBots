@@ -151,7 +151,10 @@ def moveOn(pos):
 
 def mark(pos, color):
     """Marks the cell [x, y] with the color in parameter"""
-    actions.append(['[MARK]', pos[0], pos[1], color])
+    if type(pos[0]) == type(int()):
+        actions.append(['[MARK]', [pos], color])
+    else:
+        actions.append(['[MARK]', pos, color])
     return 1
 
 def attackOn(pos):

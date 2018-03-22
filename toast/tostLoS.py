@@ -1,6 +1,5 @@
 from tkinter import *
 import random
-import time
 
 root = Tk()
 
@@ -115,8 +114,6 @@ def create_lines():
     toastCanvas.create_line(pos1[0], pos1[1], pos2[0], pos2[1])
     lineOfSight(pos1, pos2, CELL_SIZE//2)
     startButton.config(state = NORMAL)
-
-
 
 toastCanvas = Canvas(root, width = 16*CELL_SIZE, height = 16*CELL_SIZE, bg = 'white')
 toastCanvas.pack()

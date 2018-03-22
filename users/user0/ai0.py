@@ -12,16 +12,20 @@ def main():
     pos = lib.getCell(mId)
     enemy = lib.getEnemyId()
     enemyPos = lib.getCell(enemy)
-    
-    
+
+    tabToMarkY = []
+    tabToMarkR = []
     for x in range(lib.getMapWidth()):
         for y in range(lib.getMapHeight()):
             #print('ia1', x,y)
             if lib.getLineOfSight(pos, [x,y]):
-                lib.mark([x, y], 'yellow')
+                tabToMarkY.append([x,y])
             else:
-                lib.mark([x,y],'red')
-              
+                tabToMarkR.append([x,y])
+
+    lib.mark(tabToMarkY, 'yellow')
+    lib.mark(tabToMarkR, 'red')
+    
     path = lib.getPath(pos, enemyPos)
 
     if path != -1:

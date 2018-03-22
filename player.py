@@ -101,12 +101,15 @@ class replayThread(Thread):
                     time.sleep(0.12)
 
                 elif action[0] == '[MARK]':
-                    x = int(action[1])
-                    y = int(action[2])
-                    color = action[3]
-                    marks.append(gameCanvas.create_rectangle(x*self.game['cellSize'],y*self.game['cellSize'], (x+1)*self.game['cellSize'], (y+1)*self.game['cellSize'], fill=color, stipple='gray50'))
-                    gameCanvas.tag_lower(marks[len(marks) - 1])
-                    root.update()
+                    cellsToMark = json.loads(''.join(action[1:-1]))
+                    color = action[-1]
+                    for cell in cellsToMark:
+                        x = int(cell[0])
+                        y = int(cell[1])
+                        #color = action[3]
+                        marks.append(gameCanvas.create_rectangle(x*self.game['cellSize'],y*self.game['cellSize'], (x+1)*self.game['cellSize'], (y+1)*self.game['cellSize'], fill=color, stipple='gray50'))
+                        gameCanvas.tag_lower(marks[len(marks) - 1])
+                        root.update()
 
                 elif action[0] == '[ATTACK]':
                     x = int(action[1])

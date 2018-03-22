@@ -6,6 +6,7 @@ def moveMap(center, mp):
     moveMap = [center]
     for y in range(lib.getMapHeight()):
         for x in range(lib.getMapWidth()):
+            print(x,y)
             if lib.getDistance([x, y], center) < mp + 1 and lib.getCellContent([x, y]) == lib.CELL_EMPTY:
                 path = lib.getPath([x, y], center)
                 if path != -1 and len(path) <= mp:
@@ -13,7 +14,7 @@ def moveMap(center, mp):
     return moveMap 
 
 def main():
-    
+    print('---USER 1---')
     lib.setWeapon(lib.WEAPON_SIMPLE_GUN)
     selfId = lib.getMyId()
     selfPos = lib.getCell(selfId)
@@ -28,13 +29,14 @@ def main():
     # Movemap
     selfMoveMap = moveMap(selfPos, selfMp)
     #for cell in selfMoveMap:
-    #    lib.mark(cell[0], cell[1], 'green')
-
+    #    lib.mark(cell, 'green')
+    print('TOUTVABIEN')
     enemyMoveMap = moveMap(enemyPos, 3)
     #for cell in enemyMoveMap:
-    #    lib.mark(cell[0], cell[1], 'red')
+    #    lib.mark(cell, 'red')
 
     # Find safe cell / attack cell
+    
     canHit = False
     bestMove = [[], -1]
     for simulated in selfMoveMap:
