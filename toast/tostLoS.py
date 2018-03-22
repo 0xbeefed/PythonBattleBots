@@ -1,5 +1,6 @@
 from tkinter import *
 import random
+import time
 
 root = Tk()
 
@@ -96,6 +97,7 @@ def refreshMap():
         toastCanvas.create_line(x*CELL_SIZE, 0, x*CELL_SIZE, 16*CELL_SIZE)
 
 def create_lines():
+    startButton.config(state = DISABLED)
     global CELL_SIZE
     refreshMap()
     pos1 = [random.randint(0,15), random.randint(0,15)]
@@ -112,6 +114,7 @@ def create_lines():
 
     toastCanvas.create_line(pos1[0], pos1[1], pos2[0], pos2[1])
     lineOfSight(pos1, pos2, CELL_SIZE//2)
+    startButton.config(state = NORMAL)
 
 
 
