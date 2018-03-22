@@ -8,6 +8,7 @@ from random import randint
 import math
 import sys
 import users.lib
+import traceback
 
 fightInProgress = False
 turn = 1
@@ -110,7 +111,7 @@ class Coordinator():
                     self.players[self.game['whoPlays']]['ai'].main()
                 except:
                     print(self.players[self.game['whoPlays']]['pseudo'] + ': IA exit with non 0 statement')
-                    print(sys.exc_info()[0])
+                    print(traceback.print_exc())
                 result = self.players[self.game['whoPlays']]['ai'].lib.actions
                 
                 for action in result:

@@ -50,7 +50,7 @@ def getCell(entity):
 def getCellContent(pos):
     """Returns the contents of the cell [x, y]"""
     global MAP_DAT
-    if 0 <= pos[0] < len(MAP_DAT[pos[1]]) and 0 <= pos[1] < len(MAP_DAT):
+    if 0 <= pos[0] and pos[0] < getMapHeight() and 0 <= pos[1] and pos[1] < getMapWidth():
         if MAP_DAT[pos[1]][pos[0]] == -3:
             return LAVA_HOLE
         elif MAP_DAT[pos[1]][pos[0]] == -2:
