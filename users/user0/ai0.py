@@ -18,7 +18,7 @@ def main():
     for x in range(lib.getMapWidth()):
         for y in range(lib.getMapHeight()):
             #print('ia1', x,y)
-            if lib.getLineOfSight2(pos, [x,y]):
+            if lib.getLineOfSight(pos, [x,y]):
                 tabToMarkY.append([x,y])
             else:
                 tabToMarkR.append([x,y])
@@ -27,7 +27,7 @@ def main():
     lib.mark(tabToMarkR, 'red')
 
 
-    print('toast')#atom
+
     path = lib.getPath(pos, enemyPos)
 
     if path != -1:

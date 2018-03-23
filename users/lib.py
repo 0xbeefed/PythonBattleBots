@@ -80,12 +80,12 @@ def getLineOfSight2(start, end):
     start = [int(x) for x in start]
     tab = [start.copy()]
     pos = start
-    
+
     if start[0] == end[0]:
         while pos != end:
             pos[1] = pos[1]+1
             tab.append(pos.copy())
-            
+
     elif start[1] == end[1]:
         dm = 1
         if start[0] > end[0]:
@@ -104,7 +104,7 @@ def getLineOfSight2(start, end):
         if m < 0:
             m = (start[1]-end[1])/(start[0]-end[0])
             dx = -0.5
-        
+
         while posH != end:
             tmpH = posH
             xh = posH[0] + dx
@@ -113,25 +113,25 @@ def getLineOfSight2(start, end):
             tmpB = posB
             xb = posB[0]
             yb = posB[1] +dy
-            
+
             if round(m*xh+p, 2) <= yh:
                 posH = [xh, yh]
             else:
                 posH = [xh-dx, yh+dy]
-            
+
             if m*xb+p < yb:
                 posB = [xb+dx, yb-dy]
             else:
                 posB = [xb, yb]
-            
+
             if (posH[0]-0.5)%1 == 0 and (posH[1]-0.5)%1 == 0:
                 tab.append([int(x-0.5) for x in posH])
-                
+
             if (posB[0]-0.5)%1 == 0 and (posB[1]-0.5)%1 == 0:
                 tab.append([int(x-0.5) for x in posB])
         if start == [1,1]:
-            print(start, end, tab)
-                
+            #print(start, end, tab)
+
     for cell in tab:
         #print(cell)
         if getCellContent(cell) == CELL_OBSTACLE:
@@ -141,7 +141,7 @@ def getLineOfSight2(start, end):
 
 def getLineOfSight(pos, pos2):
     """Returns 1 if there are a line of sight between pos1 and pos2"""
-    obstacles = getObstacles()      
+    obstacles = getObstacles()
     if pos2[0] != pos[0]:
         for obstacle in obstacles:
             u = 0
@@ -161,9 +161,9 @@ def getLineOfSight(pos, pos2):
     else:
         for obstacle in obstacles:
             if obstacle[0] == pos2[0] and (min(pos[1], pos2[1]) < obstacle[1] < max(pos[1], pos2[1])):
-                return 0    
+                return 0
     return 1
-    
+
 def getDistance(pos, pos2):
     """Returns the Manhattan distance between pos1 and pos2"""
     return abs(pos[0]-pos2[0])+abs(pos[1]-pos2[1])
@@ -173,20 +173,20 @@ def getPath(start, end):
     openList = [start]
     nodes = {str(start) : ['',0]} # nodes['[x, y]'] = [parent, distance from the start]
     closedList = []
-    
+
     while len(openList) != 0:
-        
+
         current = openList[0]
         for tmp in openList:
             if nodes[str(tmp)][1] + getDistance(tmp, end) < nodes[str(current)][1] + getDistance(current, end):
                 current = tmp
-        
+
         if current == end:
             break
-        
+
         del openList[openList.index(current)]
         closedList.append(current)
-        
+
         for a,b in [[0,1], [0,-1], [1,0], [-1,0]]:
             X = current[0] + a
             Y = current[1] + b
@@ -197,10 +197,10 @@ def getPath(start, end):
                 nodes[str([X,Y])] = [current, nodes[str(current)][1] + 1]
             elif not str([X,Y]) in nodes or nodes[str([X,Y])][1] > nodes[str(current)][1] + 1:
                 nodes[str([X,Y])] = [current, nodes[str(current)][1] + 1]
-     
+
     if current != end: # if the path does not exist
-        return -1 
-    
+        return -1
+
     tmp = nodes[str(end)][0]
     path = [end]
     while tmp != start: # rewind the parents of the nodes to get the path

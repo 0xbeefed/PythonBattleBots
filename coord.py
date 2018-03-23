@@ -23,13 +23,13 @@ class Coordinator():
             user1Stat = json.loads(file.read())
         with open('users/user' + str(pId2) + '/stat.dat') as file:
             user2Stat = json.loads(file.read())
-            
+
         self.game = {'id': -1, 'maxTurns': 16, 'path':'', 'turn': 1, 'whoPlays': -1, 'width': 16, 'height': 16}
         self.players = [
             {'pseudo': user1Stat['pseudo'], 'color': 'blue', 'x': 1, 'y': 1, 'currentWeapon' : -1, 'maxMp': user1Stat['maxMp'], 'mp': user1Stat['maxMp'], 'id': 0, 'maxTp': user1Stat['maxTp'], 'tp': user1Stat['maxTp'], 'hp': user1Stat['maxHp'], 'maxHp': user1Stat['maxHp']},
             {'pseudo': user2Stat['pseudo'], 'color': 'red', 'x': self.game['width']-2, 'y': self.game['height']-2, 'currentWeapon' : -1, 'maxMp': user2Stat['maxMp'], 'mp': user2Stat['maxMp'], 'id': 1, 'maxTp': user2Stat['maxTp'], 'tp': user2Stat['maxTp'], 'hp': user2Stat['maxHp'], 'maxHp': user2Stat['maxHp']}
             ]
-                
+
         self.history.append(json.dumps(self.players))
         exec("from users.user{0} import ai{1} as u1".format(pId1, pId1), globals())
         self.players[0]['ai'] = u1
@@ -76,19 +76,19 @@ class Coordinator():
             if (self.map[y][x] == -1):
                 placedLavaHole += 1
                 self.map[y][x] = -3
-                
+
         self.history.append(json.dumps(self.map))
 
         # LAUNCH GAME #
         print('Generating turns')
         self.processGame()
-        
+
     def processGame(self):
         for t in range(self.game['maxTurns']):
             self.game['turn'] = t
             print('Generating turn ' + str(self.game['turn']) + ' / ' + str(self.game['maxTurns']-1))
             self.history.append('[TURN] ' + str(self.game['turn']))
-            
+
             for i in range(len(self.players)):
                 self.game['whoPlays'] = i
                 self.history.append('[WHOPLAYS] ' + str(self.game['whoPlays']))
@@ -106,14 +106,14 @@ class Coordinator():
                 self.players[self.game['whoPlays']]['ai'].lib.PLAYERS_DAT = self.players.copy()
                 self.players[self.game['whoPlays']]['ai'].lib.actions = []
                 self.players[self.game['whoPlays']]['ai'].lib.WEAPONS = self.weapons.copy()
-                
+
                 try:
                     self.players[self.game['whoPlays']]['ai'].main()
                 except:
                     print(self.players[self.game['whoPlays']]['pseudo'] + ': IA exit with non 0 statement')
                     print(traceback.print_exc())
                 result = self.players[self.game['whoPlays']]['ai'].lib.actions
-                
+
                 for action in result:
 
                     if len(action) and action[0] == '[MOVE]':
@@ -124,7 +124,7 @@ class Coordinator():
                             and x >= 0 and y >= 0 and y < len(self.map) and x < len(self.map[y])
                             and self.map[y][x] == -1
                             and self.players[self.game['whoPlays']]['mp'] >= 1):
-                            
+
                             self.map[self.players[self.game['whoPlays']]['y']][self.players[self.game['whoPlays']]['x']] = -1
                             self.players[self.game['whoPlays']]['x'] = x
                             self.players[self.game['whoPlays']]['y'] = y
@@ -135,23 +135,23 @@ class Coordinator():
 
                     elif len(action) and action[0] == '[MARK]':
                         self.history.append(' '.join([str(a) for a in action]))
-                        
+
                     elif len(action) and action[0] == '[ATTACK]' and self.players[self.game['whoPlays']]['currentWeapon'] != -1:
                         x = int(action[1])
                         y = int(action[2])
                         currentWeapon = self.players[self.game['whoPlays']]['currentWeapon']
-                        
+
                         distance = math.sqrt((self.players[self.game['whoPlays']]['x'] - x)**2 + (self.players[self.game['whoPlays']]['y'] - y)**2)
                         maxRange = self.weapons[currentWeapon]['maxRange']
                         cost = self.weapons[currentWeapon]['cost']
                         damage = self.weapons[currentWeapon]['damage']
 
-                        
+
                         if distance <= maxRange and self.players[self.game['whoPlays']]['tp'] >= cost: # 5 is max range of the weapon, 4 is the cost of attack
-                            
+
                             pos = [self.players[self.game['whoPlays']]['x'], self.players[self.game['whoPlays']]['y']]
                             pos2 = [x, y]
-    
+
                             los = users.lib.getLineOfSight(pos, pos2)
                             if los:
                                 for i in range(len(self.players)):
@@ -174,6 +174,6 @@ class Coordinator():
         with open(self.game['path'] + 'replay.dat', 'w') as file:
             file.write('\n'.join(self.history))
         subprocess.run(['python', 'player.py', self.game['path'] + 'replay.dat'], stdout=subprocess.PIPE)# Play replay
-                
+
 
 Coordinator(0, 1)
