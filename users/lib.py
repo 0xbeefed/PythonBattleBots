@@ -72,6 +72,73 @@ def getObstacles():
                 obstacles.append([x,y])
     return obstacles
 
+def getLineOfSight2(start, end):
+    global CELL_OBSTACLE
+    if start[1] > end[1]:
+        return getLineOfSight2(end, start)
+
+    start = [int(x) for x in start]
+    tab = [start.copy()]
+    pos = start
+    
+    if start[0] == end[0]:
+        while pos != end:
+            pos[1] = pos[1]+1
+            tab.append(pos.copy())
+            
+    elif start[1] == end[1]:
+        dm = 1
+        if start[0] > end[0]:
+            dm = -dm
+        while pos != end:
+            pos[0] = pos[0]+dm
+            tab.append(pos.copy())
+    else:
+        m = (end[1]-start[1])/(end[0]-start[0])
+        p = start[1] - m * start[0]
+        posH = start
+        posB = start
+        dx = 0.5
+        dy = 0.5
+
+        if m < 0:
+            m = (start[1]-end[1])/(start[0]-end[0])
+            dx = -0.5
+        
+        while posH != end:
+            tmpH = posH
+            xh = posH[0] + dx
+            yh = posH[1]
+
+            tmpB = posB
+            xb = posB[0]
+            yb = posB[1] +dy
+            
+            if round(m*xh+p, 2) <= yh:
+                posH = [xh, yh]
+            else:
+                posH = [xh-dx, yh+dy]
+            
+            if m*xb+p < yb:
+                posB = [xb+dx, yb-dy]
+            else:
+                posB = [xb, yb]
+            
+            if (posH[0]-0.5)%1 == 0 and (posH[1]-0.5)%1 == 0:
+                tab.append([int(x-0.5) for x in posH])
+                
+            if (posB[0]-0.5)%1 == 0 and (posB[1]-0.5)%1 == 0:
+                tab.append([int(x-0.5) for x in posB])
+        if start == [1,1]:
+            print(start, end, tab)
+                
+    for cell in tab:
+        #print(cell)
+        if getCellContent(cell) == CELL_OBSTACLE:
+            return 0
+    return 1
+
+
 def getLineOfSight(pos, pos2):
     """Returns 1 if there are a line of sight between pos1 and pos2"""
     obstacles = getObstacles()      
