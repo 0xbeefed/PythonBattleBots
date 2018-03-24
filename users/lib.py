@@ -77,7 +77,7 @@ def getLineOfSight2(start, end):
     if start[1] > end[1]:
         return getLineOfSight2(end, start)
 
-    start = [int(x) for x in start]
+    start = [int(x + 0.5) for x in start]
     tab = [start.copy()]
     pos = start
 
@@ -129,11 +129,8 @@ def getLineOfSight2(start, end):
 
             if (posB[0]-0.5)%1 == 0 and (posB[1]-0.5)%1 == 0:
                 tab.append([int(x-0.5) for x in posB])
-        #if start == [1,1]:
-            #print(start, end, tab)
 
     for cell in tab:
-        #print(cell)
         if getCellContent(cell) == CELL_OBSTACLE:
             return 0
     return 1
