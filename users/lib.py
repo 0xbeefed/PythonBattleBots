@@ -205,6 +205,24 @@ def getPath(start, end):
         tmp = nodes[str(tmp)][0]
     return path[::-1]
 
+def getMp(player):
+    global PLAYERS_DAT
+    return PLAYERS_DAT[player]['mp']
+
+
+def getTp(player):
+    global PLAYERS_DAT
+    return PLAYERS_DAT[player]['tp']
+
+
+def getHp(player):
+    global PLAYERS_DAT
+    return PLAYERS_DAT[player]['hp']
+
+
+def getMaxHp(player):
+    global PLAYERS_DAT
+    return PLAYERS_DAT[player]['getMaxHp']
 
 # ACTION FUNCTIONS
 
