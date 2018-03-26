@@ -77,14 +77,15 @@ def getLineOfSight2(start, end):
     if start[1] > end[1]:
         return getLineOfSight2(end, start)
 
-    start = [int(x + 0.5) for x in start]
+    start = [x + 0.5 for x in start]
+    end = [x + 0.5 for x in end]
     tab = [start.copy()]
     pos = start
 
     if start[0] == end[0]:
         while pos != end:
             pos[1] = pos[1]+1
-            tab.append(pos.copy())
+            tab.append([x - 0.5 for x in pos])
 
     elif start[1] == end[1]:
         dm = 1
@@ -92,7 +93,7 @@ def getLineOfSight2(start, end):
             dm = -dm
         while pos != end:
             pos[0] = pos[0]+dm
-            tab.append(pos.copy())
+            tab.append([x-0.5 for x in pos])
     else:
         m = (end[1]-start[1])/(end[0]-start[0])
         p = start[1] - m * start[0]
@@ -224,6 +225,9 @@ def getMaxHp(player):
     global PLAYERS_DAT
     return PLAYERS_DAT[player]['getMaxHp']
 
+def getWeaponEffects(weaponID):
+    global WEAPONS
+    return WEAPONS[weaponID]
 # ACTION FUNCTIONS
 
 def moveOn(pos):

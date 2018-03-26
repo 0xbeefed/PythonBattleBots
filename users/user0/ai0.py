@@ -8,6 +8,8 @@ def main():
     # Variables
     lib.setWeapon(lib.WEAPON_SWORD)
     print('toast')
+    print(lib.getWeaponEffects(lib.WEAPON_SWORD))
+    print(lib.getWeaponEffects(lib.WEAPON_SIMPLE_GUN))
     mId = lib.getMyId()
     pos = lib.getCell(mId)
     enemy = lib.getEnemyId()
