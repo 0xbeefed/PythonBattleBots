@@ -70,6 +70,7 @@ class replayThread(Thread):
             self.game['whoPlays'] = 0
             self.game['turn'] = 0
             marks = []
+            countAlivePlayers = len(self.players)
             for action in self.replay:
                 while not playing:
                     continue
@@ -152,11 +153,20 @@ class replayThread(Thread):
                     self.players[self.game['whoPlays']]['currentWeapon'] = int(action[1])
                     self.fightLog.append(self.players[self.game['whoPlays']]['pseudo'] + ' equipe l\'arme ' + action[2])
                     root.update()
-
-
+                    
+                elif action[0] == '[DEATH]':
+                    self.fightLog.append(self.players[int(action[1])]['pseudo'] + ' est mort.')
+                    countAlivePlayers -= 1
+                    if countAlivePlayers <= 1:
+                        self.fightLog.append('Fin de la partie.')
+                
                 if len(self.fightLog) > (self.game['height']*self.game['cellSize'])/20:
                     del self.fightLog[0]
                 logLabel['text'] = '\n'.join(self.fightLog)
+                
+                if countAlivePlayers <= 1:
+                    break
+                
             togglePlaying()
 
 
