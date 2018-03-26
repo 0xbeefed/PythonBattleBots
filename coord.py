@@ -84,6 +84,7 @@ class Coordinator():
         self.processGame()
 
     def processGame(self):
+        countAlivePlayers = len(self.players)
         for t in range(self.game['maxTurns']):
             self.game['turn'] = t
             print('Generating turn ' + str(self.game['turn']) + ' / ' + str(self.game['maxTurns']-1))
@@ -161,6 +162,7 @@ class Coordinator():
                                         self.history.append(' '.join([str(a) for a in action]))
                                         if (self.players[i]['hp'] <= 0):
                                             self.history.append('[DEATH] ' + str(self.players[i]['id']))
+                                            countAlivePlayers -= 1
                                 users.lib.PLAYERS_DAT = self.players.copy()
 
                     elif len(action) and action[0] == '[SET_WEAPON]':
@@ -168,6 +170,11 @@ class Coordinator():
                             self.players[self.game['whoPlays']]['currentWeapon'] = action[1]
                             self.players[self.game['whoPlays']]['tp'] -= 1
                             self.history.append(' '.join([str(a) for a in action]))
+
+            if countAlivePlayers <= 1:
+                print("End of the game")
+                self.history.append('[END]')
+                break
 
 
         # Save replay:
