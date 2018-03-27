@@ -200,7 +200,7 @@ def getHp(player):
 
 def getMaxHp(player):
     global PLAYERS_DAT
-    return PLAYERS_DAT[player]['getMaxHp']
+    return PLAYERS_DAT[player]['maxHp']
 
 def getWeaponEffects(weaponID):
     global WEAPONS
@@ -228,4 +228,8 @@ def attackOn(pos):
 def setWeapon(weaponID):
     global WEAPONS
     actions.append(['[SET_WEAPON]', weaponID, WEAPONS[weaponID]['name']])
+    return 1
+
+def useHeal(pos):
+    actions.append(['[HEAL]', pos[0], pos[1]])
     return 1

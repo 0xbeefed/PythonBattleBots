@@ -39,7 +39,9 @@ class Coordinator():
         self.globals = {}
         with open('globals.dat', 'r') as file:
             self.globals = file.read().split('\n')
+            print(self.globals)
         self.history.append(self.globals[1])
+        self.spells = json.loads(self.globals[2])
         self.weapons = json.loads(self.globals[1])
         self.globals = json.loads(self.globals[0])
 
@@ -54,6 +56,8 @@ class Coordinator():
             file.write(json.dumps(self.globals))
             file.write('\n')
             file.write(json.dumps(self.weapons))
+            file.write('\n')
+            file.write(json.dumps(self.spells))
         print('Created game id ' + str(self.game['id']))
 
         # GENERATING MAP #
@@ -171,11 +175,19 @@ class Coordinator():
                             self.players[self.game['whoPlays']]['tp'] -= 1
                             self.history.append(' '.join([str(a) for a in action]))
 
+                    elif len(action) and action[0] == '[HEAL]':
+                        if self.players[self.game['whoPlays']]['tp'] >= 4:
+                            self.players[self.game['whoPlays']]['hp'] = min(self.players[self.game['whoPlays']]['hp'] + 8, self.players[self.game['whoPlays']]['maxHp'])
+                            self.players[self.game['whoPlays']]['tp'] -= 4
+                            self.history.append(' '.join([str(a) for a in action]))
+
             if countAlivePlayers <= 1:
                 print("End of the game")
                 self.history.append('[END]')
                 break
-
+        if countAlivePlayers > 1:
+            print("End of the game")
+            self.history.append('[END]')
 
         # Save replay:
         with open(self.game['path'] + 'replay.dat', 'w') as file:

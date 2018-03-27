@@ -152,6 +152,13 @@ class replayThread(Thread):
                     self.players[self.game['whoPlays']]['currentWeapon'] = int(action[1])
                     self.fightLog.append(self.players[self.game['whoPlays']]['pseudo'] + ' equipe l\'arme ' + action[2])
                     root.update()
+
+                elif action[0] == '[HEAL]':
+                    self.players[self.game['whoPlays']]['hp'] = min(self.players[self.game['whoPlays']]['hp']+8, self.players[self.game['whoPlays']]['maxHp'])
+                    self.fightLog.append(self.players[self.game['whoPlays']]['pseudo'] + ' remonte à ' + str(self.players[self.game['whoPlays']]['hp']) + 'HP')
+                    gameCanvas.coords(self.players[self.game['whoPlays']]['hpBar'][0], self.players[self.game['whoPlays']]['x']*self.game['cellSize'], (self.players[self.game['whoPlays']]['y']-0.15)*self.game['cellSize'], (self.players[self.game['whoPlays']]['x']+1)*self.game['cellSize'], self.players[self.game['whoPlays']]['y']*self.game['cellSize'])
+                    gameCanvas.coords(self.players[self.game['whoPlays']]['hpBar'][1], self.players[self.game['whoPlays']]['x']*self.game['cellSize'], (self.players[self.game['whoPlays']]['y']-0.15)*self.game['cellSize'], ((self.players[self.game['whoPlays']]['x']+(self.players[self.game['whoPlays']]['hp']/self.players[self.game['whoPlays']]['maxHp']))*self.game['cellSize']), self.players[self.game['whoPlays']]['y']*self.game['cellSize'])
+                    root.update()
                     
                 elif action[0] == '[DEATH]':
                     self.fightLog.append(self.players[int(action[1])]['pseudo'] + ' est mort.')                        
