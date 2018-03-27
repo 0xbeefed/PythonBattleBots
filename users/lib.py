@@ -78,7 +78,7 @@ def getLineOfSight(start, end):
     if start == end:
         return 1
     if start[1] > end[1]:
-        return getLineOfSight2(end, start)
+        return getLineOfSight(end, start)
 
     tab = [start.copy()]
     start = [x + 0.5 for x in start]
