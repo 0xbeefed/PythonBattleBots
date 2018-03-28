@@ -232,7 +232,7 @@ hudFramePlayer2.grid(row = 0, column = 1)
 hudPseudoPlayer2 = Label(hudFramePlayer2, text = 'user0')
 hudPseudoPlayer2.grid(row = 0, column=0)
 hudCanvasPlayer2 = Canvas(hudFramePlayer2, width = 150, height = 150)
-hudCanvasPlayer2.grid(row = 1, column = 0)s
+hudCanvasPlayer2.grid(row = 1, column = 0)
 hudLabelPlayer2HP = Label(hudFramePlayer2, text = 'HP : ')
 hudLabelPlayer2HP.grid(row = 2, column=0)
 hudLabelPlayer2Weapon = Label(hudFramePlayer2, text = 'Arme actuelle : ')
