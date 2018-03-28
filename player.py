@@ -63,8 +63,6 @@ class replayThread(Thread):
                                                                    text=self.players[i]['pseudo'][:5],
                                                                    anchor='center',
                                                                    fill='white')
-            #hud.append([hudPseudoPlayer1, hudCanvasPlayer1, hudLabelPlayer1HP, hudLabelPlayer1Weapon])
-
             self.players[i]['hud'] = {'pseudo' : hud[i][0], 'canvas': hud[i][1], 'hpLabel': hud[i][2], 'weaponLabel': hud[i][3]}
             self.players[i]['hud']['pseudo'].config(text=self.players[i]['pseudo'])
             self.players[i]['hud']['canvas'].create_oval(10,10,140,140, fill=self.players[i]['color'])
@@ -113,7 +111,6 @@ class replayThread(Thread):
                     for cell in cellsToMark:
                         x = int(cell[0])
                         y = int(cell[1])
-                        #color = action[3]
                         marks.append(gameCanvas.create_rectangle(x*self.game['cellSize'], y*self.game['cellSize'], (x+1)*self.game['cellSize'], (y+1)*self.game['cellSize'], fill=color, stipple='gray50'))
                         gameCanvas.tag_lower(marks[len(marks) - 1])
 
