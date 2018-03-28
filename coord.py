@@ -177,7 +177,7 @@ class Coordinator():
 
                     elif len(action) and action[0] == '[HEAL]':
                         if self.players[self.game['whoPlays']]['tp'] >= 4:
-                            self.players[self.game['whoPlays']]['hp'] = min(self.players[self.game['whoPlays']]['hp'] + 8, self.players[self.game['whoPlays']]['maxHp'])
+                            self.players[self.game['whoPlays']]['hp'] = min(self.players[self.game['whoPlays']]['hp'] + 5, self.players[self.game['whoPlays']]['maxHp'])
                             self.players[self.game['whoPlays']]['tp'] -= 4
                             self.history.append(' '.join([str(a) for a in action]))
 

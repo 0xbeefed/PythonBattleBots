@@ -63,6 +63,13 @@ class replayThread(Thread):
                                                                    text=self.players[i]['pseudo'][:5],
                                                                    anchor='center',
                                                                    fill='white')
+            #hud.append([hudPseudoPlayer1, hudCanvasPlayer1, hudLabelPlayer1HP, hudLabelPlayer1Weapon])
+
+            self.players[i]['hud'] = {'pseudo' : hud[i][0], 'canvas': hud[i][1], 'hpLabel': hud[i][2], 'weaponLabel': hud[i][3]}
+            self.players[i]['hud']['pseudo'].config(text=self.players[i]['pseudo'])
+            self.players[i]['hud']['canvas'].create_oval(10,10,140,140, fill=self.players[i]['color'])
+            self.players[i]['hud']['hpLabel'].config(text='HP : ' + str(self.players[i]['maxHp']) + '/' + str(self.players[i]['maxHp']))
+            self.players[i]['hud']['weaponLabel'].config(text='Arme actuelle : None')
 
     def run(self):
         global playing, pickTurn
@@ -125,6 +132,7 @@ class replayThread(Thread):
                     if (target != -1):
                         self.fightLog.append(self.players[target]['pseudo'] + ' perd ' + str(self.weapons[weapon]['damage']) + 'HP')
                         self.players[target]['hp'] = max(self.players[target]['hp'] - self.weapons[weapon]['damage'], 0)
+                        self.players[target]['hud']['hpLabel'].config(text='HP : ' + str(self.players[target]['hp']) + '/' + str(self.players[target]['maxHp']))
                         gameCanvas.coords(self.players[target]['hpBar'][0], self.players[target]['x']*self.game['cellSize'], (self.players[target]['y']-0.15)*self.game['cellSize'], (self.players[target]['x']+1)*self.game['cellSize'], self.players[target]['y']*self.game['cellSize'])
                         gameCanvas.coords(self.players[target]['hpBar'][1], self.players[target]['x']*self.game['cellSize'], (self.players[target]['y']-0.15)*self.game['cellSize'], ((self.players[target]['x']+(self.players[target]['hp']/self.players[target]['maxHp']))*self.game['cellSize']), self.players[target]['y']*self.game['cellSize'])
                         root.update()
@@ -151,11 +159,13 @@ class replayThread(Thread):
                 elif action[0] == '[SET_WEAPON]':
                     self.players[self.game['whoPlays']]['currentWeapon'] = int(action[1])
                     self.fightLog.append(self.players[self.game['whoPlays']]['pseudo'] + ' equipe l\'arme ' + action[2])
+                    self.players[self.game['whoPlays']]['hud']['weaponLabel'].config(text='Arme actuelle : ' + action[2])
                     root.update()
 
                 elif action[0] == '[HEAL]':
-                    self.players[self.game['whoPlays']]['hp'] = min(self.players[self.game['whoPlays']]['hp']+8, self.players[self.game['whoPlays']]['maxHp'])
+                    self.players[self.game['whoPlays']]['hp'] = min(self.players[self.game['whoPlays']]['hp']+5, self.players[self.game['whoPlays']]['maxHp'])
                     self.fightLog.append(self.players[self.game['whoPlays']]['pseudo'] + ' remonte à ' + str(self.players[self.game['whoPlays']]['hp']) + 'HP')
+                    self.players[self.game['whoPlays']]['hud']['hpLabel'].config(text='HP : ' + str(self.players[self.game['whoPlays']]['hp']) + '/' + str(self.players[self.game['whoPlays']]['maxHp']))
                     gameCanvas.coords(self.players[self.game['whoPlays']]['hpBar'][0], self.players[self.game['whoPlays']]['x']*self.game['cellSize'], (self.players[self.game['whoPlays']]['y']-0.15)*self.game['cellSize'], (self.players[self.game['whoPlays']]['x']+1)*self.game['cellSize'], self.players[self.game['whoPlays']]['y']*self.game['cellSize'])
                     gameCanvas.coords(self.players[self.game['whoPlays']]['hpBar'][1], self.players[self.game['whoPlays']]['x']*self.game['cellSize'], (self.players[self.game['whoPlays']]['y']-0.15)*self.game['cellSize'], ((self.players[self.game['whoPlays']]['x']+(self.players[self.game['whoPlays']]['hp']/self.players[self.game['whoPlays']]['maxHp']))*self.game['cellSize']), self.players[self.game['whoPlays']]['y']*self.game['cellSize'])
                     root.update()
@@ -196,11 +206,48 @@ pickTurn = 0
 # GUI
 root = Tk()
 gameCanvas = Canvas(root, width=100, height=100, background='white')
-gameCanvas.grid(row=0, column=0)
+gameCanvas.grid(row=0, column=1)
+
+# hud Frame
+
+hudFrame = Frame(root)
+hudFrame.grid(row = 0, column = 0)
+
+hud = []
+
+# hud Player 1
+hudFramePlayer1 = Frame(hudFrame)
+hudFramePlayer1.grid(row = 0, column = 0)
+hudPseudoPlayer1 = Label(hudFramePlayer1, text = 'user1')
+hudPseudoPlayer1.grid(row = 0, column=0)
+hudCanvasPlayer1 = Canvas(hudFramePlayer1, width = 150, height = 150)
+hudCanvasPlayer1.grid(row = 1, column = 0)
+#hudCanvasPlayer1.create_oval(10,10,90,90, fill='red')
+hudLabelPlayer1HP = Label(hudFramePlayer1, text = 'HP : ')
+hudLabelPlayer1HP.grid(row = 2, column=0)
+hudLabelPlayer1Weapon = Label(hudFramePlayer1, text = 'Arme actuelle : ')
+hudLabelPlayer1Weapon.grid(row = 3, column=0)
+
+hud.append([hudPseudoPlayer1, hudCanvasPlayer1, hudLabelPlayer1HP, hudLabelPlayer1Weapon])
+
+# hud Player 2
+hudFramePlayer2 = Frame(hudFrame)
+hudFramePlayer2.grid(row = 0, column = 1)
+hudPseudoPlayer2 = Label(hudFramePlayer2, text = 'user0')
+hudPseudoPlayer2.grid(row = 0, column=0)
+hudCanvasPlayer2 = Canvas(hudFramePlayer2, width = 150, height = 150)
+hudCanvasPlayer2.grid(row = 1, column = 0)
+#hudCanvasPlayer2.create_oval(10,10,90,90, fill='blue')
+hudLabelPlayer2HP = Label(hudFramePlayer2, text = 'HP : ')
+hudLabelPlayer2HP.grid(row = 2, column=0)
+hudLabelPlayer2Weapon = Label(hudFramePlayer2, text = 'Arme actuelle : ')
+hudLabelPlayer2Weapon.grid(row = 3, column=0)
+
+hud.append([hudPseudoPlayer2, hudCanvasPlayer2, hudLabelPlayer2HP, hudLabelPlayer2Weapon])
 
 # Player frame
 playerFrame = Frame(root)
-playerFrame.grid(row=1, column=0)
+playerFrame.grid(row=1, column=1)
 pickTurnScale = Scale(playerFrame, from_=0, to=16, tickinterval=1, length=600, orient=HORIZONTAL, command=pickTurnUpdate)
 pickTurnScale.grid(row=0, column=0)
 togglePlayingButton = Button(playerFrame, text='Play', command=lambda: togglePlaying())
@@ -208,7 +255,7 @@ togglePlayingButton.grid(row=1, column=0)
 
 # Infos frame
 infosFrame = Frame(root, width=20)
-infosFrame.grid(row=0, column=1)
+infosFrame.grid(row=0, column=2)
 logLabel = Label(infosFrame, text='Information Frame here', anchor="nw", justify=LEFT, width=20, font=("Helvetica", 10, "normal"))
 logLabel.grid(row=0, column=0)
 
