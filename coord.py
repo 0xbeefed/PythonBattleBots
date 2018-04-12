@@ -20,10 +20,9 @@ class Coordinator():
         with open('users/user' + str(pId2) + '/stat.dat') as file:
             user2Stat = json.loads(file.read())
 
-        self.game = {'id': -1, 'maxTurns': 16, 'path':'', 'turn': 1, 'whoPlays': -1, 'width': 16, 'height': 16}
-        self.players = [
-            {'pseudo': user1Stat['pseudo'], 'color': 'blue', 'x': 1, 'y': 1, 'currentWeapon' : -1, 'maxMp': user1Stat['maxMp'], 'mp': user1Stat['maxMp'], 'id': 0, 'maxTp': user1Stat['maxTp'], 'tp': user1Stat['maxTp'], 'hp': user1Stat['maxHp'], 'maxHp': user1Stat['maxHp']},
-            {'pseudo': user2Stat['pseudo'], 'color': 'red', 'x': self.game['width']-2, 'y': self.game['height']-2, 'currentWeapon' : -1, 'maxMp': user2Stat['maxMp'], 'mp': user2Stat['maxMp'], 'id': 1, 'maxTp': user2Stat['maxTp'], 'tp': user2Stat['maxTp'], 'hp': user2Stat['maxHp'], 'maxHp': user2Stat['maxHp']}]
+        self.game = {'id': -1, 'maxTurns': 32, 'path':'', 'turn': 1, 'whoPlays': -1, 'width': 16, 'height': 16}
+        self.players = [{'pseudo': user1Stat['pseudo'], 'color': 'blue', 'x': 1, 'y': 1, 'currentWeapon' : -1, 'maxMp': user1Stat['maxMp'], 'mp': user1Stat['maxMp'], 'id': 0, 'maxTp': user1Stat['maxTp'], 'tp': user1Stat['maxTp'], 'hp': user1Stat['maxHp'], 'maxHp': user1Stat['maxHp']},
+            {'pseudo': user2Stat['pseudo'], 'color': 'red', 'x': self.game['width'] - 2, 'y': self.game['height']-2, 'currentWeapon' : -1, 'maxMp': user2Stat['maxMp'], 'mp': user2Stat['maxMp'], 'id': 1, 'maxTp': user2Stat['maxTp'], 'tp': user2Stat['maxTp'], 'hp': user2Stat['maxHp'], 'maxHp': user2Stat['maxHp']}]
 
         self.history.append(json.dumps(self.players))
         exec("from users.user{0} import ai{1} as u1".format(pId1, pId1), globals())
@@ -34,24 +33,14 @@ class Coordinator():
         self.globals = {}
         with open('globals.dat', 'r') as file:
             self.globals = file.read().split('\n')
-        self.history.append(self.globals[1])
-        self.spells = json.loads(self.globals[2])
-        self.weapons = json.loads(self.globals[1])
-        self.globals = json.loads(self.globals[0])
+        self.history.append(self.globals[0])
+        self.spells = json.loads(self.globals[1])
+        self.weapons = json.loads(self.globals[0])
 
         # GAME TREE #
         self.game['id'] = 0
         while os.path.isfile('Fights/' + str(self.game['id']) + '.dat'):
             self.game['id'] += 1
-
-        # DAT #
-        with open('globals.dat', 'w+') as file:
-            file.write(json.dumps(self.globals))
-            file.write('\n')
-            file.write(json.dumps(self.weapons))
-            file.write('\n')
-            file.write(json.dumps(self.spells))
-        print('Created game id ' + str(self.game['id']))
 
         # GENERATING MAP #
         self.map = [[-1 for i in range(self.game['width'])] for o in range(self.game['height'])]
