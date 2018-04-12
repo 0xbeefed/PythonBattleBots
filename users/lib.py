@@ -145,6 +145,8 @@ def getDistance(pos, pos2):
 
 def getPath(start, end):
     """Returns a path between start and end, if it exists"""
+    if start == end:
+        return -1
     openList = [start]
     nodes = {str(start) : ['',0]} # nodes['[x, y]'] = [parent, distance from the start]
     closedList = []

@@ -48,7 +48,7 @@ def main():
     if canHit:
         lib.mark(bestMove[0], 'blue')
         path = lib.getPath(selfPos, bestMove[0])
-        if path != 1:
+        if path != -1:
             for move in path:
                 lib.moveOn(move)
                 selfMp -= 1
