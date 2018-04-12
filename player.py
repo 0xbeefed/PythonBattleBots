@@ -31,11 +31,9 @@ class replayThread(Thread):
 
         # Grid
         for x in range(self.game['width']):
-            gameCanvas.create_line(x * self.game['cellSize'], 0, x * self.game['cellSize'],
-                                   self.game['height'] * self.game['cellSize'], width=1, fill='black')
+            gameCanvas.create_line(x * self.game['cellSize'], 0, x * self.game['cellSize'], self.game['height'] * self.game['cellSize'], width=1, fill='black')
         for y in range(self.game['height']):
-            gameCanvas.create_line(0, y * self.game['cellSize'], self.game['width'] * self.game['cellSize'],
-                                   y * self.game['cellSize'], width=1, fill='black')
+            gameCanvas.create_line(0, y * self.game['cellSize'], self.game['width'] * self.game['cellSize'], y * self.game['cellSize'], width=1, fill='black')
 
         # Numerotation
         for x in range(self.game['width']):
@@ -48,14 +46,10 @@ class replayThread(Thread):
         for y in range(self.game['height']):
             for x in range(self.game['width']):
                 if self.map[y][x] == -2:
-                    obs = gameCanvas.create_rectangle(x * self.game['cellSize'], y * self.game['cellSize'],
-                                                      (x + 1) * self.game['cellSize'], (y + 1) * self.game['cellSize'],
-                                                      fill='black')
+                    obs = gameCanvas.create_rectangle(x * self.game['cellSize'], y * self.game['cellSize'], (x + 1) * self.game['cellSize'], (y + 1) * self.game['cellSize'], fill='black')
                     gameCanvas.tag_lower(obs)
                 elif self.map[y][x] == -3:
-                    lav = gameCanvas.create_rectangle(x * self.game['cellSize'], y * self.game['cellSize'],
-                                                      (x + 1) * self.game['cellSize'], (y + 1) * self.game['cellSize'],
-                                                      fill='red')
+                    lav = gameCanvas.create_rectangle(x * self.game['cellSize'], y * self.game['cellSize'], (x + 1) * self.game['cellSize'], (y + 1) * self.game['cellSize'], fill='red')
                     gameCanvas.tag_lower(lav)
 
         # Players
@@ -120,9 +114,7 @@ class replayThread(Thread):
                     gameCanvas.coords(self.players[self.game['whoPlays']]['hpBar'][1],
                                       self.players[self.game['whoPlays']]['x'] * self.game['cellSize'],
                                       (self.players[self.game['whoPlays']]['y'] - 0.15) * self.game['cellSize'],
-                                      ((self.players[self.game['whoPlays']]['x'] + (
-                                              self.players[self.game['whoPlays']]['hp'] /
-                                              self.players[self.game['whoPlays']]['maxHp'])) * self.game['cellSize']),
+                                      ((self.players[self.game['whoPlays']]['x'] + (self.players[self.game['whoPlays']]['hp'] / self.players[self.game['whoPlays']]['maxHp'])) * self.game['cellSize']),
                                       self.players[self.game['whoPlays']]['y'] * self.game['cellSize'])
                     gameCanvas.coords(self.players[self.game['whoPlays']]['pseudoLabel'],
                                       (self.players[self.game['whoPlays']]['x'] + 0.5) * self.game['cellSize'],
@@ -137,10 +129,7 @@ class replayThread(Thread):
                     for cell in cellsToMark:
                         x = int(cell[0])
                         y = int(cell[1])
-                        marks.append(gameCanvas.create_rectangle(x * self.game['cellSize'], y * self.game['cellSize'],
-                                                                 (x + 1) * self.game['cellSize'],
-                                                                 (y + 1) * self.game['cellSize'], fill=color,
-                                                                 stipple='gray50'))
+                        marks.append(gameCanvas.create_rectangle(x * self.game['cellSize'], y * self.game['cellSize'], (x + 1) * self.game['cellSize'], (y + 1) * self.game['cellSize'], fill=color, stipple='gray50'))
                         gameCanvas.tag_lower(marks[len(marks) - 1])
 
                 elif action[0] == '[ATTACK]':
@@ -158,8 +147,7 @@ class replayThread(Thread):
                     if (target != -1):
                         self.fightLog.append(self.players[target]['pseudo'] + ' perd ' + str(self.weapons[weapon]['damage']) + 'HP')
                         self.players[target]['hp'] = max(self.players[target]['hp'] - self.weapons[weapon]['damage'], 0)
-                        self.players[target]['gui']['hpLabel'].config(
-                            text='HP : ' + str(self.players[target]['hp']) + '/' + str(self.players[target]['maxHp']))
+                        self.players[target]['gui']['hpLabel'].config(text='HP : ' + str(self.players[target]['hp']) + '/' + str(self.players[target]['maxHp']))
                         gameCanvas.coords(self.players[target]['hpBar'][0],
                                           self.players[target]['x'] * self.game['cellSize'],
                                           (self.players[target]['y'] - 0.15) * self.game['cellSize'],
@@ -204,8 +192,7 @@ class replayThread(Thread):
                 elif action[0] == '[SET_WEAPON]':
                     self.players[self.game['whoPlays']]['currentWeapon'] = int(action[1])
                     self.fightLog.append(self.players[self.game['whoPlays']]['pseudo'] + ' equipe l\'arme ' + action[2])
-                    self.players[self.game['whoPlays']]['gui']['weaponLabel'].config(
-                        text='Arme actuelle : ' + action[2])
+                    self.players[self.game['whoPlays']]['gui']['weaponLabel'].config(text='Arme actuelle : ' + action[2])
                     root.update()
 
                 elif action[0] == '[HEAL]':
