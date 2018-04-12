@@ -1,3 +1,2 @@
-{"gamesCount": 0, "usersCount": 3}
 [{"name": "SimpleGun", "maxRange": 5, "damage": 10, "cost": 4}, {"name": "Sword", "maxRange": 1, "damage": 20, "cost": 5}]
 [{"name": "Heal", "maxRange": 0, "heal": 5, "cost": 4}]

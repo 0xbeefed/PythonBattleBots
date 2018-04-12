@@ -40,10 +40,9 @@ class Coordinator():
         self.globals = json.loads(self.globals[0])
 
         # GAME TREE #
-        i = 0
-        while os.path.isfile('Fights/' + str(i) + '.dat'):
-            i += 1
-        self.game['id'] = i
+        self.game['id'] = 0
+        while os.path.isfile('Fights/' + str(self.game['id']) + '.dat'):
+            self.game['id'] += 1
 
         # DAT #
         with open('globals.dat', 'w+') as file:
