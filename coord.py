@@ -1,12 +1,8 @@
 import json
 import os
 import subprocess
-import shutil
-from threading import Thread
-import time
 from random import randint
 import math
-import sys
 import users.lib
 import traceback
 
@@ -39,7 +35,6 @@ class Coordinator():
         self.globals = {}
         with open('globals.dat', 'r') as file:
             self.globals = file.read().split('\n')
-            print(self.globals)
         self.history.append(self.globals[1])
         self.spells = json.loads(self.globals[2])
         self.weapons = json.loads(self.globals[1])
@@ -84,7 +79,6 @@ class Coordinator():
         self.history.append(json.dumps(self.map))
 
         # LAUNCH GAME #
-        print('Generating turns')
         self.processGame()
 
     def processGame(self):
