@@ -40,12 +40,12 @@ class Coordinator():
         self.globals = json.loads(self.globals[0])
 
         # GAME TREE #
-        self.game['id'] = self.globals['gamesCount']
-        self.game['path'] = 'Fights/' + str(self.game['id']) + '/'
-        os.makedirs(self.game['path'])
+        i = 0
+        while os.path.isfile('Fights/' + str(i) + '.dat'):
+            i += 1
+        self.game['id'] = i
 
         # DAT #
-        self.globals['gamesCount'] += 1
         with open('globals.dat', 'w+') as file:
             file.write(json.dumps(self.globals))
             file.write('\n')
@@ -175,17 +175,14 @@ class Coordinator():
                             self.history.append(' '.join([str(a) for a in action]))
 
             if countAlivePlayers <= 1:
-                print("End of the game")
-                self.history.append('[END]')
                 break
-        if countAlivePlayers > 1:
-            print("End of the game")
-            self.history.append('[END]')
+        print("End of the game")
+        self.history.append('[END]')
 
         # Save replay:
-        with open(self.game['path'] + 'replay.dat', 'w') as file:
+        with open('Fights/' + str(self.game['id']) + '.dat', 'w') as file:
             file.write('\n'.join(self.history))
-        subprocess.run(['python', 'player.py', self.game['path'] + 'replay.dat'], stdout=subprocess.PIPE)# Play replay
+        subprocess.run(['python', 'player.py', 'Fights/' + str(self.game['id']) + '.dat'], stdout=subprocess.PIPE)# Play replay
 
 
 Coordinator(0, 1)
