@@ -136,8 +136,8 @@ def getLineOfSight(start, end):
                 
     for cell in tab:
         if getCellContent(cell) == CELL_OBSTACLE:
-            return 0
-    return 1
+            return False
+    return True
 
 def getDistance(pos, pos2):
     """Returns the Manhattan distance between pos1 and pos2"""
