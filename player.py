@@ -185,6 +185,7 @@ class replayThread(Thread):
                 elif action[0] == '[TURN]':
                     self.game['turn'] = int(action[1])
                     pickTurnScale.set(self.game['turn'])
+                    self.fightLog.append('')
                     self.fightLog.append('Tour ' + str(self.game['turn']))
                     root.update()
                     time.sleep(0.15)

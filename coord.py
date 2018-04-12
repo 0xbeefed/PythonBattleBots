@@ -84,7 +84,7 @@ class Coordinator():
         countAlivePlayers = len(self.players)
         for t in range(self.game['maxTurns']):
             self.game['turn'] = t
-            print('Generating turn ' + str(self.game['turn']) + ' / ' + str(self.game['maxTurns']-1))
+            print('\nGenerating turn ' + str(self.game['turn']) + ' / ' + str(self.game['maxTurns']-1))
             self.history.append('[TURN] ' + str(self.game['turn']))
 
             for i in range(len(self.players)):
