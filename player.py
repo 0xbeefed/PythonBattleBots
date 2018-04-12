@@ -18,6 +18,7 @@ class replayThread(Thread):
         self.weapons = json.loads(self.replay[1])
         self.map = json.loads(self.replay[2])
         self.replay = self.replay[3:]
+        print('Turn count:', (''.join(self.replay)).count('[TURN]'))
         self.game = {'width': len(self.map), 'height': len(self.map[0]), 'cellSize': 32}
         self.fightLog = []
         gameCanvas.config(height = self.game['width']*self.game['cellSize'], width = self.game['height']*self.game['cellSize'])
