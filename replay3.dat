@@ -1,0 +1,337 @@
+[{"pseudo": "user0", "color": "blue", "x": 1, "y": 1, "currentWeapon": -1, "maxMp": 3, "mp": 3, "id": 0, "maxTp": 6, "tp": 6, "hp": 100, "maxHp": 100}, {"pseudo": "BossEasy", "color": "red", "x": 14, "y": 14, "currentWeapon": -1, "maxMp": 3, "mp": 3, "id": 1, "maxTp": 6, "tp": 6, "hp": 100, "maxHp": 100}]
+[{"name": "SimpleGun", "maxRange": 5, "damage": 10, "cost": 4}, {"name": "Sword", "maxRange": 1, "damage": 15, "cost": 5}]
+[[-1, -1, -3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-3, 0, -2, -3, -1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -2, -1], [-1, -1, -3, -1, -1, -2, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -2, -1, -1, -3, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -3, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1, -3, -1, -1], [-1, -1, -3, -1, -1, -3, -1, -1, -1, -1, -3, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1, -1, -2, -1, -1, -1], [-1, -1, -3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -2, -3, -1, -1, -1, -1, -1, -1, -2, -1, -3], [-1, -3, -1, -1, -1, -1, -2, -1, -1, -1, -2, -1, -1, -1, -1, -2], [-1, -1, -3, -1, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1, -2, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1, -1, -1], [-1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1, -3, -1], [-3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -3, 1, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -3, -1, -3, -1, -1]]
+[TURN] 0
+[WHOPLAYS] 0
+[MARK] [[1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [2, 7], [3, 7], [3, 8], [4, 8], [5, 8], [6, 8], [7, 8], [7, 9], [7, 10], [8, 10], [8, 11], [9, 11], [10, 11], [11, 11], [11, 12], [12, 12], [13, 12], [14, 12], [15, 12], [15, 13], [15, 14], [14, 14]] blue
+[SET_WEAPON] 1 Sword
+[MOVE] 1 2
+[MOVE] 1 3
+[MOVE] 2 3
+[HEAL] 2 3
+[WHOPLAYS] 1
+[SET_WEAPON] 0 SimpleGun
+[MARK] [[14, 14]] green
+[MARK] [[15, 12]] green
+[MARK] [[15, 13]] green
+[MARK] [[15, 14]] green
+[MARK] [[14, 15]] green
+[MARK] [[15, 15]] green
+[MARK] [[15, 12]] blue
+[MOVE] 15 14
+[MOVE] 15 13
+[MOVE] 15 12
+[TURN] 1
+[WHOPLAYS] 0
+[MARK] [[2, 4], [2, 5], [3, 5], [3, 6], [3, 7], [3, 8], [4, 8], [5, 8], [6, 8], [7, 8], [7, 9], [7, 10], [8, 10], [8, 11], [9, 11], [10, 11], [11, 11], [11, 12], [12, 12], [13, 12], [14, 12], [15, 12]] blue
+[MOVE] 2 4
+[MOVE] 2 5
+[MOVE] 3 5
+[HEAL] 3 5
+[WHOPLAYS] 1
+[MARK] [[15, 12]] green
+[MARK] [[13, 11]] green
+[MARK] [[15, 11]] green
+[MARK] [[12, 12]] green
+[MARK] [[13, 12]] green
+[MARK] [[14, 12]] green
+[MARK] [[13, 13]] green
+[MARK] [[15, 13]] green
+[MARK] [[14, 14]] green
+[MARK] [[15, 14]] green
+[MARK] [[15, 15]] green
+[MARK] [[12, 12]] blue
+[MOVE] 14 12
+[MOVE] 13 12
+[MOVE] 12 12
+[TURN] 2
+[WHOPLAYS] 0
+[MARK] [[3, 6], [3, 7], [3, 8], [4, 8], [5, 8], [6, 8], [7, 8], [7, 9], [7, 10], [8, 10], [8, 11], [9, 11], [10, 11], [11, 11], [11, 12], [12, 12]] blue
+[MOVE] 3 6
+[MOVE] 3 7
+[MOVE] 3 8
+[HEAL] 3 8
+[WHOPLAYS] 1
+[MARK] [[12, 12]] green
+[MARK] [[12, 9]] green
+[MARK] [[11, 10]] green
+[MARK] [[12, 10]] green
+[MARK] [[13, 10]] green
+[MARK] [[10, 11]] green
+[MARK] [[11, 11]] green
+[MARK] [[12, 11]] green
+[MARK] [[13, 11]] green
+[MARK] [[11, 12]] green
+[MARK] [[13, 12]] green
+[MARK] [[14, 12]] green
+[MARK] [[15, 12]] green
+[MARK] [[11, 13]] green
+[MARK] [[12, 13]] green
+[MARK] [[13, 13]] green
+[MARK] [[11, 14]] green
+[MARK] [[12, 14]] green
+[MARK] [[12, 15]] green
+[MARK] [[10, 11]] blue
+[MOVE] 12 11
+[MOVE] 11 11
+[MOVE] 10 11
+[TURN] 3
+[WHOPLAYS] 0
+[MARK] [[4, 8], [5, 8], [6, 8], [7, 8], [7, 9], [7, 10], [8, 10], [8, 11], [9, 11], [10, 11]] blue
+[MOVE] 3 9
+[MOVE] 3 10
+[MOVE] 3 11
+[HEAL] 3 11
+[WHOPLAYS] 1
+[MARK] [[10, 11]] red
+[MARK] [[9, 9]] green
+[MARK] [[11, 9]] green
+[MARK] [[8, 10]] red
+[MARK] [[9, 10]] red
+[MARK] [[11, 10]] green
+[MARK] [[12, 10]] green
+[MARK] [[8, 11]] green
+[MARK] [[9, 11]] green
+[MARK] [[11, 11]] green
+[MARK] [[12, 11]] green
+[MARK] [[13, 11]] green
+[MARK] [[8, 12]] red
+[MARK] [[9, 12]] red
+[MARK] [[11, 12]] green
+[MARK] [[12, 12]] green
+[MARK] [[9, 13]] red
+[MARK] [[11, 13]] green
+[MARK] [[8, 11]] blue
+[MOVE] 9 11
+[MOVE] 8 11
+[TURN] 4
+[WHOPLAYS] 0
+[MARK] [[4, 11], [5, 11], [6, 11], [6, 12], [7, 12], [8, 12], [8, 11]] blue
+[MOVE] 3 12
+[MOVE] 2 12
+[MOVE] 1 12
+[HEAL] 1 12
+[WHOPLAYS] 1
+[MARK] [[6, 12]] blue
+[MOVE] 8 12
+[MOVE] 7 12
+[MOVE] 6 12
+[ATTACK] 1 12
+[MARK] [[6, 12]] yellow
+[TURN] 5
+[WHOPLAYS] 0
+[MARK] [[2, 12], [3, 12], [4, 12], [5, 12], [6, 12]] blue
+[MOVE] 2 12
+[HEAL] 2 12
+[WHOPLAYS] 1
+[MARK] [[5, 14]] blue
+[MOVE] 6 13
+[MOVE] 6 14
+[MOVE] 5 14
+[ATTACK] 2 12
+[MARK] [[5, 14]] yellow
+[TURN] 6
+[WHOPLAYS] 0
+[MARK] [[3, 12], [3, 13], [3, 14], [4, 14], [5, 14]] blue
+[MOVE] 3 12
+[HEAL] 3 12
+[WHOPLAYS] 1
+[MARK] [[5, 15]] blue
+[MOVE] 5 15
+[ATTACK] 3 12
+[MARK] [[5, 15]] yellow
+[MARK] [[5, 15]] red
+[MARK] [[5, 13]] red
+[MARK] [[4, 14]] red
+[MARK] [[6, 14]] red
+[MARK] [[3, 15]] red
+[MARK] [[4, 15]] red
+[MARK] [[6, 15]] red
+[MARK] [[7, 15]] red
+[TURN] 7
+[WHOPLAYS] 0
+[MARK] [[3, 13], [3, 14], [3, 15], [4, 15], [5, 15]] blue
+[MOVE] 3 13
+[MOVE] 3 14
+[MOVE] 3 15
+[SET_WEAPON] 0 SimpleGun
+[ATTACK] 5 15
+[WHOPLAYS] 1
+[MARK] [[8, 15]] blue
+[MOVE] 6 15
+[MOVE] 7 15
+[MOVE] 8 15
+[ATTACK] 3 15
+[MARK] [[8, 15]] yellow
+[TURN] 8
+[WHOPLAYS] 0
+[MARK] [[4, 15], [5, 15], [6, 15], [7, 15], [8, 15]] blue
+[SET_WEAPON] 1 Sword
+[MOVE] 4 15
+[HEAL] 4 15
+[WHOPLAYS] 1
+[MARK] [[9, 15]] blue
+[MOVE] 9 15
+[ATTACK] 4 15
+[MARK] [[9, 15]] yellow
+[MARK] [[9, 15]] red
+[MARK] [[9, 13]] red
+[MARK] [[8, 14]] red
+[MARK] [[9, 14]] red
+[MARK] [[10, 14]] red
+[MARK] [[7, 15]] red
+[MARK] [[10, 15]] red
+[TURN] 9
+[WHOPLAYS] 0
+[MARK] [[5, 15], [6, 15], [7, 15], [8, 15], [9, 15]] blue
+[MOVE] 5 15
+[MOVE] 6 15
+[MOVE] 7 15
+[SET_WEAPON] 0 SimpleGun
+[ATTACK] 9 15
+[WHOPLAYS] 1
+[MARK] [[11, 14]] blue
+[MOVE] 9 14
+[MOVE] 10 14
+[MOVE] 11 14
+[ATTACK] 7 15
+[MARK] [[11, 14]] yellow
+[TURN] 10
+[WHOPLAYS] 0
+[MARK] [[7, 14], [8, 14], [9, 14], [10, 14], [11, 14]] blue
+[SET_WEAPON] 1 Sword
+[SET_WEAPON] 0 SimpleGun
+[ATTACK] 11 14
+[MOVE] 7 14
+[MOVE] 8 14
+[MOVE] 9 14
+[WHOPLAYS] 1
+[MARK] [[13, 13]] blue
+[MOVE] 11 13
+[MOVE] 12 13
+[MOVE] 13 13
+[ATTACK] 9 14
+[MARK] [[13, 13]] yellow
+[TURN] 11
+[WHOPLAYS] 0
+[MARK] [[10, 14], [11, 14], [11, 13], [12, 13], [13, 13]] blue
+[SET_WEAPON] 1 Sword
+[SET_WEAPON] 0 SimpleGun
+[ATTACK] 13 13
+[MOVE] 10 14
+[MOVE] 11 14
+[MOVE] 11 13
+[WHOPLAYS] 1
+[MARK] [[15, 12]] blue
+[MOVE] 13 12
+[MOVE] 14 12
+[MOVE] 15 12
+[ATTACK] 11 13
+[MARK] [[15, 12]] yellow
+[TURN] 12
+[WHOPLAYS] 0
+[MARK] [[11, 12], [12, 12], [13, 12], [14, 12], [15, 12]] blue
+[SET_WEAPON] 1 Sword
+[SET_WEAPON] 0 SimpleGun
+[ATTACK] 15 12
+[MOVE] 11 12
+[MOVE] 12 12
+[MOVE] 13 12
+[WHOPLAYS] 1
+[MARK] [[15, 15]] blue
+[MOVE] 15 13
+[MOVE] 15 14
+[MOVE] 15 15
+[ATTACK] 13 12
+[MARK] [[15, 15]] yellow
+[TURN] 13
+[WHOPLAYS] 0
+[MARK] [[14, 12], [15, 12], [15, 13], [15, 14], [15, 15]] blue
+[SET_WEAPON] 1 Sword
+[MOVE] 14 12
+[HEAL] 14 12
+[WHOPLAYS] 1
+[MARK] [[15, 15]] blue
+[MARK] [[15, 15]] red
+[MARK] [[15, 12]] red
+[MARK] [[15, 13]] red
+[MARK] [[14, 14]] red
+[MARK] [[15, 14]] red
+[MARK] [[14, 15]] red
+[TURN] 14
+[WHOPLAYS] 0
+[MARK] [[15, 12], [15, 13], [15, 14], [15, 15]] blue
+[MOVE] 15 12
+[MOVE] 15 13
+[MOVE] 15 14
+[ATTACK] 15 15
+[WHOPLAYS] 1
+[MARK] [[14, 15]] blue
+[MOVE] 14 15
+[ATTACK] 15 14
+[MARK] [[14, 15]] yellow
+[MARK] [[14, 15]] red
+[MARK] [[14, 14]] red
+[TURN] 15
+[WHOPLAYS] 0
+[MARK] [[15, 15], [14, 15]] blue
+[MOVE] 15 13
+[MOVE] 15 12
+[MOVE] 15 11
+[SET_WEAPON] 0 SimpleGun
+[ATTACK] 14 15
+[WHOPLAYS] 1
+[MARK] [[14, 15]] blue
+[MARK] [[14, 15]] red
+[MARK] [[15, 13]] red
+[MARK] [[14, 14]] red
+[MARK] [[15, 14]] red
+[MARK] [[15, 15]] red
+[TURN] 16
+[WHOPLAYS] 0
+[MARK] [[15, 12], [15, 13], [15, 14], [15, 15], [14, 15]] blue
+[SET_WEAPON] 1 Sword
+[MOVE] 15 12
+[MOVE] 15 13
+[MOVE] 15 14
+[SET_WEAPON] 0 SimpleGun
+[ATTACK] 14 15
+[WHOPLAYS] 1
+[MARK] [[14, 15]] blue
+[MARK] [[14, 15]] red
+[MARK] [[15, 13]] red
+[MARK] [[14, 14]] red
+[MARK] [[15, 15]] red
+[TURN] 17
+[WHOPLAYS] 0
+[MARK] [[15, 15], [14, 15]] blue
+[SET_WEAPON] 1 Sword
+[MOVE] 15 13
+[MOVE] 15 12
+[MOVE] 15 11
+[SET_WEAPON] 0 SimpleGun
+[ATTACK] 14 15
+[WHOPLAYS] 1
+[MARK] [[14, 15]] blue
+[MARK] [[14, 15]] red
+[MARK] [[15, 13]] red
+[MARK] [[14, 14]] red
+[MARK] [[15, 14]] red
+[MARK] [[15, 15]] red
+[TURN] 18
+[WHOPLAYS] 0
+[MARK] [[15, 12], [15, 13], [15, 14], [15, 15], [14, 15]] blue
+[SET_WEAPON] 1 Sword
+[SET_WEAPON] 0 SimpleGun
+[ATTACK] 14 15
+[DEATH] 1
+[MOVE] 15 12
+[MOVE] 15 13
+[MOVE] 15 14
+[WHOPLAYS] 1
+[MARK] [[14, 15]] blue
+[MARK] [[14, 15]] red
+[MARK] [[15, 13]] red
+[MARK] [[14, 14]] red
+[MARK] [[15, 15]] red
+[END]
