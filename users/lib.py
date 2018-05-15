@@ -151,7 +151,7 @@ def getPath(start, end):
     nodes = {str(start) : ['',0]} # nodes['[x, y]'] = [parent, distance from the start]
     closedList = []
 
-    while len(openList) != 0:
+    while openList:
 
         current = openList[0]
         for tmp in openList:
