@@ -60,7 +60,7 @@ def updateStat(stat, value):
 def save():
     global path, data
     data['pseudo'] = pseudoEntry.get()
-    with open(path + 'stat.dat', 'w') as file:
+    with open(path, 'w') as file:
         file.write(json.dumps(data))
     data = {'maxHp': '-', 'maxMp': '-', 'maxTp': '-', 'cp': '-', 'pseudo': '-'}
     pseudoEntry.delete(0, END)
