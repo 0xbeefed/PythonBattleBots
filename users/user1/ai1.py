@@ -1,6 +1,7 @@
 import sys
 sys.path.append(sys.path[0] + "/users/")
 import lib
+import random
 
 def moveMap(center, mp):
     moveMap = [center]
@@ -17,7 +18,7 @@ def main():
     lib.setWeapon(lib.WEAPON_SIMPLE_GUN)
     selfId = lib.getMyId()
     selfPos = lib.getCell(selfId)
-    selfMp = 3
+    selfMp = lib.getMp(selfId)
 
     enemyId = lib.getEnemyId()
     enemyPos = lib.getCell(enemyId)
@@ -72,11 +73,14 @@ def main():
                 lib.mark(selfSimu, 'green')
                 canFlee = True
                 if (bestFlee[1] >= lib.getDistance(selfSimu, enemyPos)):
-                    bestFlee = [selfSimu.copy(), lib.getDistance(selfSimu, enemyPos)]
+                    bestFlee = [[selfSimu.copy()], lib.getDistance(selfSimu, enemyPos)]
+                elif (bestFlee[1] == lib.getDistance(selfSimu, enemyPos)):
+                    bestFlee[0].append(selfSimu.copy())
             else:
                 lib.mark(selfSimu, 'red')
 
         if canFlee:
+            bestFlee[0] = random.choice(bestFlee[0])
             lib.mark(bestFlee[0], 'blue')
             path = lib.getPath(selfPos, bestFlee[0])
             if path != -1:
