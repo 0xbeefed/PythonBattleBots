@@ -81,7 +81,7 @@ class replayThread(Thread):
             self.players[i]['gui']['canvas'].create_oval(10, 10, 40, 40, fill=self.players[i]['color'])
             self.players[i]['gui']['hpLabel'].config(
                 text='HP : ' + str(self.players[i]['maxHp']) + '/' + str(self.players[i]['maxHp']))
-            self.players[i]['gui']['weaponLabel'].config(text='Arme actuelle : None')
+            self.players[i]['gui']['weaponLabel'].config(text='Arme actuelle:\nNone')
 
     def run(self):
         global playing, pickTurn
@@ -193,13 +193,13 @@ class replayThread(Thread):
                 elif action[0] == '[SET_WEAPON]':
                     self.players[self.game['whoPlays']]['currentWeapon'] = int(action[1])
                     self.fightLog.append(self.players[self.game['whoPlays']]['pseudo'] + ' equipe l\'arme ' + action[2])
-                    self.players[self.game['whoPlays']]['gui']['weaponLabel'].config(text='Arme actuelle : ' + action[2])
+                    self.players[self.game['whoPlays']]['gui']['weaponLabel'].config(text='Arme actuelle:\n ' + action[2])
                     root.update()
 
                 elif action[0] == '[HEAL]':
                     self.players[self.game['whoPlays']]['hp'] = min(self.players[self.game['whoPlays']]['hp'] + 5, self.players[self.game['whoPlays']]['maxHp'])
                     self.fightLog.append(self.players[self.game['whoPlays']]['pseudo'] + ' remonte à ' + str(self.players[self.game['whoPlays']]['hp']) + 'HP')
-                    self.players[self.game['whoPlays']]['gui']['hpLabel'].config(text='HP : ' + str(self.players[self.game['whoPlays']]['hp']) + '/' + str(self.players[self.game['whoPlays']]['maxHp']))
+                    self.players[self.game['whoPlays']]['gui']['hpLabel'].config(text='HP: ' + str(self.players[self.game['whoPlays']]['hp']) + '/' + str(self.players[self.game['whoPlays']]['maxHp']))
                     gameCanvas.coords(self.players[self.game['whoPlays']]['hpBar'][0],
                                       self.players[self.game['whoPlays']]['x'] * self.game['cellSize'],
                                       (self.players[self.game['whoPlays']]['y'] - 0.15) * self.game['cellSize'],
@@ -284,9 +284,9 @@ guiPseudoPlayer1 = Label(guiFramePlayer1, text='----')
 guiPseudoPlayer1.grid(row=0, column=0)
 guiCanvasPlayer1 = Canvas(guiFramePlayer1, width=50, height=50)
 guiCanvasPlayer1.grid(row=1, column=0)
-guiLabelPlayer1HP = Label(guiFramePlayer1, text='HP : --')
+guiLabelPlayer1HP = Label(guiFramePlayer1, text='HP: --')
 guiLabelPlayer1HP.grid(row=2, column=0)
-guiLabelPlayer1Weapon = Label(guiFramePlayer1, text='Arme actuelle : --')
+guiLabelPlayer1Weapon = Label(guiFramePlayer1, text='Arme actuelle:\n--')
 guiLabelPlayer1Weapon.grid(row=3, column=0)
 
 gui.append([guiPseudoPlayer1, guiCanvasPlayer1, guiLabelPlayer1HP, guiLabelPlayer1Weapon])
@@ -298,9 +298,9 @@ guiPseudoPlayer2 = Label(guiFramePlayer2, text='----')
 guiPseudoPlayer2.grid(row=0, column=0)
 guiCanvasPlayer2 = Canvas(guiFramePlayer2, width=50, height=50)
 guiCanvasPlayer2.grid(row=1, column=0)
-guiLabelPlayer2HP = Label(guiFramePlayer2, text='HP : --')
+guiLabelPlayer2HP = Label(guiFramePlayer2, text='HP: --')
 guiLabelPlayer2HP.grid(row=2, column=0)
-guiLabelPlayer2Weapon = Label(guiFramePlayer2, text='Arme actuelle : --')
+guiLabelPlayer2Weapon = Label(guiFramePlayer2, text='Arme actuelle:\n--')
 guiLabelPlayer2Weapon.grid(row=3, column=0)
 
 gui.append([guiPseudoPlayer2, guiCanvasPlayer2, guiLabelPlayer2HP, guiLabelPlayer2Weapon])
