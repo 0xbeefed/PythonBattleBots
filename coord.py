@@ -162,6 +162,10 @@ class Coordinator():
                             self.players[self.game['whoPlays']]['tp'] -= 4
                             self.history.append(' '.join([str(a) for a in action]))
 
+                    if countAlivePlayers <= 1:
+                        break
+                if countAlivePlayers <= 1:
+                    break
             if countAlivePlayers <= 1:
                 break
         print("End of the game")
@@ -173,4 +177,4 @@ class Coordinator():
         subprocess.run(['python', 'player.py', 'Fights/' + str(self.game['id']) + '.dat'], stdout=subprocess.PIPE)# Play replay
 
 
-Coordinator(0, 1)
+Coordinator(1, 2)

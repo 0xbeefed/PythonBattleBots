@@ -1,0 +1,948 @@
+[{"pseudo": "user0", "color": "blue", "x": 1, "y": 1, "currentWeapon": -1, "maxMp": 3, "mp": 3, "id": 0, "maxTp": 6, "tp": 6, "hp": 100, "maxHp": 100}, {"pseudo": "BossEasy", "color": "red", "x": 14, "y": 14, "currentWeapon": -1, "maxMp": 4, "mp": 4, "id": 1, "maxTp": 5, "tp": 5, "hp": 100, "maxHp": 100}]
+[{"name": "SimpleGun", "maxRange": 5, "damage": 10, "cost": 4}, {"name": "Sword", "maxRange": 1, "damage": 15, "cost": 5}]
+[[-1, -1, -3, -1, -3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-2, 0, -1, -1, -1, -1, -1, -1, -3, -1, -2, -1, -1, -1, -3, -1], [-1, -1, -3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -1, -1], [-3, -1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -2, -1, -2, -2, -1, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1], [-1, -1, -1, -2, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -1, -1, -3, -2], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -3, -1, -3, -1, -2, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -3, -1, -3, -1], [-1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -3, -2, -1, -1, -1, -1], [-1, -1, -1, -3, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1, -3, -1, -3, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -2, -1, -1, -1, -3, -3, -1, -1, -1, -1, -1, 1, -1], [-2, -3, -1, -3, -1, -1, -1, -1, -1, -1, -3, -2, -1, -1, -1, -1]]
+[TURN] 0
+[WHOPLAYS] 0
+[MARK] [[1, 2], [1, 3], [2, 3], [2, 4], [2, 5], [2, 6], [2, 7], [2, 8], [2, 9], [3, 9], [3, 10], [4, 10], [4, 11], [4, 12], [4, 13], [5, 13], [6, 13], [7, 13], [8, 13], [9, 13], [9, 14], [10, 14], [11, 14], [12, 14], [13, 14], [14, 14]] blue
+[SET_WEAPON] 1 Sword
+[MOVE] 2 1
+[MOVE] 3 1
+[MOVE] 4 1
+[HEAL] 4 1
+[WHOPLAYS] 1
+[SET_WEAPON] 0 SimpleGun
+[MARK] [[14, 14]] green
+[MARK] [[14, 10]] green
+[MARK] [[13, 11]] green
+[MARK] [[14, 11]] green
+[MARK] [[15, 11]] green
+[MARK] [[12, 12]] green
+[MARK] [[13, 12]] green
+[MARK] [[14, 12]] green
+[MARK] [[15, 12]] green
+[MARK] [[11, 13]] green
+[MARK] [[12, 13]] green
+[MARK] [[13, 13]] green
+[MARK] [[14, 13]] green
+[MARK] [[15, 13]] green
+[MARK] [[10, 14]] green
+[MARK] [[11, 14]] green
+[MARK] [[12, 14]] green
+[MARK] [[13, 14]] green
+[MARK] [[15, 14]] green
+[MARK] [[12, 15]] green
+[MARK] [[13, 15]] green
+[MARK] [[14, 15]] green
+[MARK] [[15, 15]] green
+[MARK] [[10, 14]] blue
+[MOVE] 13 14
+[MOVE] 12 14
+[MOVE] 11 14
+[MOVE] 10 14
+[TURN] 1
+[WHOPLAYS] 0
+[MARK] [[4, 2], [4, 3], [5, 3], [5, 4], [5, 5], [5, 6], [5, 7], [5, 8], [5, 9], [5, 10], [5, 11], [5, 12], [5, 13], [6, 13], [7, 13], [8, 13], [9, 13], [9, 14], [10, 14]] blue
+[MOVE] 3 1
+[MOVE] 2 1
+[MOVE] 1 1
+[HEAL] 1 1
+[WHOPLAYS] 1
+[MARK] [[10, 14]] green
+[MARK] [[9, 11]] green
+[MARK] [[10, 11]] green
+[MARK] [[11, 11]] green
+[MARK] [[9, 12]] green
+[MARK] [[10, 12]] green
+[MARK] [[11, 12]] green
+[MARK] [[12, 12]] green
+[MARK] [[7, 13]] green
+[MARK] [[8, 13]] green
+[MARK] [[9, 13]] green
+[MARK] [[10, 13]] green
+[MARK] [[11, 13]] green
+[MARK] [[12, 13]] green
+[MARK] [[13, 13]] green
+[MARK] [[9, 14]] green
+[MARK] [[11, 14]] green
+[MARK] [[12, 14]] green
+[MARK] [[13, 14]] green
+[MARK] [[14, 14]] green
+[MARK] [[7, 15]] green
+[MARK] [[8, 15]] green
+[MARK] [[9, 15]] green
+[MARK] [[12, 15]] green
+[MARK] [[13, 15]] green
+[MARK] [[7, 13]] blue
+[MOVE] 10 13
+[MOVE] 9 13
+[MOVE] 8 13
+[MOVE] 7 13
+[TURN] 2
+[WHOPLAYS] 0
+[MARK] [[1, 2], [1, 3], [2, 3], [2, 4], [2, 5], [2, 6], [2, 7], [2, 8], [2, 9], [3, 9], [3, 10], [4, 10], [4, 11], [4, 12], [4, 13], [5, 13], [6, 13], [7, 13]] blue
+[MOVE] 2 1
+[MOVE] 3 1
+[MOVE] 4 1
+[HEAL] 4 1
+[WHOPLAYS] 1
+[MARK] [[7, 13]] green
+[MARK] [[5, 11]] green
+[MARK] [[9, 11]] green
+[MARK] [[4, 12]] green
+[MARK] [[5, 12]] green
+[MARK] [[7, 12]] green
+[MARK] [[9, 12]] green
+[MARK] [[10, 12]] green
+[MARK] [[3, 13]] green
+[MARK] [[4, 13]] green
+[MARK] [[5, 13]] green
+[MARK] [[6, 13]] green
+[MARK] [[8, 13]] green
+[MARK] [[9, 13]] green
+[MARK] [[10, 13]] green
+[MARK] [[11, 13]] green
+[MARK] [[4, 14]] green
+[MARK] [[5, 14]] green
+[MARK] [[6, 14]] green
+[MARK] [[9, 14]] green
+[MARK] [[10, 14]] green
+[MARK] [[5, 15]] green
+[MARK] [[6, 15]] green
+[MARK] [[7, 15]] green
+[MARK] [[9, 15]] green
+[MARK] [[4, 12]] blue
+[MOVE] 6 13
+[MOVE] 5 13
+[MOVE] 5 12
+[MOVE] 4 12
+[TURN] 3
+[WHOPLAYS] 0
+[MARK] [[4, 2], [4, 3], [5, 3], [5, 4], [5, 5], [5, 6], [5, 7], [5, 8], [5, 9], [5, 10], [5, 11], [5, 12], [4, 12]] blue
+[MOVE] 3 1
+[MOVE] 2 1
+[HEAL] 2 1
+[WHOPLAYS] 1
+[MARK] [[4, 12]] green
+[MARK] [[4, 8]] green
+[MARK] [[3, 9]] green
+[MARK] [[4, 9]] green
+[MARK] [[5, 9]] green
+[MARK] [[3, 10]] green
+[MARK] [[4, 10]] green
+[MARK] [[5, 10]] green
+[MARK] [[6, 10]] green
+[MARK] [[1, 11]] green
+[MARK] [[2, 11]] green
+[MARK] [[4, 11]] green
+[MARK] [[5, 11]] green
+[MARK] [[6, 11]] green
+[MARK] [[0, 12]] green
+[MARK] [[1, 12]] green
+[MARK] [[2, 12]] green
+[MARK] [[3, 12]] green
+[MARK] [[5, 12]] green
+[MARK] [[1, 13]] green
+[MARK] [[2, 13]] green
+[MARK] [[3, 13]] green
+[MARK] [[4, 13]] green
+[MARK] [[5, 13]] green
+[MARK] [[6, 13]] green
+[MARK] [[7, 13]] green
+[MARK] [[2, 14]] green
+[MARK] [[4, 14]] green
+[MARK] [[5, 14]] green
+[MARK] [[6, 14]] green
+[MARK] [[4, 15]] green
+[MARK] [[5, 15]] green
+[MARK] [[3, 9]] blue
+[MOVE] 4 11
+[MOVE] 4 10
+[MOVE] 4 9
+[MOVE] 3 9
+[TURN] 4
+[WHOPLAYS] 0
+[MARK] [[1, 1], [1, 2], [1, 3], [2, 3], [2, 4], [2, 5], [2, 6], [2, 7], [2, 8], [2, 9], [3, 9]] blue
+[MOVE] 3 1
+[MOVE] 4 1
+[MOVE] 5 1
+[HEAL] 5 1
+[WHOPLAYS] 1
+[MARK] [[3, 9]] green
+[MARK] [[2, 6]] red
+[MARK] [[3, 6]] green
+[MARK] [[4, 6]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[4, 7]] red
+[MARK] [[5, 7]] red
+[MARK] [[0, 8]] green
+[MARK] [[1, 8]] green
+[MARK] [[2, 8]] green
+[MARK] [[3, 8]] green
+[MARK] [[4, 8]] red
+[MARK] [[5, 8]] red
+[MARK] [[6, 8]] red
+[MARK] [[0, 9]] green
+[MARK] [[1, 9]] green
+[MARK] [[2, 9]] green
+[MARK] [[4, 9]] red
+[MARK] [[5, 9]] red
+[MARK] [[6, 9]] red
+[MARK] [[7, 9]] green
+[MARK] [[0, 10]] green
+[MARK] [[1, 10]] green
+[MARK] [[3, 10]] green
+[MARK] [[4, 10]] green
+[MARK] [[5, 10]] red
+[MARK] [[6, 10]] green
+[MARK] [[1, 11]] green
+[MARK] [[4, 11]] green
+[MARK] [[5, 11]] green
+[MARK] [[4, 12]] green
+[MARK] [[4, 6]] blue
+[MOVE] 3 8
+[MOVE] 3 7
+[MOVE] 3 6
+[MOVE] 4 6
+[TURN] 5
+[WHOPLAYS] 0
+[MARK] [[5, 2], [5, 3], [5, 4], [5, 5], [5, 6], [4, 6]] blue
+[MOVE] 4 1
+[MOVE] 3 1
+[MOVE] 2 1
+[HEAL] 2 1
+[WHOPLAYS] 1
+[MARK] [[2, 6]] blue
+[MOVE] 3 6
+[MOVE] 2 6
+[ATTACK] 2 1
+[MARK] [[2, 6]] yellow
+[MARK] [[2, 6]] red
+[MARK] [[2, 4]] red
+[MARK] [[1, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[3, 6]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[2, 8]] green
+[MARK] [[1, 5]] blue
+[MOVE] 2 5
+[MOVE] 1 5
+[TURN] 6
+[WHOPLAYS] 0
+[MARK] [[1, 1], [1, 2], [1, 3], [2, 3], [2, 4], [2, 5], [1, 5]] blue
+[MOVE] 3 1
+[MOVE] 4 1
+[MOVE] 5 1
+[HEAL] 5 1
+[WHOPLAYS] 1
+[MARK] [[1, 5]] green
+[MARK] [[1, 3]] red
+[MARK] [[2, 3]] red
+[MARK] [[0, 4]] red
+[MARK] [[2, 4]] red
+[MARK] [[0, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[0, 6]] green
+[MARK] [[2, 6]] red
+[MARK] [[3, 6]] green
+[MARK] [[4, 6]] green
+[MARK] [[0, 7]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[0, 8]] green
+[MARK] [[2, 8]] green
+[MARK] [[4, 6]] blue
+[MOVE] 2 5
+[MOVE] 2 6
+[MOVE] 3 6
+[MOVE] 4 6
+[TURN] 7
+[WHOPLAYS] 0
+[MARK] [[5, 2], [5, 3], [5, 4], [5, 5], [5, 6], [4, 6]] blue
+[MOVE] 4 1
+[MOVE] 3 1
+[MOVE] 2 1
+[HEAL] 2 1
+[WHOPLAYS] 1
+[MARK] [[2, 6]] blue
+[MOVE] 3 6
+[MOVE] 2 6
+[ATTACK] 2 1
+[MARK] [[2, 6]] yellow
+[MARK] [[2, 6]] red
+[MARK] [[2, 4]] red
+[MARK] [[1, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[3, 6]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[2, 8]] green
+[MARK] [[1, 5]] blue
+[MOVE] 2 5
+[MOVE] 1 5
+[TURN] 8
+[WHOPLAYS] 0
+[MARK] [[1, 1], [1, 2], [1, 3], [2, 3], [2, 4], [2, 5], [1, 5]] blue
+[MOVE] 3 1
+[MOVE] 4 1
+[MOVE] 5 1
+[HEAL] 5 1
+[WHOPLAYS] 1
+[MARK] [[1, 5]] green
+[MARK] [[1, 3]] red
+[MARK] [[2, 3]] red
+[MARK] [[0, 4]] red
+[MARK] [[2, 4]] red
+[MARK] [[0, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[0, 6]] green
+[MARK] [[2, 6]] red
+[MARK] [[3, 6]] green
+[MARK] [[4, 6]] green
+[MARK] [[0, 7]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[0, 8]] green
+[MARK] [[2, 8]] green
+[MARK] [[4, 6]] blue
+[MOVE] 2 5
+[MOVE] 2 6
+[MOVE] 3 6
+[MOVE] 4 6
+[TURN] 9
+[WHOPLAYS] 0
+[MARK] [[5, 2], [5, 3], [5, 4], [5, 5], [5, 6], [4, 6]] blue
+[MOVE] 4 1
+[MOVE] 3 1
+[MOVE] 2 1
+[HEAL] 2 1
+[WHOPLAYS] 1
+[MARK] [[2, 6]] blue
+[MOVE] 3 6
+[MOVE] 2 6
+[ATTACK] 2 1
+[MARK] [[2, 6]] yellow
+[MARK] [[2, 6]] red
+[MARK] [[2, 4]] red
+[MARK] [[1, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[3, 6]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[2, 8]] green
+[MARK] [[1, 5]] blue
+[MOVE] 2 5
+[MOVE] 1 5
+[TURN] 10
+[WHOPLAYS] 0
+[MARK] [[1, 1], [1, 2], [1, 3], [2, 3], [2, 4], [2, 5], [1, 5]] blue
+[MOVE] 3 1
+[MOVE] 4 1
+[MOVE] 5 1
+[HEAL] 5 1
+[WHOPLAYS] 1
+[MARK] [[1, 5]] green
+[MARK] [[1, 3]] red
+[MARK] [[2, 3]] red
+[MARK] [[0, 4]] red
+[MARK] [[2, 4]] red
+[MARK] [[0, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[0, 6]] green
+[MARK] [[2, 6]] red
+[MARK] [[3, 6]] green
+[MARK] [[4, 6]] green
+[MARK] [[0, 7]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[0, 8]] green
+[MARK] [[2, 8]] green
+[MARK] [[4, 6]] blue
+[MOVE] 2 5
+[MOVE] 2 6
+[MOVE] 3 6
+[MOVE] 4 6
+[TURN] 11
+[WHOPLAYS] 0
+[MARK] [[5, 2], [5, 3], [5, 4], [5, 5], [5, 6], [4, 6]] blue
+[MOVE] 4 1
+[MOVE] 3 1
+[MOVE] 2 1
+[HEAL] 2 1
+[WHOPLAYS] 1
+[MARK] [[2, 6]] blue
+[MOVE] 3 6
+[MOVE] 2 6
+[ATTACK] 2 1
+[MARK] [[2, 6]] yellow
+[MARK] [[2, 6]] red
+[MARK] [[2, 4]] red
+[MARK] [[1, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[3, 6]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[2, 8]] green
+[MARK] [[1, 5]] blue
+[MOVE] 2 5
+[MOVE] 1 5
+[TURN] 12
+[WHOPLAYS] 0
+[MARK] [[1, 1], [1, 2], [1, 3], [2, 3], [2, 4], [2, 5], [1, 5]] blue
+[MOVE] 3 1
+[MOVE] 4 1
+[MOVE] 5 1
+[HEAL] 5 1
+[WHOPLAYS] 1
+[MARK] [[1, 5]] green
+[MARK] [[1, 3]] red
+[MARK] [[2, 3]] red
+[MARK] [[0, 4]] red
+[MARK] [[2, 4]] red
+[MARK] [[0, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[0, 6]] green
+[MARK] [[2, 6]] red
+[MARK] [[3, 6]] green
+[MARK] [[4, 6]] green
+[MARK] [[0, 7]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[0, 8]] green
+[MARK] [[2, 8]] green
+[MARK] [[4, 6]] blue
+[MOVE] 2 5
+[MOVE] 2 6
+[MOVE] 3 6
+[MOVE] 4 6
+[TURN] 13
+[WHOPLAYS] 0
+[MARK] [[5, 2], [5, 3], [5, 4], [5, 5], [5, 6], [4, 6]] blue
+[MOVE] 4 1
+[MOVE] 3 1
+[MOVE] 2 1
+[HEAL] 2 1
+[WHOPLAYS] 1
+[MARK] [[2, 6]] blue
+[MOVE] 3 6
+[MOVE] 2 6
+[ATTACK] 2 1
+[MARK] [[2, 6]] yellow
+[MARK] [[2, 6]] red
+[MARK] [[2, 4]] red
+[MARK] [[1, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[3, 6]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[2, 8]] green
+[MARK] [[1, 5]] blue
+[MOVE] 2 5
+[MOVE] 1 5
+[TURN] 14
+[WHOPLAYS] 0
+[MARK] [[1, 1], [1, 2], [1, 3], [2, 3], [2, 4], [2, 5], [1, 5]] blue
+[MOVE] 3 1
+[MOVE] 4 1
+[MOVE] 5 1
+[HEAL] 5 1
+[WHOPLAYS] 1
+[MARK] [[1, 5]] green
+[MARK] [[1, 3]] red
+[MARK] [[2, 3]] red
+[MARK] [[0, 4]] red
+[MARK] [[2, 4]] red
+[MARK] [[0, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[0, 6]] green
+[MARK] [[2, 6]] red
+[MARK] [[3, 6]] green
+[MARK] [[4, 6]] green
+[MARK] [[0, 7]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[0, 8]] green
+[MARK] [[2, 8]] green
+[MARK] [[4, 6]] blue
+[MOVE] 2 5
+[MOVE] 2 6
+[MOVE] 3 6
+[MOVE] 4 6
+[TURN] 15
+[WHOPLAYS] 0
+[MARK] [[5, 2], [5, 3], [5, 4], [5, 5], [5, 6], [4, 6]] blue
+[MOVE] 4 1
+[MOVE] 3 1
+[MOVE] 2 1
+[HEAL] 2 1
+[WHOPLAYS] 1
+[MARK] [[2, 6]] blue
+[MOVE] 3 6
+[MOVE] 2 6
+[ATTACK] 2 1
+[MARK] [[2, 6]] yellow
+[MARK] [[2, 6]] red
+[MARK] [[2, 4]] red
+[MARK] [[1, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[3, 6]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[2, 8]] green
+[MARK] [[1, 5]] blue
+[MOVE] 2 5
+[MOVE] 1 5
+[TURN] 16
+[WHOPLAYS] 0
+[MARK] [[1, 1], [1, 2], [1, 3], [2, 3], [2, 4], [2, 5], [1, 5]] blue
+[MOVE] 3 1
+[MOVE] 4 1
+[MOVE] 5 1
+[HEAL] 5 1
+[WHOPLAYS] 1
+[MARK] [[1, 5]] green
+[MARK] [[1, 3]] red
+[MARK] [[2, 3]] red
+[MARK] [[0, 4]] red
+[MARK] [[2, 4]] red
+[MARK] [[0, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[0, 6]] green
+[MARK] [[2, 6]] red
+[MARK] [[3, 6]] green
+[MARK] [[4, 6]] green
+[MARK] [[0, 7]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[0, 8]] green
+[MARK] [[2, 8]] green
+[MARK] [[4, 6]] blue
+[MOVE] 2 5
+[MOVE] 2 6
+[MOVE] 3 6
+[MOVE] 4 6
+[TURN] 17
+[WHOPLAYS] 0
+[MARK] [[5, 2], [5, 3], [5, 4], [5, 5], [5, 6], [4, 6]] blue
+[MOVE] 4 1
+[MOVE] 3 1
+[MOVE] 2 1
+[HEAL] 2 1
+[WHOPLAYS] 1
+[MARK] [[2, 6]] blue
+[MOVE] 3 6
+[MOVE] 2 6
+[ATTACK] 2 1
+[MARK] [[2, 6]] yellow
+[MARK] [[2, 6]] red
+[MARK] [[2, 4]] red
+[MARK] [[1, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[3, 6]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[2, 8]] green
+[MARK] [[1, 5]] blue
+[MOVE] 2 5
+[MOVE] 1 5
+[TURN] 18
+[WHOPLAYS] 0
+[MARK] [[1, 1], [1, 2], [1, 3], [2, 3], [2, 4], [2, 5], [1, 5]] blue
+[MOVE] 3 1
+[MOVE] 4 1
+[MOVE] 5 1
+[HEAL] 5 1
+[WHOPLAYS] 1
+[MARK] [[1, 5]] green
+[MARK] [[1, 3]] red
+[MARK] [[2, 3]] red
+[MARK] [[0, 4]] red
+[MARK] [[2, 4]] red
+[MARK] [[0, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[0, 6]] green
+[MARK] [[2, 6]] red
+[MARK] [[3, 6]] green
+[MARK] [[4, 6]] green
+[MARK] [[0, 7]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[0, 8]] green
+[MARK] [[2, 8]] green
+[MARK] [[4, 6]] blue
+[MOVE] 2 5
+[MOVE] 2 6
+[MOVE] 3 6
+[MOVE] 4 6
+[TURN] 19
+[WHOPLAYS] 0
+[MARK] [[5, 2], [5, 3], [5, 4], [5, 5], [5, 6], [4, 6]] blue
+[MOVE] 4 1
+[MOVE] 3 1
+[MOVE] 2 1
+[HEAL] 2 1
+[WHOPLAYS] 1
+[MARK] [[2, 6]] blue
+[MOVE] 3 6
+[MOVE] 2 6
+[ATTACK] 2 1
+[MARK] [[2, 6]] yellow
+[MARK] [[2, 6]] red
+[MARK] [[2, 4]] red
+[MARK] [[1, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[3, 6]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[2, 8]] green
+[MARK] [[1, 5]] blue
+[MOVE] 2 5
+[MOVE] 1 5
+[TURN] 20
+[WHOPLAYS] 0
+[MARK] [[1, 1], [1, 2], [1, 3], [2, 3], [2, 4], [2, 5], [1, 5]] blue
+[MOVE] 3 1
+[MOVE] 4 1
+[MOVE] 5 1
+[HEAL] 5 1
+[WHOPLAYS] 1
+[MARK] [[1, 5]] green
+[MARK] [[1, 3]] red
+[MARK] [[2, 3]] red
+[MARK] [[0, 4]] red
+[MARK] [[2, 4]] red
+[MARK] [[0, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[0, 6]] green
+[MARK] [[2, 6]] red
+[MARK] [[3, 6]] green
+[MARK] [[4, 6]] green
+[MARK] [[0, 7]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[0, 8]] green
+[MARK] [[2, 8]] green
+[MARK] [[4, 6]] blue
+[MOVE] 2 5
+[MOVE] 2 6
+[MOVE] 3 6
+[MOVE] 4 6
+[TURN] 21
+[WHOPLAYS] 0
+[MARK] [[5, 2], [5, 3], [5, 4], [5, 5], [5, 6], [4, 6]] blue
+[MOVE] 4 1
+[MOVE] 3 1
+[MOVE] 2 1
+[HEAL] 2 1
+[WHOPLAYS] 1
+[MARK] [[2, 6]] blue
+[MOVE] 3 6
+[MOVE] 2 6
+[ATTACK] 2 1
+[MARK] [[2, 6]] yellow
+[MARK] [[2, 6]] red
+[MARK] [[2, 4]] red
+[MARK] [[1, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[3, 6]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[2, 8]] green
+[MARK] [[1, 5]] blue
+[MOVE] 2 5
+[MOVE] 1 5
+[TURN] 22
+[WHOPLAYS] 0
+[MARK] [[1, 1], [1, 2], [1, 3], [2, 3], [2, 4], [2, 5], [1, 5]] blue
+[MOVE] 3 1
+[MOVE] 4 1
+[MOVE] 5 1
+[HEAL] 5 1
+[WHOPLAYS] 1
+[MARK] [[1, 5]] green
+[MARK] [[1, 3]] red
+[MARK] [[2, 3]] red
+[MARK] [[0, 4]] red
+[MARK] [[2, 4]] red
+[MARK] [[0, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[0, 6]] green
+[MARK] [[2, 6]] red
+[MARK] [[3, 6]] green
+[MARK] [[4, 6]] green
+[MARK] [[0, 7]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[0, 8]] green
+[MARK] [[2, 8]] green
+[MARK] [[4, 6]] blue
+[MOVE] 2 5
+[MOVE] 2 6
+[MOVE] 3 6
+[MOVE] 4 6
+[TURN] 23
+[WHOPLAYS] 0
+[MARK] [[5, 2], [5, 3], [5, 4], [5, 5], [5, 6], [4, 6]] blue
+[MOVE] 4 1
+[MOVE] 3 1
+[MOVE] 2 1
+[HEAL] 2 1
+[WHOPLAYS] 1
+[MARK] [[2, 6]] blue
+[MOVE] 3 6
+[MOVE] 2 6
+[ATTACK] 2 1
+[MARK] [[2, 6]] yellow
+[MARK] [[2, 6]] red
+[MARK] [[2, 4]] red
+[MARK] [[1, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[3, 6]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[2, 8]] green
+[MARK] [[1, 5]] blue
+[MOVE] 2 5
+[MOVE] 1 5
+[TURN] 24
+[WHOPLAYS] 0
+[MARK] [[1, 1], [1, 2], [1, 3], [2, 3], [2, 4], [2, 5], [1, 5]] blue
+[MOVE] 3 1
+[MOVE] 4 1
+[MOVE] 5 1
+[HEAL] 5 1
+[WHOPLAYS] 1
+[MARK] [[1, 5]] green
+[MARK] [[1, 3]] red
+[MARK] [[2, 3]] red
+[MARK] [[0, 4]] red
+[MARK] [[2, 4]] red
+[MARK] [[0, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[0, 6]] green
+[MARK] [[2, 6]] red
+[MARK] [[3, 6]] green
+[MARK] [[4, 6]] green
+[MARK] [[0, 7]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[0, 8]] green
+[MARK] [[2, 8]] green
+[MARK] [[4, 6]] blue
+[MOVE] 2 5
+[MOVE] 2 6
+[MOVE] 3 6
+[MOVE] 4 6
+[TURN] 25
+[WHOPLAYS] 0
+[MARK] [[5, 2], [5, 3], [5, 4], [5, 5], [5, 6], [4, 6]] blue
+[MOVE] 4 1
+[MOVE] 3 1
+[MOVE] 2 1
+[HEAL] 2 1
+[WHOPLAYS] 1
+[MARK] [[2, 6]] blue
+[MOVE] 3 6
+[MOVE] 2 6
+[ATTACK] 2 1
+[MARK] [[2, 6]] yellow
+[MARK] [[2, 6]] red
+[MARK] [[2, 4]] red
+[MARK] [[1, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[3, 6]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[2, 8]] green
+[MARK] [[1, 5]] blue
+[MOVE] 2 5
+[MOVE] 1 5
+[TURN] 26
+[WHOPLAYS] 0
+[MARK] [[1, 1], [1, 2], [1, 3], [2, 3], [2, 4], [2, 5], [1, 5]] blue
+[MOVE] 3 1
+[MOVE] 4 1
+[MOVE] 5 1
+[HEAL] 5 1
+[WHOPLAYS] 1
+[MARK] [[1, 5]] green
+[MARK] [[1, 3]] red
+[MARK] [[2, 3]] red
+[MARK] [[0, 4]] red
+[MARK] [[2, 4]] red
+[MARK] [[0, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[0, 6]] green
+[MARK] [[2, 6]] red
+[MARK] [[3, 6]] green
+[MARK] [[4, 6]] green
+[MARK] [[0, 7]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[0, 8]] green
+[MARK] [[2, 8]] green
+[MARK] [[4, 6]] blue
+[MOVE] 2 5
+[MOVE] 2 6
+[MOVE] 3 6
+[MOVE] 4 6
+[TURN] 27
+[WHOPLAYS] 0
+[MARK] [[5, 2], [5, 3], [5, 4], [5, 5], [5, 6], [4, 6]] blue
+[MOVE] 4 1
+[MOVE] 3 1
+[MOVE] 2 1
+[HEAL] 2 1
+[WHOPLAYS] 1
+[MARK] [[2, 6]] blue
+[MOVE] 3 6
+[MOVE] 2 6
+[ATTACK] 2 1
+[MARK] [[2, 6]] yellow
+[MARK] [[2, 6]] red
+[MARK] [[2, 4]] red
+[MARK] [[1, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[3, 6]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[2, 8]] green
+[MARK] [[1, 5]] blue
+[MOVE] 2 5
+[MOVE] 1 5
+[TURN] 28
+[WHOPLAYS] 0
+[MARK] [[1, 1], [1, 2], [1, 3], [2, 3], [2, 4], [2, 5], [1, 5]] blue
+[MOVE] 3 1
+[MOVE] 4 1
+[MOVE] 5 1
+[HEAL] 5 1
+[WHOPLAYS] 1
+[MARK] [[1, 5]] green
+[MARK] [[1, 3]] red
+[MARK] [[2, 3]] red
+[MARK] [[0, 4]] red
+[MARK] [[2, 4]] red
+[MARK] [[0, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[0, 6]] green
+[MARK] [[2, 6]] red
+[MARK] [[3, 6]] green
+[MARK] [[4, 6]] green
+[MARK] [[0, 7]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[0, 8]] green
+[MARK] [[2, 8]] green
+[MARK] [[4, 6]] blue
+[MOVE] 2 5
+[MOVE] 2 6
+[MOVE] 3 6
+[MOVE] 4 6
+[TURN] 29
+[WHOPLAYS] 0
+[MARK] [[5, 2], [5, 3], [5, 4], [5, 5], [5, 6], [4, 6]] blue
+[MOVE] 4 1
+[MOVE] 3 1
+[MOVE] 2 1
+[HEAL] 2 1
+[WHOPLAYS] 1
+[MARK] [[2, 6]] blue
+[MOVE] 3 6
+[MOVE] 2 6
+[ATTACK] 2 1
+[MARK] [[2, 6]] yellow
+[MARK] [[2, 6]] red
+[MARK] [[2, 4]] red
+[MARK] [[1, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[3, 6]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[2, 8]] green
+[MARK] [[1, 5]] blue
+[MOVE] 2 5
+[MOVE] 1 5
+[TURN] 30
+[WHOPLAYS] 0
+[MARK] [[1, 1], [1, 2], [1, 3], [2, 3], [2, 4], [2, 5], [1, 5]] blue
+[MOVE] 3 1
+[MOVE] 4 1
+[MOVE] 5 1
+[HEAL] 5 1
+[WHOPLAYS] 1
+[MARK] [[1, 5]] green
+[MARK] [[1, 3]] red
+[MARK] [[2, 3]] red
+[MARK] [[0, 4]] red
+[MARK] [[2, 4]] red
+[MARK] [[0, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[0, 6]] green
+[MARK] [[2, 6]] red
+[MARK] [[3, 6]] green
+[MARK] [[4, 6]] green
+[MARK] [[0, 7]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[0, 8]] green
+[MARK] [[2, 8]] green
+[MARK] [[4, 6]] blue
+[MOVE] 2 5
+[MOVE] 2 6
+[MOVE] 3 6
+[MOVE] 4 6
+[TURN] 31
+[WHOPLAYS] 0
+[MARK] [[5, 2], [5, 3], [5, 4], [5, 5], [5, 6], [4, 6]] blue
+[MOVE] 4 1
+[MOVE] 3 1
+[MOVE] 2 1
+[HEAL] 2 1
+[WHOPLAYS] 1
+[MARK] [[2, 6]] blue
+[MOVE] 3 6
+[MOVE] 2 6
+[ATTACK] 2 1
+[MARK] [[2, 6]] yellow
+[MARK] [[2, 6]] red
+[MARK] [[2, 4]] red
+[MARK] [[1, 5]] green
+[MARK] [[2, 5]] red
+[MARK] [[3, 6]] green
+[MARK] [[1, 7]] green
+[MARK] [[2, 7]] red
+[MARK] [[3, 7]] green
+[MARK] [[2, 8]] green
+[MARK] [[1, 5]] blue
+[MOVE] 2 5
+[MOVE] 1 5
+[END]
