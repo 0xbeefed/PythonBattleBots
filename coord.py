@@ -177,4 +177,4 @@ class Coordinator():
         subprocess.run(['python', 'player.py', 'Fights/' + str(self.game['id']) + '.dat'], stdout=subprocess.PIPE)# Play replay
 
 
-Coordinator(1, 2)
+Coordinator(0, 1)
