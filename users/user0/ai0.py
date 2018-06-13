@@ -69,7 +69,7 @@ class Grid:
 
     def evaluate(self):
         #print(self.players[self.myId]['position'], self.myId, self.whoPlay)
-        return self.players[self.myId]['hp']//self.players[self.myId]['maxHp']
+        return self.players[self.myId]['hp']-self.players[self.opponentId]['hp']
         if self.players[self.myId]['hp']//self.players[self.myId]['maxHp'] < 0.5:
             return (self.players[self.myId]['hp'] - self.players[self.opponentId]['hp'])*1000 + lib.getDistance(self.players[self.myId]['position'], self.players[self.opponentId]['position'])
         else:
@@ -191,7 +191,7 @@ def main():
     grid = Grid(lib.getMyId(), lib.getEnemyId())
     best_move = minimax(grid, 3)
     path = lib.getPath(lib.getCell(lib.getMyId()), [best_move[0], best_move[1]])
-    print(best_move, path)
+    print(best_move, path, file=sys.stderr)
     if path != -1:
         for cell in path:
             lib.moveOn(cell)
@@ -205,7 +205,7 @@ def main():
         lib.attackOn(lib.getCell(lib.getEnemyId()))
         for cell in lib.getPath(lib.getCell(lib.getMyId()), lib.getCell(lib.getEnemyId())):
             lib.moveOn(cell)
-    print(time.time()-start)
+    print(time.time()-start, file=sys.stderr)
 
 
     
