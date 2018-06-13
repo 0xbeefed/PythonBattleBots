@@ -79,10 +79,6 @@ class Coordinator():
                 self.game['whoPlays'] = i
                 self.history.append('[WHOPLAYS] ' + str(self.game['whoPlays']))
 
-                # Stats
-                self.players[self.game['whoPlays']]['mp'] = self.players[self.game['whoPlays']]['maxMp']
-                self.players[self.game['whoPlays']]['tp'] = self.players[self.game['whoPlays']]['maxTp']
-
                 # LAUNCH
                 users.lib.MAP_DAT = self.map.copy()
                 users.lib.GAME_DAT = self.game.copy()
@@ -164,6 +160,11 @@ class Coordinator():
 
                     if countAlivePlayers <= 1:
                         break
+
+                # Stats
+                self.players[self.game['whoPlays']]['mp'] = self.players[self.game['whoPlays']]['maxMp']
+                self.players[self.game['whoPlays']]['tp'] = self.players[self.game['whoPlays']]['maxTp']
+                
                 if countAlivePlayers <= 1:
                     break
             if countAlivePlayers <= 1:

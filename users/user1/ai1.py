@@ -22,6 +22,7 @@ def main():
 
     enemyId = lib.getEnemyId()
     enemyPos = lib.getCell(enemyId)
+    enemyMp = lib.getMp(enemyId) 
     
     tab = []
     OBSTACLES = lib.getObstacles()
@@ -31,7 +32,8 @@ def main():
     #for cell in selfMoveMap:
     #    lib.mark(cell, 'green')
 
-    enemyMoveMap = moveMap(enemyPos, 3)
+    enemyMoveMap = moveMap(enemyPos, enemyMp)
+    print(enemyPos, enemyMp, enemyMoveMap, file=sys.stderr)
     #for cell in enemyMoveMap:
     #    lib.mark(cell, 'red')
 
@@ -65,7 +67,8 @@ def main():
         for selfSimu in selfMoveMap:
             safeCell = True
             for enemySimu in enemyMoveMap:
-                if lib.getDistance(selfSimu, enemySimu) <= 6 and lib.getLineOfSight(selfSimu, enemySimu):
+                print('Simualted (E/S):', enemySimu, '/', selfSimu, file=sys.stderr)
+                if lib.getDistance(selfSimu, enemySimu) <= 5 and lib.getLineOfSight(selfSimu, enemySimu):
                     # If user can hit us, then cell isn't safe
                     safeCell = False
                     break
