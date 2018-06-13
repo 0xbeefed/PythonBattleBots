@@ -176,5 +176,7 @@ class Coordinator():
             file.write('\n'.join(self.history))
         subprocess.run(['python', 'player.py', 'Fights/' + str(self.game['id']) + '.dat'], stdout=subprocess.PIPE)# Play replay
 
-
-Coordinator(0, 1)
+print('Generation d\'un combat')
+user1 = int(input('ID premier utilisateur: '))
+user2 = int(input('ID second utilisateur: '))
+Coordinator(user1, user2)

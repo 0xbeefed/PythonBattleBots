@@ -259,7 +259,7 @@ def pickTurnUpdate(e):
 if (len(sys.argv) > 1):
     path = sys.argv[1]
 else:
-    path = 'replay.dat'
+    path = input('Ouvrir ~> ')
 
 # Globals
 playing = False
